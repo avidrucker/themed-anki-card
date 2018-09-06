@@ -1,9 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const StyledMoleculeTags = styled.span.attrs({
+  className: ' ',
+})``;
 
 const MoleculeTags = (props) => (
-  <span className={props.classes}>
+  <StyledMoleculeTags className={props.classes}>
     {props.tags}
-  </span>
+  </StyledMoleculeTags>
 );
 
 export default MoleculeTags;

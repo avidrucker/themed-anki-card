@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledAtomTranslit = styled.span.attrs({
-  className: ' i ',
+  className: ' ',
 })``;
 
 const AtomTranslit = (props) => (

@@ -1,9 +1,28 @@
 @import "tachyons";
 
 @font-face {
+    font-family: 'bpdotsregular';
+    src: url('BPdots-webfont.eot');
+    src: url('BPdots-webfont.eot?#iefix') format('embedded-opentype'),
+         url('BPdots-webfont.woff') format('woff'),
+         url('BPdots-webfont.ttf') format('truetype'),
+         url('BPdots-webfont.svg#bpdotsregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'jackeyfontregular';
+    src: url('jackeyfont-webfont.woff2') format('woff2'),
+         url('jackeyfont-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'camingocoderegular';
-    src: url('CamingoCode-Regular-webfont.eot'), url('CamingoCode-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('CamingoCode-Regular-webfont.woff2') format('woff2'),
+    src: url('CamingoCode-Regular-webfont.eot');
+    src: url('CamingoCode-Regular-webfont.eot?#iefix') format('embedded-opentype'),
          url('CamingoCode-Regular-webfont.woff') format('woff'),
          url('CamingoCode-Regular-webfont.ttf') format('truetype'),
          url('CamingoCode-Regular-webfont.svg#camingocoderegular') format('svg');
@@ -11,21 +30,11 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'bpdotsregular';
-    src: url('BPdots-webfont.eot'), url('BPdots-webfont.eot?#iefix') format('embedded-opentype'),
-         url('BPdots-webfont.woff2') format('woff2'),
-         url('BPdots-webfont.woff') format('woff'),
-         url('BPdots-webfont.ttf') format('truetype'),
-         url('BPdots-webfont.svg#bpdotsregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
 /* FONTS */
 
-.camingocoderegular { font-family: 'camingocoderegular', monospace}
+.camingocode { font-family: 'camingocoderegular', monospace }
+.bpdots { font-family: 'bpdotsregular', sans-serif }
+.jackeyfont { font-family: 'jackeyfontregular', sans-serif }
 .schoolbell { font-family: 'Schoolbell', cursive }
 .ringbearer {font-family: 'ringbearermedium', cursive }
 .press-start-2p { font-family: 'Press Start 2P', cursive }
@@ -33,7 +42,6 @@
 .source-code-pro {font-family: 'Source Code Pro', monospace }
 .sawarabi-mincho { font-family: 'Sawarabi Mincho', sans-serif }
 .noto-sans-jp { font-family: 'Noto Sans JP', sans-serif }
-.bpdotsregular { font-family: 'bpdotsregular' };
 .jpn-test { font-family: 'Yu Gothic', YuGothic, Meiryo, 'Meiryo', Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif }
 
 /* COLORS */

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledAtomAudio = styled.span.attrs({
-  className: ' f1 ',
+  className: ' ',
 })``;
 
 const AtomAudio = (props) => (

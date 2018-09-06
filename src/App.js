@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import OrganismCard from './components/OrganismCard';
 
+//
 const themes = {
   zen: {
     global: " bg-black white relative h-100 ",
@@ -27,7 +28,7 @@ const themes = {
     clickable: "  ",
   },
   zenBurnTachyons: {
-    global: ` bg-gray white justify-center items-center camingocoderegular `,
+    global: ` bg-gray white justify-center items-center `,
     important: " b ",
     unimportant: " ",
     primary: " f-subheadline yellow ",
@@ -54,13 +55,13 @@ const themes = {
     global: " bg-black flex flex-column ",
     important: " b ",
     unimportant: " ",
-    primary: " ",
-    secondary: " ",
-    tertiary: " ",
-    quaternary: " ",
-    first: " f1 white neon-glow-green ",
-    followingFirst: " f3 light-green bpdotsregular source-code-pro ",
-    clickable: " white ",
+    primary: " f1 ",
+    secondary: " b noto-sans f2 green ",
+    tertiary: " f3 green ",
+    quaternary: " f3 green ",
+    first: " white neon-glow-green  ",
+    followingFirst: " normal bpdots  ",
+    clickable: " f2 white neon-glow-green ",
   },
   glowUI: {
     global: " bg-black light-blue flex flex-column ",
@@ -70,9 +71,9 @@ const themes = {
     secondary: " f2 ",
     tertiary: " f3 ",
     quaternary: " f3 ",
-    first: " white neon-glow-cyan tron-outline ",
-    followingFirst: " ",
-    clickable: " white neon-glow-cyan ",
+    first: " b white neon-glow-cyan tron-outline ",
+    followingFirst: " camingocode ",
+    clickable: " f2 white neon-glow-cyan ",
   },
   highFantasy: {
     global: " bg-mid-gray light-yellow flex flex-column ",
@@ -82,22 +83,22 @@ const themes = {
     secondary: " f2 ",
     tertiary: " f3 ",
     quaternary: " f3 ",
-    first: " b noto-sans ringbearer sawarabi-mincho ",
+    first: " noto-sans ringbearer sawarabi-mincho ",
     followingFirst: " ",
-    clickable: "  ",
+    clickable: " f2  ",
   },
   retroConsole: {
     global: ` retro-green-darker bg-retro-green-lighter
-    flex flex-column `,
+    flex flex-column jackeyfont `,
     important: " b ",
     unimportant: " ",
     primary: " ",
-    secondary: " ",
-    tertiary: " ",
-    quaternary: " ",
-    first: " f1 jpn-test ",
-    followingFirst: " f4 jpn-test ",
-    clickable: "  ",
+    secondary: " f3 ",
+    tertiary: " f3 ",
+    quaternary: " f3 ",
+    first: " f1 ",
+    followingFirst: " ",
+    clickable: " f2  ",
   },
   rpgSketch: {
     global: " bg-white dark-red ",
@@ -112,7 +113,7 @@ const themes = {
     clickable: "  ",
   },
   zenBurn: {
-    global: ` bg-zb-1 zb-default justify-center items-center camingocoderegular `,
+    global: ` bg-zb-1 zb-default justify-center items-center `,
     important: " b ",
     unimportant: " ",
     primary: " f-subheadline zb-bright-yellow ",
