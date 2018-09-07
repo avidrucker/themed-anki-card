@@ -30,19 +30,46 @@
     font-style: normal;
 }
 
-/* FONTS */
+@font-face {
+	font-family: 'kanjistrokeordersregular';
+	src: url('kanjistrokeorders_v4.002-webfont.woff2') format('woff2'),
+			 url('kanjistrokeorders_v4.002-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
 
+@font-face {
+	font-family: 'playtimewithhottoddiesobliqRg';
+	src: url('PlaytimeOblique-webfont.eot');
+	src: url('PlaytimeOblique-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('PlaytimeOblique-webfont.woff') format('woff'),
+			 url('PlaytimeOblique-webfont.ttf') format('truetype'),
+			 url('PlaytimeOblique-webfont.svg#playtimewithhottoddiesobliqRg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+/* FONTS */
+.papyrus { font-family: Papyrus, fantasy, cursive }
+.cinzel { font-family: 'Cinzel', serif }
+.playtime { font-family: 'playtimewithhottoddiesobliqRg', cursive }
+.architects-daughter { font-family: 'Architects Daughter', cursive }
 .camingocode { font-family: 'camingocoderegular', monospace }
 .bpdots { font-family: 'bpdotsregular', sans-serif }
-.jackeyfont { font-family: 'jackeyfontregular', sans-serif }
+.jackeyfont { font-family: 'JackeyFont', JackeyFont, 'jackeyfontregular', sans-serif }
 .schoolbell { font-family: 'Schoolbell', cursive }
 .ringbearer {font-family: 'ringbearermedium', cursive }
 .press-start-2p { font-family: 'Press Start 2P', cursive }
 .tron-outline { font-family: 'tr2n', cursive }
 .source-code-pro {font-family: 'Source Code Pro', monospace }
 .sawarabi-mincho { font-family: 'Sawarabi Mincho', sans-serif }
-.noto-sans-jp { font-family: 'Noto Sans JP', sans-serif }
+.noto-sans { font-family: 'Noto Sans JP', sans-serif }
+.muli { font-family: 'Muli', sans-serif }
 .jpn-test { font-family: 'Yu Gothic', YuGothic, Meiryo, 'Meiryo', Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif }
+.fredericka { font-family: 'Fredericka the Great', cursive }
+.stroke-order { font-family: 'kanjistrokeordersregular', "KanjiStrokeOrders", KanjiStrokeOrders, cursive }
+
 
 /* COLORS */
 .retro-green-darker { color: #0f380f } /*Darker Green*/
@@ -63,6 +90,12 @@
 .zb-cyan {color: #8CD0D3 } /*number*/
 .zb-salmon {color: #DCA3A3 } /*boolean, character*/
 
+.zen-beige { color: #f6f6e0 }
+.bg-zen-beige { background-color: #f6f6e0 }
+.zen-black { color: #040404 }
+.bg-zen-black { background-color: #040404 }
+
+/* GLOWS & SHADOWS */
 .neon-glow-cyan { text-shadow:
     0 0 6px rgba(202,228,225,0.92),
     0 0 30px rgba(202,228,225,0.34),
@@ -74,3 +107,6 @@
 .neon-glow-green {
   text-shadow: 0 0 10px #FFF, 0 0 20px #FFF, 0 0 30px #FFF, 0 0 40px #0F0, 0 0 70px #0F0, 0 0 80px #0F0, 0 0 100px #0F0, 0 0 150px #0F0
 }
+
+/* BACKGROUND IMAGES */
+.bg-img-blackboard { background-image: url("./images/bg_blackboard_l_opt.jpg")}

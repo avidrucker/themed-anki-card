@@ -6,7 +6,7 @@ const StyledAtomTerm = styled.span.attrs({
 })``;
 
 const AtomTerm = (props) => (
-  <StyledAtomTerm className={props.classes}>
+  <StyledAtomTerm className={props.classes} lang={props.lang}>
     {props.term}
   </StyledAtomTerm>
 );
