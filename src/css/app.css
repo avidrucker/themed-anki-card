@@ -49,8 +49,9 @@
 	font-style: normal;
 }
 
-
 /* FONTS */
+.m-plus-rounded-1c {font-family: 'M PLUS Rounded 1c', sans-serif }
+.noto-serif { font-family: 'Noto Serif JP', sans-serif }
 .papyrus { font-family: Papyrus, fantasy, cursive }
 .cinzel { font-family: 'Cinzel', serif }
 .playtime { font-family: 'playtimewithhottoddiesobliqRg', cursive }

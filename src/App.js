@@ -35,7 +35,7 @@ const themes = {
     first: " ",
     followingFirst: " ",
     clickable: " f2 ",
-		jpnPrimary: " f1 stroke-order lh-title ",
+		jpnPrimary: " f1 stroke-order b lh-title ",
 		jpnSecondary: " f2 stroke-order lh-title ",
 		latinPrimary: " f3 fredericka ",
 		latinSecondary: " f3 fredericka ",
@@ -53,8 +53,8 @@ const themes = {
     first: " ",
     followingFirst: " ",
     clickable: " f2 zb-pale-yellow lh-solid ",
-		jpnPrimary: " f1 stroke-order lh-solid ",
-		jpnSecondary: " f1 stroke-order lh-solid ",
+		jpnPrimary: " f1 noto-serif lh-solid ",
+		jpnSecondary: " f1 noto-serif lh-solid ",
 		latinPrimary: " f3 ",
 		latinSecondary: " f3 ",
 		styleLabel: " " + STYLE_L,
@@ -71,8 +71,8 @@ const themes = {
     first: ` pl3 bg-zen-beige zen-black db tc pt5 flex justify-start items-end `,
     followingFirst: " pl3 zen-beige bg-zen-black ",
 		clickable: " f2 lh-solid ",
-		jpnPrimary: " noto-sans lh-title ",
-		jpnSecondary: " noto-sans lh-title ",
+		jpnPrimary: " m-plus-rounded-1c lh-title ",
+		jpnSecondary: " m-plus-rounded-1c lh-title ",
 		latinPrimary: " muli lh-copy ",
 		latinSecondary: " muli lh-copy ",
 		styleLabel: " bg-zen-black zen-beige muli " + STYLE_L,
@@ -241,14 +241,14 @@ const words = {
   },
 };
 
-const THEME_INDEX = 1;
+const THEME_INDEX = 0;
 const THEME_SET = [
 	[themes.indexCard, themes.blackBoard, themes.zenBurnTrue, themes.zen],
   [themes.matrix, themes.glowUI, themes.highFantasy, themes.retroConsole],
 	[themes.rpgSketch, themes.zenBurnTachyons, themes.zenBurnTrue, themes.fullPhoto]
 ];
 
-const WORD_INDEX = 1; //0==all diff, 1==kanji & kana, 2==kana only, 3==short, 4==long ,
+const WORD_INDEX = 0; //0==all diff, 1==kanji & kana, 2==kana only, 3==short, 4==long ,
 const WORD_SET = [
 	[words.sushi, words.australia, words.library, words.asoko],
 	[words.library ,words.library, words.library, words.library]
