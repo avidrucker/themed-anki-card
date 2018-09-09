@@ -24,17 +24,17 @@ const OrganismCard = (props) => (
 			classes={props.theme.primary + props.theme.first + props.theme.jpnPrimary}
 			lang={props.l2}
 		/>
-    <AtomReading
+		<AtomReading
 			reading={props.word.reading}
 			classes={props.theme.secondary + props.theme.followingFirst + props.theme.jpnSecondary}
 			lang={props.l2}
 		/>
-    <AtomTranslat
+		<AtomTranslat
 			translat={props.word.translat}
 			classes={props.theme.tertiary + props.theme.followingFirst  + props.theme.latinSecondary}
 			lang={props.l1}
 		/>
-    <AtomTranslit
+		<AtomTranslit
 			translit={props.word.translit}
 			classes={props.theme.quaternary + props.theme.followingFirst + props.theme.latinSecondary}
 			lang={props.l1}

@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import OrganismCard from './components/OrganismCard';
 
-const STYLE_L = " absolute top-0 right-0 pa2 f4 o-70 ";
-const STLYE_G = " relative ";
+const STYLE_L = " absolute top-0 right-0 pa2 f4 o-70 "; //styleLabel style
+const STLYE_G = " relative "; //global style
 
 const themes = {
 	indexCard: {
@@ -25,7 +25,7 @@ const themes = {
 	},
 	blackBoard: {
 		name: "Blackboard",
-    global: " bg-img-blackboard cover white justify-center items-center " + STLYE_G,
+    global: " bg-img-blackboard cover white justify-center items-center ph3 " + STLYE_G,
     important: " ",
     unimportant: " ",
     primary: " yellow ",
@@ -79,7 +79,7 @@ const themes = {
   },
   matrix: {
 		name: "Code Matrix",
-    global: " bg-black flex flex-column green " + STLYE_G,
+    global: " bg-black flex flex-column green pa3 " + STLYE_G,
     important: " b ",
     unimportant: " ",
     primary: " ",
@@ -134,7 +134,7 @@ const themes = {
   retroConsole: {
 		name: "8-Bit Retro",
     global: ` retro-green-darker bg-retro-green-lighter
-    flex flex-column jackeyfont ` + STLYE_G,
+    flex flex-column ` + STLYE_G,
     important: " ",
     unimportant: " ",
     primary: " ",
@@ -144,10 +144,10 @@ const themes = {
     first: " f1 ",
     followingFirst: " ",
     clickable: " f2 noto-sans ",
-		jpnPrimary: " ",
-		jpnSecondary: " f2 ",
-		latinPrimary: " f2 ",
-		latinSecondary: " f3 ",
+		jpnPrimary: " jackeyfont ",
+		jpnSecondary: " f2 jackeyfont ",
+		latinPrimary: " f2 vt323 ",
+		latinSecondary: " f3 vt323 ",
 		styleLabel: " " + STYLE_L,
   },
   rpgSketch: {
@@ -247,6 +247,10 @@ const THEME_SET = [
   [themes.matrix, themes.glowUI, themes.highFantasy, themes.retroConsole],
 	[themes.rpgSketch, themes.zenBurnTachyons, themes.zenBurnTrue, themes.fullPhoto]
 ];
+const MASTER_THEME_SET = [ themes.indexCard, themes.blackBoard,
+	themes.zen, themes.fullPhoto, themes.matrix, themes.glowUI, themes.highFantasy,
+	themes.retroConsole, themes.rpgSketch, themes.zenBurnTachyons, themes.zenBurnTrue 
+];
 
 const WORD_INDEX = 0; //0==all diff, 1==kanji & kana, 2==kana only, 3==short, 4==long ,
 const WORD_SET = [
@@ -254,28 +258,121 @@ const WORD_SET = [
 	[words.library ,words.library, words.library, words.library]
 ];
 
-const CardTester = () => (
-	<Fragment>
-		<div className="w-50 h-50 bg-purple">
-			<OrganismCard word={WORD_SET[WORD_INDEX][0]} theme={THEME_SET[THEME_INDEX][0]} />
-		</div>
-		<div className="w-50 h-50 bg-blue">
-			<OrganismCard word={WORD_SET[WORD_INDEX][1]}  theme={THEME_SET[THEME_INDEX][1]} />
-		</div>
-		<div className="w-50 h-50 bg-green">
-			<OrganismCard word={WORD_SET[WORD_INDEX][2]}  theme={THEME_SET[THEME_INDEX][2]} />
-		</div>
-		<div className="w-50 h-50 bg-red">
-			<OrganismCard word={WORD_SET[WORD_INDEX][3]}  theme={THEME_SET[THEME_INDEX][3]} />
-		</div>
-	</Fragment>
-);
+class CardTester1 extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			i1: 0,
+			i2: 1,
+			i3: 2,
+			i4: 3,
+		};
+	}
+
+	updateIndex = (i) => {
+		const THEME_CNT = MASTER_THEME_SET.length;
+		if(i < THEME_CNT - 1) {
+			return i+1;
+		}	else {
+			return 0;
+		}
+	};
+
+	handleClick1 = (event) => { this.setState({i1: this.updateIndex(this.state.i1)}) };
+	handleClick2 = (event) => { this.setState({i2: this.updateIndex(this.state.i2)}) };
+	handleClick3 = (event) => { this.setState({i3: this.updateIndex(this.state.i3)}) };
+	handleClick4 = (event) => { this.setState({i4: this.updateIndex(this.state.i4)}) };
+
+	render() {
+		return (
+			<div className="flex flex-wrap w-100 vh-100">
+				<div onClick={this.handleClick1} className="w-50 h-50 bg-purple">
+					<OrganismCard word={WORD_SET[WORD_INDEX][0]} theme={MASTER_THEME_SET[this.state.i1]} />
+				</div>
+				<div onClick={this.handleClick2} className="w-50 h-50 bg-blue">
+					<OrganismCard word={WORD_SET[WORD_INDEX][1]}  theme={MASTER_THEME_SET[this.state.i2]} />
+				</div>
+				<div onClick={this.handleClick3} className="w-50 h-50 bg-green">
+					<OrganismCard word={WORD_SET[WORD_INDEX][2]}  theme={MASTER_THEME_SET[this.state.i3]} />
+				</div>
+				<div onClick={this.handleClick4} className="w-50 h-50 bg-red">
+					<OrganismCard word={WORD_SET[WORD_INDEX][3]}  theme={MASTER_THEME_SET[this.state.i4]} />
+				</div>
+			</div>
+		);
+	}
+}
+
+class CardTester2 extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			i1: 0,
+			i2: 1,
+			i3: 2,
+			i4: 3,
+			i5: 4,
+			i6: 5,
+			i7: 6,
+			i8: 7,
+		};
+	}
+
+	updateIndex = (i) => {
+		const THEME_CNT = MASTER_THEME_SET.length;
+		if(i < THEME_CNT - 1) {
+			return i+1;
+		}	else {
+			return 0;
+		}
+	};
+
+	handleClick1 = (event) => { this.setState({i1: this.updateIndex(this.state.i1)}) };
+	handleClick2 = (event) => { this.setState({i2: this.updateIndex(this.state.i2)}) };
+	handleClick3 = (event) => { this.setState({i3: this.updateIndex(this.state.i3)}) };
+	handleClick4 = (event) => { this.setState({i4: this.updateIndex(this.state.i4)}) };
+	handleClick5 = (event) => { this.setState({i5: this.updateIndex(this.state.i5)}) };
+	handleClick6 = (event) => { this.setState({i6: this.updateIndex(this.state.i6)}) };
+	handleClick7 = (event) => { this.setState({i7: this.updateIndex(this.state.i7)}) };
+	handleClick8 = (event) => { this.setState({i8: this.updateIndex(this.state.i8)}) };
+
+	render() {
+		return (
+			<div className="flex flex-wrap w-100 vh-100">
+				<div onClick={this.handleClick1} className="w-25 h-50 bg-purple">
+					<OrganismCard word={WORD_SET[WORD_INDEX][0]} theme={MASTER_THEME_SET[this.state.i1]} />
+				</div>
+				<div onClick={this.handleClick2} className="w-25 h-50 bg-blue">
+					<OrganismCard word={WORD_SET[WORD_INDEX][1]}  theme={MASTER_THEME_SET[this.state.i2]} />
+				</div>
+				<div onClick={this.handleClick3} className="w-25 h-50 bg-green">
+					<OrganismCard word={WORD_SET[WORD_INDEX][2]}  theme={MASTER_THEME_SET[this.state.i3]} />
+				</div>
+				<div onClick={this.handleClick4} className="w-25 h-50 bg-red">
+					<OrganismCard word={WORD_SET[WORD_INDEX][3]}  theme={MASTER_THEME_SET[this.state.i4]} />
+				</div>
+				<div onClick={this.handleClick5} className="w-25 h-50 bg-purple">
+					<OrganismCard word={WORD_SET[WORD_INDEX][0]} theme={MASTER_THEME_SET[this.state.i5]} />
+				</div>
+				<div onClick={this.handleClick6} className="w-25 h-50 bg-blue">
+					<OrganismCard word={WORD_SET[WORD_INDEX][1]}  theme={MASTER_THEME_SET[this.state.i6]} />
+				</div>
+				<div onClick={this.handleClick7} className="w-25 h-50 bg-green">
+					<OrganismCard word={WORD_SET[WORD_INDEX][2]}  theme={MASTER_THEME_SET[this.state.i7]} />
+				</div>
+				<div onClick={this.handleClick8} className="w-25 h-50 bg-red">
+					<OrganismCard word={WORD_SET[WORD_INDEX][3]}  theme={MASTER_THEME_SET[this.state.i8]} />
+				</div>
+			</div>
+		);
+	}
+}
 
 class App extends Component {
   render() {
     return (
-      <main className="flex flex-wrap bg-yellow red w-100 vh-100">
-        <CardTester />
+      <main className="bg-yellow red w-100 vh-100">
+        <CardTester2 />
       </main>
     );
   }
