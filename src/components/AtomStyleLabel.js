@@ -6,7 +6,7 @@ const StyledAtomStyleLabel = styled.span.attrs({
 })``;
 
 const AtomStyleLabel = (props) => (
-  <StyledAtomStyleLabel className={props.classes} lang="en">
+  <StyledAtomStyleLabel className={props.classes} lang={props.lang} >
     {props.text}
   </StyledAtomStyleLabel>
 );

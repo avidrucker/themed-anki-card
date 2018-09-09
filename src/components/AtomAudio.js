@@ -6,7 +6,7 @@ const StyledAtomAudio = styled.span.attrs({
 })``;
 
 const AtomAudio = (props) => (
-  <StyledAtomAudio className={props.classes}>
+  <StyledAtomAudio className={props.classes} lang={props.lang}>
     {`▶`}
   </StyledAtomAudio>
 );

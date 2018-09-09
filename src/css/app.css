@@ -97,6 +97,8 @@
 .zen-black { color: #040404 }
 .bg-zen-black { background-color: #040404 }
 
+.oil { color: #1c1910 } /* dark brown */
+
 /* GLOWS & SHADOWS */
 .neon-glow-cyan { text-shadow:
     0 0 6px rgba(202,228,225,0.92),
@@ -110,5 +112,17 @@
   text-shadow: 0 0 10px #FFF, 0 0 20px #FFF, 0 0 30px #FFF, 0 0 40px #0F0, 0 0 70px #0F0, 0 0 80px #0F0, 0 0 100px #0F0, 0 0 150px #0F0
 }
 
+
 /* BACKGROUND IMAGES */
-.bg-img-blackboard { background-image: url("./images/bg_blackboard_l_opt.jpg")}
+.bg-blackboard { background-image: url("./images/bg_blackboard_l_opt.jpg")}
+.bg-wood { background-image: url("./images/fg_wood1_opt.jpg")} /*swapped fg and bg*/
+.bg-parchment { background-image: url("./images/bg_parchment_l_opt.jpg")}
+.bg-space { background-image: url("./images/bg_space_l_opt.jpg")}
+.text-wooden {
+	background-image: url("./images/bg_wood1_opt.jpg"); /*swapped fg and bg*/
+  color: white;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.stroke-wooden { -webkit-text-stroke: 1.5px #1c1910 }
+.stroke-black {  -webkit-text-stroke: 1px #000 }

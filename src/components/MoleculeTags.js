@@ -6,7 +6,7 @@ const StyledMoleculeTags = styled.span.attrs({
 })``;
 
 const MoleculeTags = (props) => (
-  <StyledMoleculeTags className={props.classes}>
+  <StyledMoleculeTags className={props.classes} lang={props.lang}>
     {props.tags}
   </StyledMoleculeTags>
 );

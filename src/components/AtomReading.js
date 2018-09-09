@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import styled from 'styled-components';
 
 const StyledAtomReading = styled.span.attrs({
@@ -6,9 +6,18 @@ const StyledAtomReading = styled.span.attrs({
 })``;
 
 const AtomReading = (props) => (
-  <StyledAtomReading className={props.classes}>
+	<Fragment>
+	{ !!props.reading &&
+		<StyledAtomReading className={props.classes} lang={props.lang}>
     {props.reading}
-  </StyledAtomReading>
+	</StyledAtomReading>
+	}
+	{
+		!props.reading &&
+		<Fragment>
+		</Fragment>
+	}
+	</Fragment>
 );
 
 export default AtomReading;

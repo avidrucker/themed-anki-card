@@ -6,7 +6,7 @@ const StyledAtomTranslit = styled.span.attrs({
 })``;
 
 const AtomTranslit = (props) => (
-  <StyledAtomTranslit className={props.classes}>
+  <StyledAtomTranslit className={props.classes} lang={props.lang}>
     {`"${props.translit}"`}
   </StyledAtomTranslit>
 );

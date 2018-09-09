@@ -1,31 +1,35 @@
 import React, { Component, Fragment } from 'react';
 import OrganismCard from './components/OrganismCard';
 
-const STYLE_L = " absolute top-0 right-0 pa2 f4 o-70 "; //styleLabel style
-const STLYE_G = " relative "; //global style
+const STYLE_L = " absolute bottom-0 right-0 pa2 f4 "; //styleLabel style
+const STLYE_G = " relative  "; //global style
+const STYLE_B = " "; //body style
+const STYLE_C = " f1 absolute top-0 right-0 pa2 "; //clickable style
 
 const themes = {
 	indexCard: {
 		name: "Index Card",
-    global: " bg-white black " + STLYE_G,
+		global: " bg-white black " + STLYE_G,
+		body: " " + STYLE_B,
     important: " ",
     unimportant: " ",
     primary: " ",
     secondary: " ",
     tertiary: " ",
     quaternary: " ",
-    first: ` ph2 h4 bb b--red db w-100 lh-solid flex justify-start items-center `,
-    followingFirst: ` ph2 h2 bb b--blue db w-100 lh-solid pv2 flex items-center `,
-    clickable: " f2 ",
-		jpnPrimary: " f1 stroke-order lh-solid ",
-		jpnSecondary: " f2 stroke-order lh-solid ",
+    first: ` pv3 bb b--red db w-100 lh-solid flex justify-start items-center `,
+    followingFirst: ` h2 bb b--blue db w-100 lh-solid pv2 flex items-center `,
+    clickable: " stroke-black white " + STYLE_C,
+		jpnPrimary: " f1 stroke-order ",
+		jpnSecondary: " f2 stroke-order ",
 		latinPrimary: " f4 schoolbell ",
 		latinSecondary: " f4 schoolbell ",
 		styleLabel: " schoolbell " + STYLE_L,
 	},
 	blackBoard: {
 		name: "Blackboard",
-    global: " bg-img-blackboard cover white justify-center items-center ph3 " + STLYE_G,
+    global: " bg-blackboard cover white flex flex-column justify-center items-center " + STLYE_G,
+		body: " flex flex-column justify-center items-center ph3 " + STYLE_B,
     important: " ",
     unimportant: " ",
     primary: " yellow ",
@@ -33,17 +37,18 @@ const themes = {
     tertiary: " light-green ",
     quaternary: " light-pink ",
     first: " ",
-    followingFirst: " ",
-    clickable: " f2 ",
-		jpnPrimary: " f1 sawarabi-mincho lh-title ",
-		jpnSecondary: " f2 sawarabi-mincho lh-title ",
+    followingFirst: " h2 db w-100 lh-solid pv1 flex items-center justify-center ",
+    clickable: " " + STYLE_C,
+		jpnPrimary: " f1 sawarabi-mincho ",
+		jpnSecondary: " f2 sawarabi-mincho ",
 		latinPrimary: " f3 fredericka ",
 		latinSecondary: " f3 fredericka ",
 		styleLabel: " fredericka " + STYLE_L,
 	},
 	zenBurnTrue: {
 		name: "Zenburn True",
-    global: ` bg-zb-1 zb-default justify-center items-center ` + STLYE_G,
+    global: ` bg-zb-1 zb-default flex flex-column justify-center items-center ` + STLYE_G,
+		body: " flex flex-column justify-center items-center " + STYLE_B,
     important: " b ",
     unimportant: " ",
     primary: " zb-bright-yellow ",
@@ -52,7 +57,7 @@ const themes = {
     quaternary: " zb-salmon ",
     first: " ",
     followingFirst: " ",
-    clickable: " f2 zb-pale-yellow lh-solid ",
+    clickable: " zb-pale-yellow " + STYLE_C,
 		jpnPrimary: " f1 noto-serif lh-solid ",
 		jpnSecondary: " f1 noto-serif lh-solid ",
 		latinPrimary: " f3 ",
@@ -62,15 +67,16 @@ const themes = {
   zen: {
 		name: "Zen",
     global: " zen-beige bg-zen-black relative h-100 " + STLYE_G,
+		body: " " + STYLE_B,
     important: " ",
     unimportant: " o-80 ",
     primary: " f1 ",
     secondary: " f2 ",
     tertiary: " f3 ",
     quaternary: " f3 ",
-    first: ` pl3 bg-zen-beige zen-black db tc pt5 flex justify-start items-end `,
-    followingFirst: " pl3 zen-beige bg-zen-black ",
-		clickable: " f2 lh-solid ",
+    first: ` pl3 bg-zen-beige zen-black db tc pt4 flex justify-start items-end `,
+    followingFirst: " pl3 zen-beige bg-zen-black db ",
+		clickable: " " + STYLE_C,
 		jpnPrimary: " noto-sans lh-title ",
 		jpnSecondary: " noto-sans lh-title ",
 		latinPrimary: " muli lh-copy ",
@@ -79,7 +85,8 @@ const themes = {
   },
   matrix: {
 		name: "Code Matrix",
-    global: " bg-black flex flex-column green pa3 " + STLYE_G,
+    global: " bg-black green " + STLYE_G,
+		body: " flex flex-column justify-center items-center pa3 " + STYLE_B,
     important: " b ",
     unimportant: " ",
     primary: " ",
@@ -88,16 +95,17 @@ const themes = {
     quaternary: " f3 ",
     first: " white neon-glow-green  ",
     followingFirst: " normal  ",
-    clickable: " f2 white neon-glow-green ",
+    clickable: " white neon-glow-green " + STYLE_C,
 		jpnPrimary: " f1 ",
-		jpnSecondary: " f2 b",
+		jpnSecondary: " f2 b ",
 		latinPrimary: " ",
 		latinSecondary: " bpdots ",
 		styleLabel: " white bpdots " + STYLE_L,
   },
   glowUI: {
 		name: "Glowing UI",
-    global: " bg-black light-blue flex flex-column " + STLYE_G,
+    global: " bg-black light-blue " + STLYE_G,
+		body: " pa3 flex flex-column " + STYLE_B,
     important: " ",
     unimportant: " ",
     primary: " f1 ",
@@ -106,7 +114,7 @@ const themes = {
     quaternary: " f3 ",
     first: " b white neon-glow-cyan tron-outline ",
     followingFirst: " camingocode ",
-    clickable: " f2 white neon-glow-cyan ",
+    clickable: " white neon-glow-cyan " + STYLE_C,
 		jpnPrimary: " ",
 		jpnSecondary: " ",
 		latinPrimary: " ",
@@ -115,7 +123,8 @@ const themes = {
   },
   highFantasy: {
 		name: "High Fantasy",
-    global: " bg-mid-gray light-yellow flex flex-column " + STLYE_G,
+    global: " bg-mid-gray light-yellow " + STLYE_G,
+		body: " flex flex-column " + STYLE_B,
     important: " b ",
     unimportant: " ",
     primary: " ",
@@ -124,7 +133,7 @@ const themes = {
     quaternary: " f4 ",
     first: " f1 sawarabi-mincho ",
     followingFirst: " ",
-    clickable: " f2 ",
+    clickable: " " + STYLE_C,
 		jpnPrimary: " sawarabi-mincho ",
 		jpnSecondary: " sawarabi-mincho f2 ",
 		latinPrimary: " ringbearer ",
@@ -133,17 +142,17 @@ const themes = {
   },
   retroConsole: {
 		name: "8-Bit Retro",
-    global: ` retro-green-darker bg-retro-green-lighter
-    flex flex-column ` + STLYE_G,
+    global: ` retro-green-darker bg-retro-green-lighter ` + STLYE_G,
+		body: " flex flex-column " + STYLE_B,
     important: " ",
     unimportant: " ",
     primary: " ",
     secondary: " ",
-    tertiary: " ",
-    quaternary: " ",
+    tertiary: " retro-green-dark ",
+    quaternary: " retro-green-dark ",
     first: " f1 ",
     followingFirst: " ",
-    clickable: " f2 noto-sans ",
+    clickable: " noto-sans " + STYLE_C,
 		jpnPrimary: " jackeyfont ",
 		jpnSecondary: " f2 jackeyfont ",
 		latinPrimary: " f2 vt323 ",
@@ -152,36 +161,38 @@ const themes = {
   },
   rpgSketch: {
 		name: "RPG Sketch",
-    global: " bg-white dark-red " + STLYE_G,
+    global: " bg-parchment cover black flex flex-column justify-center items-center " + STLYE_G,
+		body: " " + STYLE_B,
     important: " b ",
     unimportant: " ",
-    primary: " f1 ",
-    secondary: " f2 ",
-    tertiary: " f3 ",
-    quaternary: " f3 ",
-    first: " ",
-    followingFirst: " ",
-    clickable: "  ",
-		jpnPrimary: " ",
-		jpnSecondary: " ",
-		latinPrimary: " ",
-		latinSecondary: " ",
+    primary: " ",
+    secondary: " ",
+    tertiary: " ",
+    quaternary: " ",
+    first: " f1 lh-solid flex items-center justify-center ",
+    followingFirst: " db w-100 lh-solid pv1 flex items-center justify-center ",
+    clickable: " " + STYLE_C,
+		jpnPrimary: " noto-serif ",
+		jpnSecondary: " f1 noto-serif ",
+		latinPrimary: " f3 ",
+		latinSecondary: " f3 ",
 		styleLabel: " " + STYLE_L,
   },
 	zenBurnTachyons: {
 		name: "Zenburn Tachyons",
-    global: ` bg-gray white justify-center items-center ` + STLYE_G,
+    global: ` bg-gray white flex flex-column justify-center items-center ` + STLYE_G,
+		body: " flex flex-column justify-center items-center " + STYLE_B,
     important: " b ",
     unimportant: " ",
-    primary: " f-subheadline yellow ",
-    secondary: " f1 light-blue ",
-    tertiary: " f2 light-green ",
-    quaternary: " f2 light-pink ",
-    first: " ",
-    followingFirst: " ",
-    clickable: "  ",
+    primary: " yellow ",
+    secondary: " light-blue ",
+    tertiary: " light-green ",
+    quaternary: " light-pink ",
+    first: " f1 ",
+    followingFirst: " f2 ",
+    clickable: " " + STYLE_C,
 		jpnPrimary: " noto-sans ",
-		jpnSecondary: " ",
+		jpnSecondary: " noto-sans ",
 		latinPrimary: " ",
 		latinSecondary: " ",
 		styleLabel: " " + STYLE_L,
@@ -189,6 +200,7 @@ const themes = {
 	fullPhoto: {
 		name: "Full Photo",
     global: ` black ` + STLYE_G,
+		body: "  " + STYLE_B,
     important: " ",
     unimportant: " ",
     primary: "  ",
@@ -197,12 +209,31 @@ const themes = {
     quaternary: " f2 ",
     first: " f-subheadline ",
     followingFirst: " f2 ",
-    clickable: "  ",
+    clickable: " " + STYLE_C,
 		jpnPrimary: " noto-sans ",
 		jpnSecondary: " ",
 		latinPrimary: " ",
 		latinSecondary: " ",
 		styleLabel: " " + STYLE_L,
+	},
+	woodOnWood: {
+		name: "Wood Inlay",
+    global: " bg-wood cover b flex flex-column justify-center items-center " + STLYE_G,
+		body: " text-wooden cover stroke-wooden flex flex-column justify-center items-center ",
+    important: " ",
+    unimportant: " ",
+    primary: " ",
+    secondary: " ",
+    tertiary: " ",
+    quaternary: " ",
+    first: " f-subheadline lh-solid ",
+    followingFirst: " f2 lh-solid ",
+    clickable: " text-wooden cover stroke-wooden " + STYLE_C,
+		jpnPrimary: " ",
+		jpnSecondary: " ",
+		latinPrimary: " ",
+		latinSecondary: " ",
+		styleLabel: " text-wooden cover stroke-wooden " + STYLE_L,
 	},
 }
 
@@ -241,15 +272,17 @@ const words = {
   },
 };
 
+const INDEX_START = 0;
 const THEME_INDEX = 0;
 const THEME_SET = [
 	[themes.indexCard, themes.blackBoard, themes.zenBurnTrue, themes.zen],
   [themes.matrix, themes.glowUI, themes.highFantasy, themes.retroConsole],
 	[themes.rpgSketch, themes.zenBurnTachyons, themes.zenBurnTrue, themes.fullPhoto]
 ];
-const MASTER_THEME_SET = [ themes.indexCard, themes.blackBoard,
-	themes.zen, themes.fullPhoto, themes.matrix, themes.glowUI, themes.highFantasy,
-	themes.retroConsole, themes.rpgSketch, themes.zenBurnTachyons, themes.zenBurnTrue 
+const MASTER_THEME_SET = [ themes.rpgSketch, themes.indexCard, themes.blackBoard,
+	themes.woodOnWood, themes.fullPhoto, themes.highFantasy, themes.retroConsole,
+	themes.matrix, themes.glowUI, themes.zenBurnTachyons, themes.zenBurnTrue,
+	themes.zen
 ];
 
 const WORD_INDEX = 0; //0==all diff, 1==kanji & kana, 2==kana only, 3==short, 4==long ,
@@ -262,10 +295,10 @@ class CardTester1 extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			i1: 0,
-			i2: 1,
-			i3: 2,
-			i4: 3,
+			i1: INDEX_START + 0,
+			i2: INDEX_START + 1,
+			i3: INDEX_START + 2,
+			i4: INDEX_START + 3,
 		};
 	}
 
@@ -287,16 +320,17 @@ class CardTester1 extends Component {
 		return (
 			<div className="flex flex-wrap w-100 vh-100">
 				<div onClick={this.handleClick1} className="w-50 h-50 bg-purple">
-					<OrganismCard word={WORD_SET[WORD_INDEX][0]} theme={MASTER_THEME_SET[this.state.i1]} />
+					<OrganismCard l1="en" l2="ja" word={WORD_SET[WORD_INDEX][0]} theme={MASTER_THEME_SET[this.state.i1]}
+						/>
 				</div>
 				<div onClick={this.handleClick2} className="w-50 h-50 bg-blue">
-					<OrganismCard word={WORD_SET[WORD_INDEX][1]}  theme={MASTER_THEME_SET[this.state.i2]} />
+					<OrganismCard l1="en" l2="ja" word={WORD_SET[WORD_INDEX][1]}  theme={MASTER_THEME_SET[this.state.i2]} />
 				</div>
 				<div onClick={this.handleClick3} className="w-50 h-50 bg-green">
-					<OrganismCard word={WORD_SET[WORD_INDEX][2]}  theme={MASTER_THEME_SET[this.state.i3]} />
+					<OrganismCard l1="en" l2="ja" word={WORD_SET[WORD_INDEX][2]}  theme={MASTER_THEME_SET[this.state.i3]} />
 				</div>
 				<div onClick={this.handleClick4} className="w-50 h-50 bg-red">
-					<OrganismCard word={WORD_SET[WORD_INDEX][3]}  theme={MASTER_THEME_SET[this.state.i4]} />
+					<OrganismCard l1="en" l2="ja" word={WORD_SET[WORD_INDEX][3]}  theme={MASTER_THEME_SET[this.state.i4]} />
 				</div>
 			</div>
 		);
@@ -307,14 +341,14 @@ class CardTester2 extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			i1: 0,
-			i2: 1,
-			i3: 2,
-			i4: 3,
-			i5: 4,
-			i6: 5,
-			i7: 6,
-			i8: 7,
+			i1: INDEX_START + 0,
+			i2: INDEX_START + 1,
+			i3: INDEX_START + 2,
+			i4: INDEX_START + 3,
+			i5: INDEX_START + 4,
+			i6: INDEX_START + 5,
+			i7: INDEX_START + 6,
+			i8: INDEX_START + 7,
 		};
 	}
 
@@ -372,7 +406,7 @@ class App extends Component {
   render() {
     return (
       <main className="bg-yellow red w-100 vh-100">
-        <CardTester2 />
+        <CardTester1 />
       </main>
     );
   }
