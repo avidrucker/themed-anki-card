@@ -1,7 +1,6 @@
 import React, {Fragment} from 'react';
 import styled from 'styled-components';
 
-import MoleculeTags from './MoleculeTags';
 import AtomAudio from './AtomAudio';
 import AtomTerm from './AtomTerm';
 import AtomTranslat from './AtomTranslat';
@@ -35,20 +34,21 @@ const OrganismCardFront = (props) => (
 		
 		<main className={props.theme.body}>
 			{
-				(props.type == "hearKnow") &&
+				(props.type === "hearKnow") &&
 				<Fragment>
 					<AtomPrompt
 						text={props.prompt.ja.l1}
 						classes={props.theme.prompt}
 					/>
-					<AtomAudio audio={props.word.audio}
+					<AtomAudio
+						audio={props.word.audio}
 						classes={props.theme.clickable}
 						lang={props.l2}
 					/>
 				</Fragment>
 			}
 			{
-				(props.type != "hearKnow") &&
+				(props.type !== "hearKnow") &&
 				<Fragment>
 					{
 						!!props.prompt &&

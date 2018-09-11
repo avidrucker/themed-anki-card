@@ -17,8 +17,10 @@ const STYLE_L = " absolute bottom-0 right-0 pa2 f4 "; //styleLabel style
 const STYLE_D = " absolute bottom-0 left-0 pa2 f4 "; //dataLabel style
 const STLYE_G = " relative overflow-y-hidden "; //global style
 const STYLE_B = " "; //body style
-const STYLE_C = " lh-solid f1 absolute top-0 right-0 pa2 z-999 "; //clickable style
-const STYLE_GO = " absolute top-0 right-0 w-100 h-100 z-9999 "; //global overal
+const STYLE_C = " f1 "; //clickable style
+const STYLE_GO = " absolute top-0 right-0 w-100 h-100 z-9999 "; //global overlay
+const STYLE_F = " "; //front style
+const STYLE_BA = " lh-solid f1 absolute top-0 right-0 pa2 z-999 "; //back audio style
 
 const pictures = {
 	australia: {
@@ -49,10 +51,10 @@ const pictures = {
 const themes = {
 	blackBoard: {
 		name: "Blackboard",
-    global: " bg-blackboard cover white flex flex-column justify-center items-center " + STLYE_G,
-		body: " flex flex-column justify-center items-center ph3 " + STYLE_B,
+    global: " relative bg-blackboard cover white flex flex-column justify-center items-center " + STLYE_G,
+		body: " relative flex flex-column justify-center items-center ph3 " + STYLE_B,
     important: " ",
-    unimportant: " ",
+		unimportant: " ",
     primary: " yellow ",
     secondary: " white ",
     tertiary: " light-blue ",
@@ -60,12 +62,14 @@ const themes = {
 		quintary: " light-green ",
     first: " ",
     followingFirst: " h2 db w-100 lh-solid pv1 flex items-center justify-center ",
-    clickable: " " + STYLE_C,
+		clickable: " " + STYLE_C,
+		backAudio: " " + STYLE_BA,
+		front: " ",
 		jpnPrimary: " f1 sawarabi-mincho ",
 		jpnSecondary: " f2 sawarabi-mincho ",
 		latinPrimary: " f3 chalkduster ",
 		latinSecondary: " f3 chalkduster ",
-		prompt: " ",
+		prompt: " f3 chalkduster white ",
 		styleLabel: " chalkduster " + STYLE_L,
 		dataLabel: " chalkduster " + STYLE_D,
 		imgSection: " pt1 h4 db flex justify-center ",
@@ -87,6 +91,8 @@ const themes = {
     first: ` pl3 pv3 bb b--red db lh-solid flex justify-start items-center `,
     followingFirst: ` pl3 h2 bb b--blue db lh-solid pv2 flex items-center `,
     clickable: " stroke-black white " + STYLE_C,
+		backAudio: " " + STYLE_BA,
+		front: " ",
 		jpnPrimary: " f1 stroke-order ",
 		jpnSecondary: " f2 stroke-order ",
 		latinPrimary: " f3 schoolbell ",
@@ -112,6 +118,8 @@ const themes = {
     first: " ",
     followingFirst: " ",
     clickable: " zb-pale-yellow " + STYLE_C,
+		backAudio: " " + STYLE_BA,
+		front: " ",
 		jpnPrimary: " f1 noto-serif lh-solid ",
 		jpnSecondary: " f1 noto-serif lh-solid ",
 		latinPrimary: " f3 ",
@@ -137,6 +145,8 @@ const themes = {
     first: ` pl3 bg-zen-beige zen-black db h4 pv2 flex justify-start items-end `,
     followingFirst: " pl3 zen-beige bg-zen-black db ",
 		clickable: " zen-black " + STYLE_C,
+		backAudio: " " + STYLE_BA,
+		front: " ",
 		jpnPrimary: " noto-sans lh-title ",
 		jpnSecondary: " noto-sans lh-title ",
 		latinPrimary: " muli lh-copy ",
@@ -163,6 +173,8 @@ const themes = {
     first: " white neon-glow-green  ",
     followingFirst: " b normal matrix-green ",
     clickable: " white neon-glow-green " + STYLE_C,
+		backAudio: " " + STYLE_BA,
+		front: " ",
 		jpnPrimary: " f1 ",
 		jpnSecondary: " f2 b ",
 		latinPrimary: " ",
@@ -190,6 +202,8 @@ const themes = {
     first: " b f1 white neon-glow-cyan tron-outline ",
     followingFirst: " f2 camingocode ",
     clickable: " white neon-glow-cyan " + STYLE_C,
+		backAudio: " " + STYLE_BA,
+		front: " ",
 		jpnPrimary: " ",
 		jpnSecondary: " ",
 		latinPrimary: " ",
@@ -216,6 +230,8 @@ const themes = {
     first: " f1 ",
     followingFirst: " f2 ",
     clickable: " " + STYLE_C,
+		backAudio: " " + STYLE_BA,
+		front: " ",
 		jpnPrimary: " noto-sans ",
 		jpnSecondary: " noto-sans ",
 		latinPrimary: " ",
@@ -241,6 +257,8 @@ const themes = {
     first: " f1 sawarabi-mincho ",
     followingFirst: " f3 ",
     clickable: " " + STYLE_C,
+		backAudio: " " + STYLE_BA,
+		front: " ",
 		jpnPrimary: " sawarabi-mincho ",
 		jpnSecondary: " sawarabi-mincho ",
 		latinPrimary: " ringbearer ",
@@ -265,7 +283,9 @@ const themes = {
     quaternary: " retro-green-dark ",
     first: " f1 ",
     followingFirst: " ",
-    clickable: " f1 " + STYLE_C,
+    clickable: " " + STYLE_C,
+		backAudio: " " + STYLE_BA,
+		front: " ",
 		jpnPrimary: " jackeyfont ",
 		jpnSecondary: " f2 jackeyfont ",
 		latinPrimary: " f2 vt323 ",
@@ -291,6 +311,8 @@ const themes = {
     first: " f1 lh-solid flex items-center justify-center ",
     followingFirst: " db w-100 lh-solid pv1 flex items-center justify-center ",
     clickable: " " + STYLE_C,
+		backAudio: " " + STYLE_BA,
+		front: " ",
 		jpnPrimary: " noto-serif ",
 		jpnSecondary: " f1 noto-serif ",
 		latinPrimary: " f3 ",
@@ -316,6 +338,8 @@ const themes = {
     first: " f-subheadline lh-solid ",
     followingFirst: " f2 lh-title ",
     clickable: " " + STYLE_C,
+		backAudio: " " + STYLE_BA,
+		front: " ",
 		jpnPrimary: " ",
 		jpnSecondary: " ",
 		latinPrimary: " ",
@@ -341,6 +365,8 @@ const themes = {
     first: " f-subheadline lh-solid ",
     followingFirst: " f2 lh-solid ",
     clickable: " text-wooden cover stroke-wooden " + STYLE_C,
+		backAudio: " " + STYLE_BA,
+		front: " ",
 		jpnPrimary: " ",
 		jpnSecondary: " ",
 		latinPrimary: " ",
@@ -621,7 +647,7 @@ class CardTesterDouble extends Component {
 						type={TYPE_SET[TYPE_INDEX]}
 						images={PHOTO_SET[PHOTO_INDEX][0][MASTER_THEME_SET[this.state.i1].imgSet]}
 						word={WORD_SET[WORD_INDEX][0]}
-						theme={MASTER_THEME_SET[this.state.i2]} />
+						theme={MASTER_THEME_SET[this.state.i1]} />
 				</div>
 			</div>
 		);

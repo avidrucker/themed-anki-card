@@ -32,7 +32,7 @@ const OrganismCardBack = (props) => (
 			<AtomLanguage text={props.l2} />{`:`}<AtomType text={props.type} />{`:`}<AtomSide text="back" />
 		</span>
 		<AtomAudio audio={props.word.audio}
-			classes={props.theme.clickable}
+			classes={props.theme.clickable + props.theme.backAudio}
 			lang={props.l2}
 		/>
 		<main className={props.theme.body}>
