@@ -1,4 +1,4 @@
-@import "tachyons";
+@import "tachyons"; /*@import "/tachyons";*/
 
 @font-face {
     font-family: 'bpdotsregular';
@@ -49,7 +49,19 @@
 	font-style: normal;
 }
 
+@font-face {
+  font-family: "chalkduster";
+  src: url("Chalkduster.eot");
+	src: url("Chalkduster.eot?#iefix") format("embedded-opentype"),
+		url("Chalkduster.woff") format("woff"),
+		url("Chalkduster.ttf") format("truetype"),
+		url("Chalkduster.svg#Chalkduster") format("svg");
+  font-style: normal;
+  font-stretch: normal;
+}
+
 /* FONTS */
+.chalkduster { font-family: 'chalkduster', cursive }
 .m-plus-rounded-1c {font-family: 'M PLUS Rounded 1c', sans-serif }
 .noto-serif { font-family: 'Noto Serif JP', sans-serif }
 .papyrus { font-family: Papyrus, fantasy, cursive }
@@ -99,6 +111,15 @@
 
 .oil { color: #1c1910 } /* dark brown */
 
+.bg-matrix-black { background-color: #0D0208 }
+.bg-matrix-dark-green { background-color: #003B00 }
+.bg-matrix-green { background-color: #008F11 }
+.bg-matrix-light-green { background-color: #00FF41 }
+.matrix-black { color: #0D0208 }
+.matrix-dark-green { color: #003B00 }
+.matrix-green { color: #008F11 }
+.matrix-light-green { color: #00FF41 }
+
 /* GLOWS & SHADOWS */
 .neon-glow-cyan { text-shadow:
     0 0 6px rgba(202,228,225,0.92),
@@ -118,6 +139,8 @@
 .bg-wood { background-image: url("./images/fg_wood1_opt.jpg")} /*swapped fg and bg*/
 .bg-parchment { background-image: url("./images/bg_parchment_l_opt.jpg")}
 .bg-space { background-image: url("./images/bg_space_l_opt.jpg")}
+.bg-chalk { background-image: url("./images/chalk_texture1.jpg")}
+.bg-code-rain { background-image: url("./images/code_rain_opt.jpg")}
 .text-wooden {
 	background-image: url("./images/bg_wood1_opt.jpg"); /*swapped fg and bg*/
   color: white;
@@ -126,3 +149,38 @@
 }
 .stroke-wooden { -webkit-text-stroke: 1.5px #1c1910 }
 .stroke-black {  -webkit-text-stroke: 1px #000 }
+
+/* OBJECT FITTING */
+.of-fill { object-fit: fill}
+.of-contain { object-fit: contain}
+.of-cover { object-fit: cover}
+.of-none { object-fit: none}
+.of-scale-down { object-fit: scale-down}
+
+/* FX */
+.sepia { filter:sepia(100%) }
+.multiply { mix-blend-mode: multiply }
+.overlay { mix-blend-mode: overlay }
+.hue { mix-blend-mode: hue }
+.saturation { mix-blend-mode: saturation }
+.soft-light { mix-blend-mode: soft-light }
+.lighten { mix-blend-mode: lighten }
+.darken { mix-blend-mode: darken }
+.luminosity { mix-blend-mode: luminosity }
+
+/*mix-blend-mode: normal;
+mix-blend-mode: multiply;
+mix-blend-mode: screen;
+mix-blend-mode: overlay;
+mix-blend-mode: color-dodge;
+mix-blend-mode: color-burn;
+mix-blend-mode: hard-light;
+mix-blend-mode: soft-light;
+mix-blend-mode: difference;
+mix-blend-mode: exclusion;
+mix-blend-mode: hue;
+mix-blend-mode: saturation;
+mix-blend-mode: color;
+mix-blend-mode: luminosity;*/
+
+.colorless { filter:grayscale(100%) }

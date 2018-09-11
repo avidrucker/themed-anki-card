@@ -8,6 +8,7 @@ import AtomTranslat from './AtomTranslat';
 import AtomTranslit from './AtomTranslit';
 import AtomReading from './AtomReading';
 import AtomStyleLabel from './AtomStyleLabel';
+import AtomImage from './AtomImage';
 
 const StyledOrganismCard = styled.div.attrs({
   className: `h-100 w-100`,
@@ -15,6 +16,10 @@ const StyledOrganismCard = styled.div.attrs({
 
 const OrganismCard = (props) => (
   <StyledOrganismCard className={props.theme.global}>
+		{
+			!!props.theme.globalOverlay &&
+			<span className={props.theme.globalOverlay}></span>
+		}
 		<AtomStyleLabel
 			lang={props.l1}
 			text={`style: ${props.theme.name}`}
@@ -51,6 +56,22 @@ const OrganismCard = (props) => (
 				lang={props.l1}
 			/>
 		</main>
+		<section className={props.theme.imgSection}>
+			<AtomImage
+				src={props.images.photo}
+				alt={props.images.alt}
+				lang={props.l1}
+				classes={props.theme.photo}
+				overlay={props.theme.imgOverlay}
+			/>
+			<AtomImage
+				src={props.images.flag}
+				alt={props.images.altFlag}
+				lang={props.l1}
+				classes={props.theme.flag}
+				overlay={props.theme.imgOverlay}
+			/>
+		</section>
   </StyledOrganismCard>
 );
 
