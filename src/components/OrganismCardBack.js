@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import styled from 'styled-components';
 
 import MoleculeTags from './MoleculeTags';
@@ -9,13 +9,16 @@ import AtomTranslit from './AtomTranslit';
 import AtomReading from './AtomReading';
 import AtomStyleLabel from './AtomStyleLabel';
 import AtomImage from './AtomImage';
+import AtomType from './AtomType';
+import AtomSide from './AtomSide';
+import AtomLanguage from './AtomLanguage';
 
-const StyledOrganismCard = styled.div.attrs({
+const StyledOrganismCardBack = styled.div.attrs({
   className: `h-100 w-100`,
 })``;
 
-const OrganismCard = (props) => (
-  <StyledOrganismCard className={props.theme.global}>
+const OrganismCardBack = (props) => (
+  <StyledOrganismCardBack className={props.theme.global}>
 		{
 			!!props.theme.globalOverlay &&
 			<span className={props.theme.globalOverlay}></span>
@@ -25,6 +28,9 @@ const OrganismCard = (props) => (
 			text={`style: ${props.theme.name}`}
 			classes={props.theme.styleLabel}
 		/>
+		<span className={props.theme.dataLabel}>
+			<AtomLanguage text={props.l2} />{`:`}<AtomType text={props.type} />{`:`}<AtomSide text="back" />
+		</span>
 		<AtomAudio audio={props.word.audio}
 			classes={props.theme.clickable}
 			lang={props.l2}
@@ -52,27 +58,32 @@ const OrganismCard = (props) => (
 			/>
 			<MoleculeTags
 				tags={props.word.tags} 
-				classes={props.theme.tertiary + props.theme.followingFirst + props.theme.latinSecondary}
+				classes={props.theme.quintary + props.theme.followingFirst + props.theme.latinSecondary}
 				lang={props.l1}
 			/>
 		</main>
-		<section className={props.theme.imgSection}>
-			<AtomImage
-				src={props.images.photo}
-				alt={props.images.alt}
-				lang={props.l1}
-				classes={props.theme.photo}
-				overlay={props.theme.imgOverlay}
-			/>
-			<AtomImage
-				src={props.images.flag}
-				alt={props.images.altFlag}
-				lang={props.l1}
-				classes={props.theme.flag}
-				overlay={props.theme.imgOverlay}
-			/>
-		</section>
-  </StyledOrganismCard>
+		<Fragment>
+		{
+			!!props.images && !!props.images.photo &&
+			<section className={props.theme.imgSection}>
+					<AtomImage
+						src={props.images.photo}
+						alt={props.images.alt}
+						lang={props.l1}
+						classes={props.theme.photo}
+						overlay={props.theme.imgOverlay}
+					/>
+					<AtomImage
+						src={props.images.flag}
+						alt={props.images.altFlag}
+						lang={props.l1}
+						classes={props.theme.flag}
+						overlay={props.theme.imgOverlay}
+					/>
+			</section>
+		}
+		</Fragment>
+  </StyledOrganismCardBack>
 );
 
-export default OrganismCard;
+export default OrganismCardBack;
