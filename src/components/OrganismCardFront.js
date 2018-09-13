@@ -28,79 +28,111 @@ const OrganismCardFront = (props) => (
 			text={`style: ${props.theme.name}`}
 			classes={props.theme.styleLabel}
 		/>
-		<span className={props.theme.dataLabel}>
+		<label className={props.theme.dataLabel}>
 			<AtomLanguage text={props.l2} />{`:`}<AtomType text={props.type} />{`:`}<AtomSide text="front" />
-		</span>
+		</label>
 		
 		<main className={props.theme.body}>
 			{
 				(props.type === "hearKnow") &&
 				<Fragment>
-					<AtomPrompt
-						text={props.prompt.ja.l1}
-						classes={props.theme.prompt}
-					/>
-					<AtomAudio
-						audio={props.word.audio}
-						classes={props.theme.clickable}
-						lang={props.l2}
-					/>
+					{
+						!!props.prompt && !!props.word.audio &&
+						<Fragment>
+							<AtomPrompt
+								text={props.prompt.ja.l1}
+								classes={props.theme.prompt}
+							/>
+							<AtomAudio
+								audio={props.word.audio}
+								classes={props.theme.clickable}
+								lang={props.l2}
+							/>
+						</Fragment>
+					}
 				</Fragment>
 			}
 			{
-				(props.type !== "hearKnow") &&
+				(props.type === "readSpeak") &&
 				<Fragment>
 					{
-						!!props.prompt &&
-						<AtomPrompt
-							text={props.prompt.ja.l1}
-							classes={props.theme.prompt}
-						/>
+						!!props.prompt && !!props.word.reading &&
+						<Fragment>
+							<AtomPrompt
+								text={props.prompt.ja.l1}
+								classes={props.theme.prompt}
+							/>
+							<AtomTerm
+								term={props.word.term}
+								classes={props.theme.primary + props.theme.first + props.theme.jpnPrimary}
+								lang={props.l2}
+							/>
+						</Fragment>
 					}
-					<AtomTerm
-						term={props.word.term}
-						classes={props.theme.primary + props.theme.first + props.theme.jpnPrimary}
-						lang={props.l2}
-					/>
-					<AtomReading
-						reading={props.word.reading}
-						classes={props.theme.secondary + props.theme.followingFirst + props.theme.jpnSecondary}
-						lang={props.l2}
-					/>
-					<AtomTranslat
-						translat={props.word.translat}
-						classes={props.theme.tertiary + props.theme.followingFirst  + props.theme.latinSecondary}
-						lang={props.l1}
-					/>
-					<AtomTranslit
-						translit={props.word.translit}
-						classes={props.theme.quaternary + props.theme.followingFirst + props.theme.latinSecondary}
-						lang={props.l1}
-					/>
+				</Fragment>
+			}
+			{
+				(props.type === "lookSpeak") &&
+				<Fragment>
+					{
+						!!props.prompt && !!props.images && !!props.images.photo &&
+						<Fragment>
+							<AtomPrompt
+								text={props.prompt.ja.l1}
+								classes={props.theme.prompt}
+							/>
+							<section className={props.theme.imgSection}>
+							<AtomImage
+								src={props.images.photo}
+								alt={props.images.alt}
+								lang={props.l1}
+								classes={props.theme.photo}
+								overlay={props.theme.imgOverlay}
+							/>
+					</section>
+						</Fragment>
+					}
+				</Fragment>
+			}
+			{
+				(props.type === "recall") &&
+				<Fragment>
+					{
+						!!props.prompt && !!props.word.translat &&
+						<Fragment>
+							<AtomPrompt
+								text={props.prompt.ja.l1}
+								classes={props.theme.prompt}
+							/>
+							<AtomTranslat
+								translat={props.word.translat}
+								classes={props.theme.tertiary + props.theme.followingFirst  + props.theme.latinSecondary}
+								lang={props.l1}
+							/>
+						</Fragment>
+					}
+				</Fragment>
+			}
+			{
+				(props.type === "convertWriteTranslit") &&
+				<Fragment>
+					{
+						!!props.prompt && !!props.word.reading && !!props.word.translit &&
+						<Fragment>
+							<AtomPrompt
+								text={props.prompt.ja.l1}
+								classes={props.theme.prompt}
+							/>
+							<AtomTranslat
+								translat={props.word.translat}
+								classes={props.theme.tertiary + props.theme.followingFirst  + props.theme.latinSecondary}
+								lang={props.l1}
+							/>
+						</Fragment>
+					}
 				</Fragment>
 			}
 		</main>
-		<Fragment>
-		{
-			!!props.images && !!props.images.photo &&
-			<section className={props.theme.imgSection}>
-					<AtomImage
-						src={props.images.photo}
-						alt={props.images.alt}
-						lang={props.l1}
-						classes={props.theme.photo}
-						overlay={props.theme.imgOverlay}
-					/>
-					<AtomImage
-						src={props.images.flag}
-						alt={props.images.altFlag}
-						lang={props.l1}
-						classes={props.theme.flag}
-						overlay={props.theme.imgOverlay}
-					/>
-			</section>
-		}
-		</Fragment>
   </StyledOrganismCardFront>
 );
 

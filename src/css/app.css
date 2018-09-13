@@ -104,6 +104,19 @@
 .zb-cyan {color: #8CD0D3 } /*number*/
 .zb-salmon {color: #DCA3A3 } /*boolean, character*/
 
+.std-pink-chalk { color: #f2a3bd }
+.std-yellow-chalk { color: #d6d963 }
+.std-turquoise-chalk { color: #6fe7db }
+.std-purple-chalk { color: #c4adc9 }
+.std-white-chalk { color: #f4f4f0 }
+
+.od-red-chalk { color: #ed7777 }
+.od-orange-chalk { color: #fad48b }
+.od-yellow-chalk { color: #f5f9ad }
+.od-green-chalk { color: #bcdf8a }
+.od-blue-chalk { color: #94c0cc }
+.od-white-chalk { color: #f6f4f1 }
+
 .zen-beige { color: #f6f6e0 }
 .bg-zen-beige { background-color: #f6f6e0 }
 .zen-black { color: #040404 }
@@ -119,6 +132,9 @@
 .matrix-dark-green { color: #003B00 }
 .matrix-green { color: #008F11 }
 .matrix-light-green { color: #00FF41 }
+
+.dark-slate-gray { color: #2f4f4f } /* todo: implement this as fallback for chalk on wet stone / side-walk*/
+/*todo: implement chalk rock colors: http://colrd.com/palette/23114/?download=css */
 
 /* GLOWS & SHADOWS */
 .neon-glow-cyan { text-shadow:
@@ -184,3 +200,6 @@ mix-blend-mode: color;
 mix-blend-mode: luminosity;*/
 
 .colorless { filter:grayscale(100%) }
+
+/* LINKS & HOVERS */
+.disabled-link { pointer-events: none }

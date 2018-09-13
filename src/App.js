@@ -13,16 +13,27 @@ import AU_FLAG from './images/flag_australia_original.png';
 import AU_FLAG_8BIT from './images/flag_australia_8bit.png';
 import AU_FLAG_SKETCH from './images/flag_australia_sketch.png';
 
+import CRAB from './images/crab_l.jpg';
+import CRAB_8BIT from './images/crab_l.jpg';
+import CRAB_SKETCH from './images/crab_sketch2.jpg';
+
 const STYLE_L = " absolute bottom-0 right-0 pa2 f4 "; //styleLabel style
 const STYLE_D = " absolute bottom-0 left-0 pa2 f4 "; //dataLabel style
 const STLYE_G = " relative overflow-y-hidden "; //global style
 const STYLE_B = " "; //body style
 const STYLE_C = " f1 "; //clickable style
-const STYLE_GO = " absolute top-0 right-0 w-100 h-100 z-9999 "; //global overlay
+const STYLE_GO = " disabled-link absolute top-0 right-0 w-100 h-100 z-999 "; //global overlay
 const STYLE_F = " "; //front style
-const STYLE_BA = " lh-solid f1 absolute top-0 right-0 pa2 z-999 "; //back audio style
+const STYLE_BA = " lh-solid f1 absolute top-0 right-0 pa2 z-99 "; //back audio style
 
 const pictures = {
+	crab: {
+		alt: "Crab on the beach",
+		std: { photo: CRAB },
+		retro: { photo: CRAB_8BIT },
+		sketch: { photo: CRAB_SKETCH}
+	},
+	library: {},
 	australia: {
 		alt: "Australia from Satellite",
 		altFlag: "Australian Flag",
@@ -38,13 +49,8 @@ const pictures = {
 			photo: AU_SKETCH,
 			flag: AU_FLAG_SKETCH,
 		},
-		blackboard: {
-			photo: AU,
-			flag: AU_FLAG,
-		}
 	},
-	library: {},
-	crab: {},
+	asoko: {},
 	sushi: {},
 };
 
@@ -61,7 +67,7 @@ const themes = {
 		quaternary: " light-pink ",
 		quintary: " light-green ",
     first: " ",
-    followingFirst: " h2 db w-100 lh-solid pv1 flex items-center justify-center ",
+    followingFirst: " w-100 lh-solid flex items-center justify-center ",
 		clickable: " " + STYLE_C,
 		backAudio: " " + STYLE_BA,
 		front: " ",
@@ -69,13 +75,13 @@ const themes = {
 		jpnSecondary: " f2 sawarabi-mincho ",
 		latinPrimary: " f3 chalkduster ",
 		latinSecondary: " f3 chalkduster ",
-		prompt: " f3 chalkduster white ",
+		prompt: " f3 chalkduster white tc ",
 		styleLabel: " chalkduster " + STYLE_L,
 		dataLabel: " chalkduster " + STYLE_D,
 		imgSection: " pt1 h4 db flex justify-center ",
 		photo: " h4 of-contain lighten ",
 		flag: " h4 of-contain lighten ",
-		imgSet: "blackboard",
+		imgSet: "std",
 		globalOverlay: " bg-blackboard cover darken o-20 " + STYLE_GO,
 	},
 	indexCard: {
@@ -88,6 +94,7 @@ const themes = {
     secondary: " ",
     tertiary: " ",
     quaternary: " ",
+		quintary: " ",
     first: ` pl3 pv3 bb b--red db lh-solid flex justify-start items-center `,
     followingFirst: ` pl3 h2 bb b--blue db lh-solid pv2 flex items-center `,
     clickable: " stroke-black white " + STYLE_C,
@@ -115,6 +122,7 @@ const themes = {
     secondary: " zb-cyan ",
     tertiary: " zb-muted-green ",
     quaternary: " zb-salmon ",
+		quintary: " ",
     first: " ",
     followingFirst: " ",
     clickable: " zb-pale-yellow " + STYLE_C,
@@ -142,6 +150,7 @@ const themes = {
     secondary: " f2 ",
     tertiary: " f3 ",
     quaternary: " f3 ",
+		quintary: " ",
     first: ` pl3 bg-zen-beige zen-black db h4 pv2 flex justify-start items-end `,
     followingFirst: " pl3 zen-beige bg-zen-black db ",
 		clickable: " zen-black " + STYLE_C,
@@ -158,7 +167,7 @@ const themes = {
 		photo: " w4 ",
 		flag: " w4 ",
 		imgSet: "std",
-		imgOverlay: " bg-zen-beige hue saturation ",
+		imgOverlay: " bg-zen-beige saturation z-999 ",
   },
   matrix: {
 		name: "Code Matrix",
@@ -170,6 +179,7 @@ const themes = {
     secondary: " noto-sans ",
     tertiary: " f3 ",
     quaternary: " f3 ",
+		quintary: " ",
     first: " white neon-glow-green  ",
     followingFirst: " b normal matrix-green ",
     clickable: " white neon-glow-green " + STYLE_C,
@@ -180,7 +190,7 @@ const themes = {
 		latinPrimary: " ",
 		latinSecondary: " bpdots ",
 		prompt: " ",
-		styleLabel: " white bpdots z-9999 absolute  " + STYLE_L,
+		styleLabel: " white bpdots z-999 absolute  " + STYLE_L,
 		dataLabel: " " + STYLE_D,
 		imgSection: " flex flex-row ",
 		photo: " dib ",
@@ -198,7 +208,8 @@ const themes = {
     primary: " ",
     secondary: " ",
     tertiary: " ",
-    quaternary: " ",
+		quaternary: " ",
+		quintary: " ",
     first: " b f1 white neon-glow-cyan tron-outline ",
     followingFirst: " f2 camingocode ",
     clickable: " white neon-glow-cyan " + STYLE_C,
@@ -227,6 +238,7 @@ const themes = {
     secondary: " light-blue ",
     tertiary: " light-green ",
     quaternary: " light-pink ",
+		quintary: " ",
     first: " f1 ",
     followingFirst: " f2 ",
     clickable: " " + STYLE_C,
@@ -254,6 +266,7 @@ const themes = {
     secondary: " ",
     tertiary: " ",
     quaternary: " ",
+		quintary: " ",
     first: " f1 sawarabi-mincho ",
     followingFirst: " f3 ",
     clickable: " " + STYLE_C,
@@ -264,7 +277,7 @@ const themes = {
 		latinPrimary: " ringbearer ",
 		latinSecondary: " noto-sans ",
 		prompt: " ",
-		styleLabel: " z-9999 absolute " + STYLE_L,
+		styleLabel: " z-999 absolute " + STYLE_L,
 		dataLabel: " " + STYLE_D,
 		imgSection: "  w-50 h-100 flex flex-column justify-start items-start ",
 		photo: " sepia of-cover h-50 tc center ",
@@ -281,6 +294,7 @@ const themes = {
     secondary: " ",
     tertiary: " retro-green-dark ",
     quaternary: " retro-green-dark ",
+		quintary: " ",
     first: " f1 ",
     followingFirst: " ",
     clickable: " " + STYLE_C,
@@ -308,6 +322,7 @@ const themes = {
     secondary: " ",
     tertiary: " ",
     quaternary: " ",
+		quintary: " ",
     first: " f1 lh-solid flex items-center justify-center ",
     followingFirst: " db w-100 lh-solid pv1 flex items-center justify-center ",
     clickable: " " + STYLE_C,
@@ -328,13 +343,14 @@ const themes = {
 	fullPhoto: {
 		name: "Full Photo",
     global: ` relative white noto-sans flex flex-column ` + STLYE_G,
-		body: " absolute z-9999 flex flex-column justify-start pl3 pt3  " + STYLE_B,
+		body: " absolute z-9 flex flex-column justify-start pl3 pt3  " + STYLE_B,
     important: " ",
     unimportant: " ",
     primary: "  ",
     secondary: "  ",
     tertiary: "  ",
     quaternary: " ",
+		quintary: " ",
     first: " f-subheadline lh-solid ",
     followingFirst: " f2 lh-title ",
     clickable: " " + STYLE_C,
@@ -362,6 +378,7 @@ const themes = {
     secondary: " ",
     tertiary: " ",
     quaternary: " ",
+		quintary: " ",
     first: " f-subheadline lh-solid ",
     followingFirst: " f2 lh-solid ",
     clickable: " text-wooden cover stroke-wooden " + STYLE_C,
@@ -465,8 +482,11 @@ const words = {
 	
 	WRITING
 	5A. copyWrite = writing skills & attention to detail (SQUARE 0: BEST NOT TO SKIP, BUT DON'T STAY HERE FOR LONG)
-	5B. convertWrite = converting from transliteration in l1 to l2 written form (RECOMMENDED COMPROMISE BETWEEN 5A & 5C)
+	5B. convertWriteTranslit = converting from transliteration in l1 to l2 transliteration (ie. romanji to kana) (RECOMMENDED COMPROMISE BETWEEN 5A & 5C)
 	5C. hearWrite = dictation, combining listening & writing (ADVANCED LEARNERS ONLY)
+	
+	MISC
+	6. mnemonicRecall
 
 	*/}
 const prompts = {
@@ -544,7 +564,7 @@ const prompts = {
 			l2: "o sitelen sin e ni",
 		},
 	},
-	convertWrite: {
+	convertWriteTranslit: {
 		ja: {
 			l1: "Write this using Hiragana:",
 			l2: "ひらがなでかきなさい：",
@@ -578,12 +598,13 @@ const prompts = {
 };
 
 const TYPE_INDEX = 0;
-const TYPE_SET = [ "hearKnow", "lookSpeak", "recall", "readSpeak", "convertWrite"];
+const TYPE_SET = [ "hearKnow", "lookSpeak", "recall", "readSpeak", "convertWriteTranslit"];
 
 const PROMPT_SET = [ prompts.hearKnow, prompts.lookSpeak, prompts.recall,
-	prompts.readSpeak, prompts.convertWrite ]; //PRIMARY VECTORS
+	prompts.readSpeak, prompts.convertWriteTranslit ]; //PRIMARY VECTORS
 //const PROMPT_SET2 = [ prompts.egDescribe, prompts.egMCD, prompts.soundKaruta,
-//	prompts.QandA, prompts.opposites]; //SECONDARY VECTORS
+//	prompts.QandA, prompts.opposites]; //SECONDARY VECTORS //todo: implement V2
+// prompts.identifyCountryByFlag //TERTIARY VECTORS //todo: implement V3
 
 const THEME_INDEX = 0;
 
@@ -593,187 +614,94 @@ const MASTER_THEME_SET = [ themes.blackBoard, themes.fullPhoto,
 	themes.woodOnWood, themes.zenMenu
 ];
 
-const WORD_INDEX = 1; //0==all diff, 1==kanji & kana, 2==kana only, 3==short, 4==long ,
-const WORD_SET = [
-	[words.crab, words.australia, words.library, words.asoko],
-	[words.library, words.library, words.library, words.library],
-	[words.crab, words.crab, words.crab, words.crab],
-	[words.australia, words.australia, words.australia, words.australia]
-];
+const WORD_INDEX = 1; //crab==1 kanji, australia==long, library==many kanji, asoko==kana only, sushi==even kanji to kana ratio
+const MASTER_WORD_SET = [words.crab, words.australia, words.library, words.asoko, words.sushi];
 
 const PHOTO_INDEX = 1;
-const PHOTO_SET = [
-	[pictures.crab, pictures.australia, pictures.library, pictures.asoko],
-	[pictures.library, pictures.library, pictures.library, pictures.library],
-	[pictures.crab, pictures.crab, pictures.crab, pictures.crab],
-	[pictures.australia, pictures.australia, pictures.australia, pictures.australia]
-];
+const MASTER_PHOTO_SET = [pictures.crab, pictures.australia, pictures.library, pictures.asoko, pictures.sushi];
 
-class CardTesterDouble extends Component {
+const SIDE_INDEX = 1; //0 represents front, 1 represents back
+
+const CardDevToolBar = (props) => (
+	<aside className="absolute z-9999 top-0 left-0">
+		<button onClick={props.handleClick1} className="">Flip Card</button>
+		<button onClick={props.handleClick2} className="">Change Theme</button>
+		<button onClick={props.handleClick3} className="">Change Type</button>
+		<button onClick={props.handleClick4} className="">Change Word</button>
+	</aside>
+);
+
+class CardTester extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			i1: THEME_INDEX,
-			i2: THEME_INDEX,
+			th: THEME_INDEX,
+			w: WORD_INDEX,
+			p: PHOTO_INDEX,
+			ty: TYPE_INDEX,
+			s: SIDE_INDEX,
 		};
 	}
 
-	updateIndex = (i) => {
-		const THEME_CNT = MASTER_THEME_SET.length;
-		if(i < THEME_CNT - 1) {
+	updateIndex = (i, set) => {
+		const CNT = set.length;
+		if(i < CNT - 1) {
 			return i+1;
 		}	else {
 			return 0;
 		}
 	};
 
-	handleClick1 = (event) => { this.setState({i1: this.updateIndex(this.state.i1)}) };
-	handleClick2 = (event) => { this.setState({i2: this.updateIndex(this.state.i2)}) };
+	toggleBinary = (i) => {
+		return (i === 0 ? 1 : 0);
+	};
+
+	handleClick1 = (event) => { this.setState({s: this.toggleBinary(this.state.s)}) };
+	handleClick2 = (event) => { this.setState({th: this.updateIndex(this.state.th, MASTER_THEME_SET)}) };
+	handleClick3 = (event) => { this.setState({ty: this.updateIndex(this.state.ty, TYPE_SET)}) };
+	handleClick4 = (event) => {
+		this.setState({
+			w: this.updateIndex(this.state.w, MASTER_WORD_SET),
+			p: this.updateIndex(this.state.p, MASTER_WORD_SET)
+		})
+	};
 
 	render() {
 		return (
-			<div className="flex flex-wrap w-100 vh-100">
-				<div onClick={this.handleClick1} className="w-50 h-100 bg-purple">
-					<OrganismCardFront l1="en" l2="ja"
-						type={TYPE_SET[TYPE_INDEX]}
-						prompt={PROMPT_SET[TYPE_INDEX]}
-						images={PHOTO_SET[PHOTO_INDEX][0][MASTER_THEME_SET[this.state.i1].imgSet]}
-						word={WORD_SET[WORD_INDEX][0]}
-						theme={MASTER_THEME_SET[this.state.i1]}
+			<div className="relative flex flex-wrap w-100 vh-100">
+				<CardDevToolBar
+					handleClick1={this.handleClick1}
+					handleClick2={this.handleClick2}
+					handleClick3={this.handleClick3}
+					handleClick4={this.handleClick4}
+				/>
+				<Fragment>
+				{
+					this.state.s === 0 &&
+					<div className="bg-purple w-100">
+						<OrganismCardFront
+							l1="en" l2="ja"
+							prompt={PROMPT_SET[this.state.ty]}
+							type={TYPE_SET[this.state.ty]}
+							images={MASTER_PHOTO_SET[this.state.p][MASTER_THEME_SET[this.state.th].imgSet]}
+							word={MASTER_WORD_SET[this.state.w]}
+							theme={MASTER_THEME_SET[this.state.th]}
 						/>
-				</div>
-				<div onClick={this.handleClick2} className="w-50 h-100 bg-blue">
-					<OrganismCardBack l1="en" l2="ja"
-						type={TYPE_SET[TYPE_INDEX]}
-						images={PHOTO_SET[PHOTO_INDEX][0][MASTER_THEME_SET[this.state.i1].imgSet]}
-						word={WORD_SET[WORD_INDEX][0]}
-						theme={MASTER_THEME_SET[this.state.i1]} />
-				</div>
-			</div>
-		);
-	}
-}
-
-class CardTesterQuarter extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			i1: THEME_INDEX + 0,
-			i2: THEME_INDEX + 1,
-			i3: THEME_INDEX + 2,
-			i4: THEME_INDEX + 3,
-		};
-	}
-
-	updateIndex = (i) => {
-		const THEME_CNT = MASTER_THEME_SET.length;
-		if(i < THEME_CNT - 1) {
-			return i+1;
-		}	else {
-			return 0;
-		}
-	};
-
-	handleClick1 = (event) => { this.setState({i1: this.updateIndex(this.state.i1)}) };
-	handleClick2 = (event) => { this.setState({i2: this.updateIndex(this.state.i2)}) };
-	handleClick3 = (event) => { this.setState({i3: this.updateIndex(this.state.i3)}) };
-	handleClick4 = (event) => { this.setState({i4: this.updateIndex(this.state.i4)}) };
-
-	render() {
-		return (
-			<div className="flex flex-wrap w-100 vh-100">
-				<div onClick={this.handleClick1} className="w-50 h-50 bg-purple">
-					{/*console.log(PHOTO_SET[PHOTO_INDEX][0])*/}
-					{/*console.log(MASTER_THEME_SET[this.state.i1].imgSet)*/}
-					<OrganismCardBack l1="en" l2="ja"
-						images={PHOTO_SET[PHOTO_INDEX][0][MASTER_THEME_SET[this.state.i1].imgSet]}
-						word={WORD_SET[WORD_INDEX][0]}
-						theme={MASTER_THEME_SET[this.state.i1]}
+					</div>
+				}
+				{
+					this.state.s === 1 &&
+					<div className="bg-blue w-100">
+						<OrganismCardBack
+							l1="en" l2="ja"
+							type={TYPE_SET[this.state.ty]}
+							images={MASTER_PHOTO_SET[this.state.p][MASTER_THEME_SET[this.state.th].imgSet]}
+							word={MASTER_WORD_SET[this.state.w]}
+							theme={MASTER_THEME_SET[this.state.th]}
 						/>
-				</div>
-				<div onClick={this.handleClick2} className="w-50 h-50 bg-blue">
-					<OrganismCardBack l1="en" l2="ja"
-						images={PHOTO_SET[PHOTO_INDEX][1][MASTER_THEME_SET[this.state.i2].imgSet]}
-						word={WORD_SET[WORD_INDEX][1]}
-						theme={MASTER_THEME_SET[this.state.i2]} />
-				</div>
-				<div onClick={this.handleClick3} className="w-50 h-50 bg-green">
-					<OrganismCardBack l1="en" l2="ja"
-						images={PHOTO_SET[PHOTO_INDEX][2][MASTER_THEME_SET[this.state.i3].imgSet]}
-						word={WORD_SET[WORD_INDEX][2]}
-						theme={MASTER_THEME_SET[this.state.i3]} />
-				</div>
-				<div onClick={this.handleClick4} className="w-50 h-50 bg-red">
-					<OrganismCardBack l1="en" l2="ja"
-						images={PHOTO_SET[PHOTO_INDEX][3][MASTER_THEME_SET[this.state.i4].imgSet]}
-						word={WORD_SET[WORD_INDEX][3]}
-						theme={MASTER_THEME_SET[this.state.i4]} />
-				</div>
-			</div>
-		);
-	}
-}
-
-class CardTesterEighth extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			i1: THEME_INDEX + 0,
-			i2: THEME_INDEX + 1,
-			i3: THEME_INDEX + 2,
-			i4: THEME_INDEX + 3,
-			i5: THEME_INDEX + 4,
-			i6: THEME_INDEX + 5,
-			i7: THEME_INDEX + 6,
-			i8: THEME_INDEX + 7,
-		};
-	}
-
-	updateIndex = (i) => {
-		const THEME_CNT = MASTER_THEME_SET.length;
-		if(i < THEME_CNT - 1) {
-			return i+1;
-		}	else {
-			return 0;
-		}
-	};
-
-	handleClick1 = (event) => { this.setState({i1: this.updateIndex(this.state.i1)}) };
-	handleClick2 = (event) => { this.setState({i2: this.updateIndex(this.state.i2)}) };
-	handleClick3 = (event) => { this.setState({i3: this.updateIndex(this.state.i3)}) };
-	handleClick4 = (event) => { this.setState({i4: this.updateIndex(this.state.i4)}) };
-	handleClick5 = (event) => { this.setState({i5: this.updateIndex(this.state.i5)}) };
-	handleClick6 = (event) => { this.setState({i6: this.updateIndex(this.state.i6)}) };
-	handleClick7 = (event) => { this.setState({i7: this.updateIndex(this.state.i7)}) };
-	handleClick8 = (event) => { this.setState({i8: this.updateIndex(this.state.i8)}) };
-
-	render() {
-		return (
-			<div className="flex flex-wrap w-100 vh-100">
-				<div onClick={this.handleClick1} className="w-25 h-50 bg-purple">
-					<OrganismCardBack word={WORD_SET[WORD_INDEX][0]} theme={MASTER_THEME_SET[this.state.i1]} />
-				</div>
-				<div onClick={this.handleClick2} className="w-25 h-50 bg-blue">
-					<OrganismCardBack word={WORD_SET[WORD_INDEX][1]}  theme={MASTER_THEME_SET[this.state.i2]} />
-				</div>
-				<div onClick={this.handleClick3} className="w-25 h-50 bg-green">
-					<OrganismCardBack word={WORD_SET[WORD_INDEX][2]}  theme={MASTER_THEME_SET[this.state.i3]} />
-				</div>
-				<div onClick={this.handleClick4} className="w-25 h-50 bg-red">
-					<OrganismCardBack word={WORD_SET[WORD_INDEX][3]}  theme={MASTER_THEME_SET[this.state.i4]} />
-				</div>
-				<div onClick={this.handleClick5} className="w-25 h-50 bg-purple">
-					<OrganismCardBack word={WORD_SET[WORD_INDEX][0]} theme={MASTER_THEME_SET[this.state.i5]} />
-				</div>
-				<div onClick={this.handleClick6} className="w-25 h-50 bg-blue">
-					<OrganismCardBack word={WORD_SET[WORD_INDEX][1]}  theme={MASTER_THEME_SET[this.state.i6]} />
-				</div>
-				<div onClick={this.handleClick7} className="w-25 h-50 bg-green">
-					<OrganismCardBack word={WORD_SET[WORD_INDEX][2]}  theme={MASTER_THEME_SET[this.state.i7]} />
-				</div>
-				<div onClick={this.handleClick8} className="w-25 h-50 bg-red">
-					<OrganismCardBack word={WORD_SET[WORD_INDEX][3]}  theme={MASTER_THEME_SET[this.state.i8]} />
-				</div>
+					</div>
+				}
+				</Fragment>
 			</div>
 		);
 	}
@@ -783,7 +711,7 @@ class App extends Component {
   render() {
     return (
       <main className="bg-yellow red w-100 vh-100">
-        <CardTesterDouble />
+        <CardTester />
       </main>
     );
   }

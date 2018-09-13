@@ -38,7 +38,7 @@ const OrganismCardBack = (props) => (
 		<main className={props.theme.body}>
 			<AtomTerm
 				term={props.word.term}
-				classes={props.theme.primary + props.theme.first + props.theme.jpnPrimary}
+				classes={props.theme.primary + props.theme.first + props.theme.jpnPrimary + (!props.word.reading ? " tracked-tight " : " tracked-mega ")}
 				lang={props.l2}
 			/>
 			<AtomReading
@@ -73,13 +73,16 @@ const OrganismCardBack = (props) => (
 						classes={props.theme.photo}
 						overlay={props.theme.imgOverlay}
 					/>
-					<AtomImage
-						src={props.images.flag}
-						alt={props.images.altFlag}
-						lang={props.l1}
-						classes={props.theme.flag}
-						overlay={props.theme.imgOverlay}
-					/>
+					{
+						!!props.images.flag &&
+						<AtomImage
+							src={props.images.flag}
+							alt={props.images.altFlag}
+							lang={props.l1}
+							classes={props.theme.flag}
+							overlay={props.theme.imgOverlay}
+						/>
+					}
 			</section>
 		}
 		</Fragment>

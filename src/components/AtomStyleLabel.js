@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledAtomStyleLabel = styled.span.attrs({
+const StyledAtomStyleLabel = styled.label.attrs({
   className: '',
 })``;
 

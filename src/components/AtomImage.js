@@ -13,7 +13,7 @@ const AtomImage = (props) => (
 		}
 		{!!props.src && !!props.overlay &&
 		<span className="relative dib w-100 overflow-y-hidden">
-			<span className={" absolute z-9999 top-0 left-0 h-100 w-100 dib " + props.overlay}></span>
+			<span className={" absolute top-0 left-0 h-100 w-100 dib " + props.overlay}></span>
 			<StyledAtomImage
 				className={props.classes + " relative "}
 				lang={props.lang}
