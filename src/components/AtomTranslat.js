@@ -7,7 +7,7 @@ const StyledAtomTranslat = styled.span.attrs({
 
 const AtomTranslat = (props) => (
   <StyledAtomTranslat className={props.classes} lang={props.lang}>
-    {props.translat}
+    {(props.intro===0) ? "Translation: " : ""}{props.translat}
   </StyledAtomTranslat>
 );
 

@@ -5,7 +5,6 @@ import AtomAudio from './AtomAudio';
 import AtomTerm from './AtomTerm';
 import AtomTranslat from './AtomTranslat';
 import AtomTranslit from './AtomTranslit';
-import AtomReading from './AtomReading';
 import AtomStyleLabel from './AtomStyleLabel';
 import AtomImage from './AtomImage';
 import AtomType from './AtomType';
@@ -23,31 +22,36 @@ const OrganismCardFront = (props) => (
 			!!props.theme.globalOverlay &&
 			<span className={props.theme.globalOverlay}></span>
 		}
-		<AtomStyleLabel
-			lang={props.l1}
-			text={`style: ${props.theme.name}`}
-			classes={props.theme.styleLabel}
-		/>
-		<label className={props.theme.dataLabel}>
-			<AtomLanguage text={props.l2} />{`:`}<AtomType text={props.type} />{`:`}<AtomSide text="front" />
-		</label>
-		
-		<main className={props.theme.body}>
+		<div className={props.theme.devLabels}>
+			<AtomStyleLabel
+				lang={props.l1}
+				text={`style: ${props.theme.name}`}
+				classes={props.theme.styleLabel}
+			/>
+			<label className={props.theme.dataLabel}>
+				<AtomLanguage text={props.l2} />{`:`}<AtomType text={props.type} />{`:`}<AtomSide text="front" />
+			</label>
+		</div>
+		<main className={props.theme.cardContent}>
 			{
 				(props.type === "hearKnow") &&
 				<Fragment>
 					{
-						!!props.prompt && !!props.word.audio &&
+						(!!props.prompt && !!props.word.audio) &&
 						<Fragment>
-							<AtomPrompt
-								text={props.prompt.ja.l1}
-								classes={props.theme.prompt}
-							/>
-							<AtomAudio
-								audio={props.word.audio}
-								classes={props.theme.clickable}
-								lang={props.l2}
-							/>
+							<div className={props.theme.cardHead + props.theme.headFront}>
+								<AtomAudio
+									audio={props.word.audio}
+									classes={props.theme.clickable}
+									lang={props.l2}
+								/>
+							</div>
+							<div className={props.theme.cardBody + props.theme.bodyFront}>
+								<AtomPrompt
+									text={props.prompt.ja.l1}
+									classes={props.theme.prompt}
+								/>
+							</div>
 						</Fragment>
 					}
 				</Fragment>
@@ -56,17 +60,21 @@ const OrganismCardFront = (props) => (
 				(props.type === "readSpeak") &&
 				<Fragment>
 					{
-						!!props.prompt && !!props.word.reading &&
+						(!!props.prompt && !!props.word.reading) &&
 						<Fragment>
-							<AtomPrompt
-								text={props.prompt.ja.l1}
-								classes={props.theme.prompt}
-							/>
-							<AtomTerm
-								term={props.word.term}
-								classes={props.theme.primary + props.theme.first + props.theme.jpnPrimary}
-								lang={props.l2}
-							/>
+							<div className={props.theme.cardHead + props.theme.headFront}>
+								<AtomTerm
+									term={props.word.term}
+									classes={props.theme.primary + props.theme.first + props.theme.jpnPrimary + (!props.word.reading ? " tracked-tight " : " tracked-mega ")}
+									lang={props.l2}
+								/>
+							</div>
+							<div className={props.theme.cardBody}>
+								<AtomPrompt
+									text={props.prompt.ja.l1}
+									classes={props.theme.prompt}
+								/>
+							</div>
 						</Fragment>
 					}
 				</Fragment>
@@ -75,21 +83,25 @@ const OrganismCardFront = (props) => (
 				(props.type === "lookSpeak") &&
 				<Fragment>
 					{
-						!!props.prompt && !!props.images && !!props.images.photo &&
+						(!!props.prompt && !!props.images && !!props.images.photo) &&
 						<Fragment>
-							<AtomPrompt
-								text={props.prompt.ja.l1}
-								classes={props.theme.prompt}
-							/>
-							<section className={props.theme.imgSection}>
-							<AtomImage
-								src={props.images.photo}
-								alt={props.images.alt}
-								lang={props.l1}
-								classes={props.theme.photo}
-								overlay={props.theme.imgOverlay}
-							/>
-					</section>
+							<div className={props.theme.cardHead + props.theme.headFront}>
+								<section className={props.theme.imgSection}>
+									<AtomImage
+										src={props.images.photo}
+										alt={props.images.alt}
+										lang={props.l1}
+										classes={props.theme.photo}
+										overlay={props.theme.imgOverlay}
+									/>
+								</section>
+							</div>
+							<div className={props.theme.cardBody + props.theme.bodyFront}>
+								<AtomPrompt
+									text={props.prompt.ja.l1}
+									classes={props.theme.prompt}
+								/>
+							</div>
 						</Fragment>
 					}
 				</Fragment>
@@ -100,15 +112,19 @@ const OrganismCardFront = (props) => (
 					{
 						!!props.prompt && !!props.word.translat &&
 						<Fragment>
-							<AtomPrompt
-								text={props.prompt.ja.l1}
-								classes={props.theme.prompt}
-							/>
-							<AtomTranslat
-								translat={props.word.translat}
-								classes={props.theme.tertiary + props.theme.followingFirst  + props.theme.latinSecondary}
-								lang={props.l1}
-							/>
+							<div className={props.theme.cardHead + props.theme.headFront}>
+								<AtomTranslat
+									translat={props.word.translat}
+									classes={props.theme.latinPrimary}
+									lang={props.l1}
+								/>
+							</div>
+							<div className={props.theme.cardBody}>
+								<AtomPrompt
+									text={props.prompt.ja.l1}
+									classes={props.theme.prompt}
+								/>
+							</div>
 						</Fragment>
 					}
 				</Fragment>
@@ -119,15 +135,19 @@ const OrganismCardFront = (props) => (
 					{
 						!!props.prompt && !!props.word.reading && !!props.word.translit &&
 						<Fragment>
-							<AtomPrompt
-								text={props.prompt.ja.l1}
-								classes={props.theme.prompt}
-							/>
-							<AtomTranslat
-								translat={props.word.translat}
-								classes={props.theme.tertiary + props.theme.followingFirst  + props.theme.latinSecondary}
-								lang={props.l1}
-							/>
+							<div className={props.theme.cardHead + props.theme.headFront}>
+								<AtomTranslit
+									translit={props.word.translit}
+									classes={props.theme.latinPrimary}
+									lang={props.l1}
+								/>
+							</div>
+							<div className={props.theme.cardBody}>
+								<AtomPrompt
+									text={props.prompt.ja.l1}
+									classes={props.theme.prompt}
+								/>
+							</div>
 						</Fragment>
 					}
 				</Fragment>

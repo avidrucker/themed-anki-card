@@ -5,11 +5,12 @@ const StyledAtomReading = styled.span.attrs({
   className: ' ',
 })``;
 
+//reading, pronunciation, phonetic writing
 const AtomReading = (props) => (
 	<Fragment>
 	{ !!props.reading &&
 		<StyledAtomReading className={props.classes} lang={props.lang}>
-    {props.reading}
+    {(props.intro===0) ? "Reading: " : ""}{props.reading}
 	</StyledAtomReading>
 	}
 	{

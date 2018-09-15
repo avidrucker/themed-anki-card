@@ -5,9 +5,10 @@ const StyledMoleculeTags = styled.span.attrs({
   className: ' ',
 })``;
 
+//categories, tags, metadata
 const MoleculeTags = (props) => (
   <StyledMoleculeTags className={props.classes} lang={props.lang}>
-    {props.tags}
+    {(props.intro===0) ? "Categories: " : ""}{props.tags}
   </StyledMoleculeTags>
 );
 

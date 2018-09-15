@@ -136,6 +136,17 @@
 .dark-slate-gray { color: #2f4f4f } /* todo: implement this as fallback for chalk on wet stone / side-walk*/
 /*todo: implement chalk rock colors: http://colrd.com/palette/23114/?download=css */
 
+.manuscript-brown { color: #45392A } /*"jacko bean"*/
+
+/*todo: implement illuminated manuscript color scheme w/ following hex colors as a base:
+493A28
+534F48
+C2AC82
+F2DB97
+F9F2C0
+reference: http://colormind.io/image/
+*/
+
 /* GLOWS & SHADOWS */
 .neon-glow-cyan { text-shadow:
     0 0 6px rgba(202,228,225,0.92),
@@ -203,3 +214,7 @@ mix-blend-mode: luminosity;*/
 
 /* LINKS & HOVERS */
 .disabled-link { pointer-events: none }
+
+/* T-MASTER FLEXBOX */
+.flex-1 { flex: 1; }
+.flex-2 { flex: 2; }
