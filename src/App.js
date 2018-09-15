@@ -27,8 +27,8 @@ const STYLE_GO = " disabled-link absolute top-0 right-0 w-100 h-100 z-999 "; //g
 const STYLE_BA = " lh-solid absolute top-1 right-1 pa2 z-9999 "; //back audio style
 const STYLE_CH = " "; //card head
 const STYLE_CB  = " "; //card body
-const STYLE_TB = " absolute pb4 mb3 z-9999 "//toolbar style
-const STYLE_TBB = " dib pa1 ph2 ma1 "//toolbar btn style
+const STYLE_TB = " absolute pb4 ph2 mb3 z-9999 "//toolbar style
+const STYLE_TBB = " dib pa1 ph1 ph2-ns ma1 "//toolbar btn style
 
 const pictures = {
 	crab: {
@@ -84,7 +84,7 @@ const themes = {
 		latinPrimary: " muli lh-solid ",
 		latinSecondary: " muli lh-copy ",
 		prompt: " f3 muli lh-copy ",
-		devLabels: " f5 " + STYLE_DL,
+		devLabels: " f5 pa2 " + STYLE_DL,
 		styleLabel: " bg-zen-black zen-beige muli " + STYLE_L,
 		dataLabel: " muli " + STYLE_D,
 		imgSection: " dn ",
@@ -340,25 +340,28 @@ const themes = {
 		cardContent: " pl3 pt3 flex flex-column " + STYLE_B,
     primary: " ",
     secondary: " ",
-    tertiary: " ",
-    quaternary: " ",
-		quintary: " ",
+    tertiary: " f3 ",
+    quaternary: " f3 ",
+		quintary: " f5 ",
     first: " ",
     followingFirst: " ",
     clickable: " " + STYLE_C,
 		backAudio: " f-subheadline " + STYLE_BA,
 		headFront: " ",
-		jpnPrimary: " f1 jackeyfont ",
-		jpnSecondary: " f1 jackeyfont ",
-		latinPrimary: " f2 press-start-2p retro-green-dark ",
-		latinSecondary: " f2 press-start-2p retro-green-dark ",
+		headBack: " lh-title ",
+		bodyFront: " ",
+		bodyBack: " lh-copy flex flex-column ",
+		jpnPrimary: " f1 jackeyfont lh-solid ",
+		jpnSecondary: " f1 jackeyfont lh-solid ",
+		latinPrimary: " press-start-2p retro-green-dark ",
+		latinSecondary: " press-start-2p retro-green-dark ",
 		prompt: " ",
-		devLabels: " f5 press-start-2p retro-green-dark " + STYLE_DL,
+		devLabels: " pa2 f5 press-start-2p retro-green-dark " + STYLE_DL,
 		styleLabel: " " + STYLE_L,
 		dataLabel: " " + STYLE_D,
 		imgSection: " db pl3 pt2 ",
 		photo: " h4 di of-contain ",
-		flag: " pl3 h4 di of-contain ",
+		flag: " pt2 pt0-ns pl2-ns h4 di of-contain ",
 		imgSet: "retro",
 		toolBarBtn: " f5 press-start-2p retro-green-dark " + STYLE_TBB,
   },
@@ -633,7 +636,7 @@ const PROMPT_SET = [ prompts.hearKnow, prompts.lookSpeak, prompts.recall,
 //	prompts.QandA, prompts.opposites]; //SECONDARY VECTORS //todo: implement V2
 // prompts.identifyCountryByFlag //TERTIARY VECTORS //todo: implement V3
 
-const THEME_INDEX = 0;
+const THEME_INDEX = 5;
 
 const MASTER_THEME_SET = [ themes.zenMenu, themes.fullPhoto, themes.blackBoard, 
 	themes.rpgSketch, themes.indexCard, themes.retroConsole, themes.matrix,
@@ -641,7 +644,7 @@ const MASTER_THEME_SET = [ themes.zenMenu, themes.fullPhoto, themes.blackBoard,
 	themes.woodOnWood
 ];
 
-const WORD_INDEX = 0; //crab==1 kanji, australia==long, library==many kanji, asoko==kana only, sushi==even kanji to kana ratio
+const WORD_INDEX = 1; //crab==1 kanji, australia==long, library==many kanji, asoko==kana only, sushi==even kanji to kana ratio
 const MASTER_WORD_SET = [words.crab, words.australia, words.library, words.asoko, words.sushi];
 const MASTER_PHOTO_SET = [pictures.crab, pictures.australia, pictures.library, pictures.asoko, pictures.sushi];
 
