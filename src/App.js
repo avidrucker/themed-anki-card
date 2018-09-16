@@ -30,6 +30,13 @@ const STYLE_CB  = " "; //card body
 const STYLE_TB = " absolute pb4 ph2 mb3 z-9999 "//toolbar style
 const STYLE_TBB = " dib pa1 ph1 ph2-ns ma1 "//toolbar btn style
 
+const fonts = ["ringbearer", "dearest", "unifraktur", "pixel-m-plus12", "chalkduster",
+	"m-plus-rounded-1c", "noto-serif",	"papyrus", "cinzel", "playtime", "architects-daughter",
+	"camingocode", "bpdots", "jackeyfont",	"schoolbell", "ringbearer", "press-start-2p",
+	"vt323", "tron-outline", "source-code-pro", "sawarabi-mincho", "noto-sans", "muli",
+	"jpn-test", "fredericka", "stroke-order"
+];
+
 const pictures = {
 	crab: {
 		alt: "Crab on the beach",
@@ -60,6 +67,74 @@ const pictures = {
 
 //zenMenu imgSection: h4 absolute top-0 right-0 pt2 pr5 flex flex-row items-start
 const themes = {
+	mondrian: {
+		name: "Mondrian Homage",
+    global: " " + STYLE_G,
+		cardContent: " " + STYLE_B,
+		cardHead: " " + STYLE_CH,
+		cardBody: " " + STYLE_CB,
+    primary: " ",
+    secondary: " ",
+    tertiary: " ",
+    quaternary: " ",
+		quintary: " ",
+    first: ` `,
+    followingFirst: " ",
+		clickable: " lh-solid f-subheadline " + STYLE_C,
+		backAudio: " " + STYLE_BA,
+		headFront: " ",
+		headBack: " ",
+		bodyFront: " ",
+		bodyBack: " ",
+		jpnPrimary: " ",
+		jpnSecondary: " ",
+		latinPrimary: " ",
+		latinSecondary: " ",
+		prompt: " ",
+		devLabels: " f5 pa1 " + STYLE_DL,
+		styleLabel: " " + STYLE_L,
+		dataLabel: " " + STYLE_D,
+		imgSection: " ",
+		photo: " ",
+		flag: " ",
+		imgSet: " ",
+		imgOverlay: " ",
+		toolBarBtn: " underline " + STYLE_TBB,
+  },
+	illumManus: {
+		name: "Illuminated Manuscript",
+    global: " " + STYLE_G,
+		cardContent: " " + STYLE_B,
+		cardHead: " " + STYLE_CH,
+		cardBody: " " + STYLE_CB,
+    primary: " ",
+    secondary: " ",
+    tertiary: " ",
+    quaternary: " ",
+		quintary: " ",
+    first: ` `,
+    followingFirst: " ",
+		clickable: " lh-solid f-subheadline " + STYLE_C,
+		backAudio: " " + STYLE_BA,
+		headFront: " ",
+		headBack: " ",
+		bodyFront: " ",
+		bodyBack: " ",
+		jpnPrimary: " ",
+		jpnSecondary: " ",
+		latinPrimary: " ",
+		latinSecondary: " ",
+		prompt: " ",
+		devLabels: " f5 pa1 " + STYLE_DL,
+		styleLabel: " " + STYLE_L,
+		dataLabel: " " + STYLE_D,
+		imgSection: " ",
+		photo: " ",
+		flag: " ",
+		imgSet: " ",
+		imgOverlay: " ",
+		toolBarBtn: " underline " + STYLE_TBB,
+  },
 	zenMenu: {
 		name: "Zen Menu",
     global: " zen-beige bg-zen-black relative h-100 " + STYLE_G,
@@ -336,7 +411,7 @@ const themes = {
   },
   retroConsole: {
 		name: "8-Bit Retro",
-    global: ` retro-green-darker bg-retro-green-lighter ` + STYLE_G,
+    global: ` pixel-m-plus12 retro-green-darker bg-retro-green-lighter ` + STYLE_G,
 		cardContent: " pl3 pt3 flex flex-column " + STYLE_B,
     primary: " ",
     secondary: " ",
@@ -351,19 +426,19 @@ const themes = {
 		headBack: " lh-title ",
 		bodyFront: " ",
 		bodyBack: " lh-copy flex flex-column ",
-		jpnPrimary: " f1 jackeyfont lh-solid ",
-		jpnSecondary: " f1 jackeyfont lh-solid ",
-		latinPrimary: " press-start-2p retro-green-dark ",
-		latinSecondary: " press-start-2p retro-green-dark ",
+		jpnPrimary: " f1 lh-solid ",
+		jpnSecondary: " f1 lh-solid ",
+		latinPrimary: " retro-green-dark ",
+		latinSecondary: " retro-green-dark ",
 		prompt: " ",
-		devLabels: " pa2 f5 press-start-2p retro-green-dark " + STYLE_DL,
+		devLabels: " pa2 f5 retro-green-dark " + STYLE_DL,
 		styleLabel: " " + STYLE_L,
 		dataLabel: " " + STYLE_D,
 		imgSection: " db pl3 pt2 ",
 		photo: " h4 di of-contain ",
 		flag: " pt2 pt0-ns pl2-ns h4 di of-contain ",
 		imgSet: "retro",
-		toolBarBtn: " f5 press-start-2p retro-green-dark " + STYLE_TBB,
+		toolBarBtn: " f5 retro-green-dark " + STYLE_TBB,
   },
   rpgSketch: {
 		name: "RPG Sketch",
@@ -636,15 +711,16 @@ const PROMPT_SET = [ prompts.hearKnow, prompts.lookSpeak, prompts.recall,
 //	prompts.QandA, prompts.opposites]; //SECONDARY VECTORS //todo: implement V2
 // prompts.identifyCountryByFlag //TERTIARY VECTORS //todo: implement V3
 
-const THEME_INDEX = 5;
+const THEME_INDEX = 0;
 
-const MASTER_THEME_SET = [ themes.zenMenu, themes.fullPhoto, themes.blackBoard, 
-	themes.rpgSketch, themes.indexCard, themes.retroConsole, themes.matrix,
-	themes.glowUI, themes.highFantasy, themes.zenBurnTachyons, themes.zenBurnTrue,
-	themes.woodOnWood
+const MASTER_THEME_SET = [ themes.zenMenu, themes.retroConsole, themes.indexCard, themes.illumManus,
+	themes.blackBoard, themes.fullPhoto, themes.rpgSketch
 ];
 
-const WORD_INDEX = 1; //crab==1 kanji, australia==long, library==many kanji, asoko==kana only, sushi==even kanji to kana ratio
+const ICEBOX_THEME_SET = [themes.zenBurnTachyons, themes.zenBurnTrue, themes.woodOnWood, themes.mondrian,
+	themes.matrix, themes.glowUI, themes.highFantasy];
+
+const WORD_INDEX = 0; //crab==1 kanji, australia==long, library==many kanji, asoko==kana only, sushi==even kanji to kana ratio
 const MASTER_WORD_SET = [words.crab, words.australia, words.library, words.asoko, words.sushi];
 const MASTER_PHOTO_SET = [pictures.crab, pictures.australia, pictures.library, pictures.asoko, pictures.sushi];
 

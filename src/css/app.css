@@ -60,11 +60,38 @@
   font-stretch: normal;
 }
 
+@font-face {
+	font-family: "pixelmplus12";
+	src: url("PixelMplus12-Regular.woff") format("woff");
+	font-style: normal;
+	font-stretch: normal; 
+}
+
+@font-face {
+	font-family: 'dearestregular';
+	src: url('Dearest-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'ringbearermedium';
+	src: url('ringm___-webfont.woff2') format('woff2'),
+			 url('ringm___-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+
+}
+
 /* FONTS */
+.ringbearer { font-family: 'ringbearermedium' }
+.dearest { font-family: 'dearestregular', cursive }
+.unifraktur { font-family: 'UnifrakturMaguntia', cursive }
+.pixel-m-plus12 { font-family: 'pixelmplus2', cursive }
 .chalkduster { font-family: 'chalkduster', cursive }
 .m-plus-rounded-1c {font-family: 'M PLUS Rounded 1c', sans-serif }
 .noto-serif { font-family: 'Noto Serif JP', sans-serif }
-.papyrus { font-family: Papyrus, fantasy, cursive }
+.papyrus { font-family: 'Papyrus', Papyrus, fantasy, cursive }
 .cinzel { font-family: 'Cinzel', serif }
 .playtime { font-family: 'playtimewithhottoddiesobliqRg', cursive }
 .architects-daughter { font-family: 'Architects Daughter', cursive }
@@ -83,7 +110,44 @@
 .jpn-test { font-family: 'Yu Gothic', YuGothic, Meiryo, 'Meiryo', Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif }
 .fredericka { font-family: 'Fredericka the Great', cursive }
 .stroke-order { font-family: 'kanjistrokeordersregular', "KanjiStrokeOrders", KanjiStrokeOrders, cursive }
+/*
+todo:
+- add: munro as 8bit retro alternative
+- add: pixelmplus as 8bit retro alt
 
+- add: cool crayon for blackboard chalk variant
+- add: papyrus & parchment fonts for rpg sketch
+
+- add: Daniel for index card variant
+- add: cabinsketch for index card / blackboard variant
+
+- add: patrick hand as index card alternative (g web font)
+- add: architects daughter as index card alternative (g web font)
+- add: angelina as index card alternative
+- add: indie flower as index card alternative (g web font)
+- add: caveat as index card alternative (g web font)
+
+- add: play as glow alternative
+- add: pasajero as glow alt.
+
+- add: black & old english fonts for illuminated manuscript
+- add: UnifrakturMaguntia (g web font) DONE
+- add: RM Albion as illuminated manuscript
+- add: lyric poetry as illum manus alt.
+- add: metal blackletter as illum manus alt.
+
+- add: style-bold font for brush ink on rice paper
+- add: master of break for calligraphy ink on rice paper
+
+- add: mikiyu new penji
+- add: othutome
+- add: zinfree penito "Jin Pen Ito"
+- add: zinfree penkeba "Jin Pen Keba"
+
+- add: pix chicago for mac homage
+
+- reviwed & passed on: fofer
+*/
 
 /* COLORS */
 .retro-green-darker { color: #0f380f } /*Darker Green*/
