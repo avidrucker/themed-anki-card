@@ -61,7 +61,7 @@
 }
 
 @font-face {
-	font-family: "pixelmplus12";
+	font-family: 'pixelmplus12';
 	src: url("PixelMplus12-Regular.woff") format("woff");
 	font-style: normal;
 	font-stretch: normal; 
@@ -80,14 +80,23 @@
 			 url('ringm___-webfont.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
+}
 
+@font-face {
+	font-family: 'othutome_fontbold';
+	src: url('othutomefont_ver2.woff2') format('woff2'),
+			 url('othutomefont_ver2.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
 
 /* FONTS */
+.otsutome { font-family: 'othutome_fontbold' }
 .ringbearer { font-family: 'ringbearermedium' }
 .dearest { font-family: 'dearestregular', cursive }
-.unifraktur { font-family: 'UnifrakturMaguntia', cursive }
-.pixel-m-plus12 { font-family: 'pixelmplus2', cursive }
+.unifraktur-maguntia { font-family: 'UnifrakturMaguntia', cursive }
+.unifraktur-cook { font-family: 'UnifrakturCook', cursive }
+.pixel-m-plus12 { font-family: 'pixelmplus12', cursive }
 .chalkduster { font-family: 'chalkduster', cursive }
 .m-plus-rounded-1c {font-family: 'M PLUS Rounded 1c', sans-serif }
 .noto-serif { font-family: 'Noto Serif JP', sans-serif }
@@ -110,10 +119,17 @@
 .jpn-test { font-family: 'Yu Gothic', YuGothic, Meiryo, 'Meiryo', Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif }
 .fredericka { font-family: 'Fredericka the Great', cursive }
 .stroke-order { font-family: 'kanjistrokeordersregular', "KanjiStrokeOrders", KanjiStrokeOrders, cursive }
+.patrick-hand { font-family: 'Patrick Hand', cursive }
+.indie-flower { font-family: 'Indie Flower', cursive }
+.caveat-brush { font-family: 'Caveat Brush', cursive }
+.caveat { font-family: 'Caveat', cursive }
+.exo-2 { font-family: 'Exo 2', sans-serif }
+.play { font-family: 'Play', sans-serif }
+
 /*
 todo:
 - add: munro as 8bit retro alternative
-- add: pixelmplus as 8bit retro alt
+- add: pixelmplus as 8bit retro alt DONE
 
 - add: cool crayon for blackboard chalk variant
 - add: papyrus & parchment fonts for rpg sketch
@@ -121,14 +137,11 @@ todo:
 - add: Daniel for index card variant
 - add: cabinsketch for index card / blackboard variant
 
-- add: patrick hand as index card alternative (g web font)
-- add: architects daughter as index card alternative (g web font)
+- add: patrick hand as index card alternative (g web font) DONE
+- add: architects daughter as index card alternative (g web font) DONE
+- add: indie flower as index card alternative (g web font) DONE
+- add: caveat as index card alternative (g web font) DONE
 - add: angelina as index card alternative
-- add: indie flower as index card alternative (g web font)
-- add: caveat as index card alternative (g web font)
-
-- add: play as glow alternative
-- add: pasajero as glow alt.
 
 - add: black & old english fonts for illuminated manuscript
 - add: UnifrakturMaguntia (g web font) DONE
@@ -146,7 +159,7 @@ todo:
 
 - add: pix chicago for mac homage
 
-- reviwed & passed on: fofer
+- reviwed & passed on: fofer, pasajero (no lowercase)
 */
 
 /* COLORS */
@@ -158,6 +171,11 @@ todo:
 .bg-retro-green-dark { background-color: #306230 } /*Dark Green*/
 .bg-retro-green-light { background-color: #8bac0f } /*Light Green*/
 .bg-retro-green-lighter { background-color: #9bbc0f } /*Lighter Green*/
+
+.retro-green-darker-2 { color: #223300 }
+.retro-green-dark-2 { color: #446611 }
+.retro-green-light-2 { color: #889944 }
+.retro-green-lighter-2 { color: #CECE9C }
 
 .bg-zb-1 { background-color: #3f3f3f } /*background*/
 .bg-zb-2 {background-color: #242424 } /*PMenu select???*/

@@ -30,12 +30,14 @@ const STYLE_CB  = " "; //card body
 const STYLE_TB = " absolute pb4 ph2 mb3 z-9999 "//toolbar style
 const STYLE_TBB = " dib pa1 ph1 ph2-ns ma1 "//toolbar btn style
 
-const fonts = ["ringbearer", "dearest", "unifraktur", "pixel-m-plus12", "chalkduster",
-	"m-plus-rounded-1c", "noto-serif",	"papyrus", "cinzel", "playtime", "architects-daughter",
-	"camingocode", "bpdots", "jackeyfont",	"schoolbell", "ringbearer", "press-start-2p",
-	"vt323", "tron-outline", "source-code-pro", "sawarabi-mincho", "noto-sans", "muli",
-	"jpn-test", "fredericka", "stroke-order"
+const fonts = ["ringbearer", "dearest", "unifraktur-maguntia", "unifraktur-cook",
+	"chalkduster", "papyrus", "cinzel", "playtime", "architects-daughter", "camingocode",
+	"bpdots", "schoolbell", "press-start-2p", "vt323", "tron-outline", "source-code-pro",
+	"muli", "fredericka", "patrick-hand", "indie-flower", "caveat-brush", "caveat", "exo-2", "play"
 ];
+
+const fonts_ja = ["otsutome","pixel-m-plus12","jackeyfont", "sawarabi-mincho",
+	"noto-sans", "noto-serif", "stroke-order", "m-plus-rounded-1c", "jpn-test" ];
 
 const pictures = {
 	crab: {
@@ -324,7 +326,7 @@ const themes = {
 		globalOverlay: " o-50 hue bg-matrix-green " + STYLE_GO,
 		toolBarBtn: " " + STYLE_TBB,
   },
-  glowUI: {
+  futuristic: {
 		name: "Glowing UI",
     global: " bg-black light-blue " + STYLE_G,
 		cardContent: " pa3 flex flex-column " + STYLE_B,
@@ -718,7 +720,7 @@ const MASTER_THEME_SET = [ themes.zenMenu, themes.retroConsole, themes.indexCard
 ];
 
 const ICEBOX_THEME_SET = [themes.zenBurnTachyons, themes.zenBurnTrue, themes.woodOnWood, themes.mondrian,
-	themes.matrix, themes.glowUI, themes.highFantasy];
+	themes.matrix, themes.futuristic, themes.highFantasy];
 
 const WORD_INDEX = 0; //crab==1 kanji, australia==long, library==many kanji, asoko==kana only, sushi==even kanji to kana ratio
 const MASTER_WORD_SET = [words.crab, words.australia, words.library, words.asoko, words.sushi];
@@ -838,11 +840,45 @@ class CardTester extends Component {
 	}
 }
 
+const FontTest = (props) => (
+	<div className={props.classes + " pa3 dib f1 ba b--red "}>{props.text + ": あア亜 A a"}</div>
+);
+
+//fonts
+class FontTester1 extends Component {
+	constructor(props) {
+		super(props);
+	}
+
+	render() {
+		const listItems = fonts.map((font, i) =>
+			<FontTest classes={font} text={font} />
+    );
+
+		return (<section className={this.props.classes}>{listItems}</section>);
+	}
+}
+
+class FontTester2 extends Component {
+	constructor(props) {
+		super(props);
+	}
+
+	render() {
+		const listItems = fonts_ja.map((font, i) =>
+			<FontTest classes={font} text={font} />
+    );
+
+		return (<section className={this.props.classes}>{listItems}</section>);
+	}
+}
+
 class App extends Component {
   render() {
     return (
-      <main className="bg-yellow red w-100 vh-100">
-        <CardTester />
+      <main className="bg-yellow red w-100 h-100">
+        <FontTester1 classes=" purple " />
+				<FontTester2 classes=" green " />
       </main>
     );
   }
