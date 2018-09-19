@@ -14,6 +14,8 @@ import AtomSide from './AtomSide';
 import AtomLanguage from './AtomLanguage';
 import AtomMeaning from './AtomMeaning';
 
+const STYLE_BA = " lh-solid absolute top-1 right-1 pa2 z-9999 "; //back audio style
+
 const StyledOrganismCardBack = styled.div.attrs({
   className: `h-100 w-100`,
 })``;
@@ -35,7 +37,7 @@ const OrganismCardBack = (props) => (
 			</span>
 		</div>
 		<AtomAudio audio={props.word.audio}
-			classes={props.theme.clickable + props.theme.backAudio}
+			classes={props.theme.clickable + props.theme.audioBtn + STYLE_BA}
 			lang={props.l2}
 		/>
 		<main className={props.theme.cardContent}>

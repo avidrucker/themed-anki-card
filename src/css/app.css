@@ -176,6 +176,10 @@ todo:
 .retro-green-dark-2 { color: #446611 }
 .retro-green-light-2 { color: #889944 }
 .retro-green-lighter-2 { color: #CECE9C }
+.bg-retro-green-darker-2 { background-color: #223300 }
+.bg-retro-green-dark-2 { background-color: #446611 }
+.bg-retro-green-light-2 { background-color: #889944 }
+.bg-retro-green-lighter-2 { background-color: #CECE9C }
 
 .bg-zb-1 { background-color: #3f3f3f } /*background*/
 .bg-zb-2 {background-color: #242424 } /*PMenu select???*/
@@ -250,6 +254,10 @@ reference: http://colormind.io/image/
 .bg-space { background-image: url("./images/bg_space_l_opt.jpg")}
 .bg-chalk { background-image: url("./images/chalk_texture1.jpg")}
 .bg-code-rain { background-image: url("./images/code_rain_opt.jpg")}
+.bg-rice-paper {
+	background-color: #fff2e8;
+	background-image: url("./images/rice-paper-2.png");
+}
 .text-wooden {
 	background-image: url("./images/bg_wood1_opt.jpg"); /*swapped fg and bg*/
   color: white;

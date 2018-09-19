@@ -24,20 +24,14 @@ const STYLE_G = " relative overflow-y-hidden "; //global style
 const STYLE_B = " "; //body style
 const STYLE_C = " link grow "; //clickable style (the audio button)
 const STYLE_GO = " disabled-link absolute top-0 right-0 w-100 h-100 z-999 "; //global overlay
-const STYLE_BA = " lh-solid absolute top-1 right-1 pa2 z-9999 "; //back audio style
 const STYLE_CH = " "; //card head
 const STYLE_CB  = " "; //card body
 const STYLE_TB = " absolute pb4 ph2 mb3 z-9999 "//toolbar style
 const STYLE_TBB = " dib pa1 ph1 ph2-ns ma1 "//toolbar btn style
 
-const fonts = ["ringbearer", "dearest", "unifraktur-maguntia", "unifraktur-cook",
-	"chalkduster", "papyrus", "cinzel", "playtime", "architects-daughter", "camingocode",
-	"bpdots", "schoolbell", "press-start-2p", "vt323", "tron-outline", "source-code-pro",
-	"muli", "fredericka", "patrick-hand", "indie-flower", "caveat-brush", "caveat", "exo-2", "play"
-];
+const fonts = ["architects-daughter", "camingocode", "caveat", "caveat-brush", "cinzel", "dearest", "exo-2", "fredericka", "indie-flower", "muli", "papyrus", "patrick-hand", "play", "playtime", "press-start-2p", "schoolbell", "source-code-pro", "tron-outline", "unifraktur-cook", "unifraktur-maguntia", "vt323","bpdots","chalkduster","ringbearer"];
 
-const fonts_ja = ["otsutome","pixel-m-plus12","jackeyfont", "sawarabi-mincho",
-	"noto-sans", "noto-serif", "stroke-order", "m-plus-rounded-1c", "jpn-test" ];
+const fonts_ja = ["jackeyfont","jpn-test","m-plus-rounded-1c","noto-sans","noto-serif","otsutome","pixel-m-plus12","sawarabi-mincho","stroke-order"];
 
 const pictures = {
 	crab: {
@@ -69,6 +63,74 @@ const pictures = {
 
 //zenMenu imgSection: h4 absolute top-0 right-0 pt2 pr5 flex flex-row items-start
 const themes = {
+	inkOnRicePaper: {
+		name: "Ink on Rice Paper",
+    global: " otsutome black bg-rice-paper flex flex-column justify-center items-center tc " + STYLE_G,
+		cardContent: " " + STYLE_B,
+		cardHead: " " + STYLE_CH,
+		cardBody: " " + STYLE_CB,
+    primary: " ",
+    secondary: " ",
+    tertiary: " ",
+    quaternary: " ",
+		quintary: " ",
+    first: ` `,
+    followingFirst: " ",
+		clickable: " lh-solid f-subheadline " + STYLE_C,
+		audioBtn: " ",
+		headFront: " f2 ",
+		headBack: " f-subheadline ",
+		bodyFront: " f2 ",
+		bodyBack: " f2 ",
+		jpnPrimary: " ",
+		jpnSecondary: " ",
+		latinPrimary: " db ",
+		latinSecondary: " db ",
+		prompt: " ",
+		devLabels: " f4 pa1 " + STYLE_DL,
+		styleLabel: " " + STYLE_L,
+		dataLabel: " " + STYLE_D,
+		imgSection: " ",
+		photo: " ",
+		flag: " ",
+		imgSet: " ",
+		imgOverlay: " ",
+		toolBarBtn: " black otsutome f4 " + STYLE_TBB,
+	},
+	zenLight: {
+		name: "Zen Light",
+    global: " " + STYLE_G,
+		cardContent: " " + STYLE_B,
+		cardHead: " " + STYLE_CH,
+		cardBody: " " + STYLE_CB,
+    primary: " ",
+    secondary: " ",
+    tertiary: " ",
+    quaternary: " ",
+		quintary: " ",
+    first: ` `,
+    followingFirst: " ",
+		clickable: " lh-solid f-subheadline " + STYLE_C,
+		audioBtn: " ",
+		headFront: " ",
+		headBack: " ",
+		bodyFront: " ",
+		bodyBack: " ",
+		jpnPrimary: " ",
+		jpnSecondary: " ",
+		latinPrimary: " ",
+		latinSecondary: " ",
+		prompt: " ",
+		devLabels: " f5 pa1 " + STYLE_DL,
+		styleLabel: " " + STYLE_L,
+		dataLabel: " " + STYLE_D,
+		imgSection: " ",
+		photo: " ",
+		flag: " ",
+		imgSet: " ",
+		imgOverlay: " ",
+		toolBarBtn: " " + STYLE_TBB,
+	},
 	mondrian: {
 		name: "Mondrian Homage",
     global: " " + STYLE_G,
@@ -83,7 +145,7 @@ const themes = {
     first: ` `,
     followingFirst: " ",
 		clickable: " lh-solid f-subheadline " + STYLE_C,
-		backAudio: " " + STYLE_BA,
+		audioBtn: " ",
 		headFront: " ",
 		headBack: " ",
 		bodyFront: " ",
@@ -117,7 +179,7 @@ const themes = {
     first: ` `,
     followingFirst: " ",
 		clickable: " lh-solid f-subheadline " + STYLE_C,
-		backAudio: " " + STYLE_BA,
+		audioBtn: " ",
 		headFront: " ",
 		headBack: " ",
 		bodyFront: " ",
@@ -151,7 +213,7 @@ const themes = {
     first: ` db flex justify-start h-100 items-end `,
     followingFirst: " db ",
 		clickable: " zen-black lh-solid " + STYLE_C,
-		backAudio: " f-subheadline " + STYLE_BA,
+		audioBtn: " f-subheadline ",
 		headFront: " f-subheadline flex justify-start items-end ",
 		headBack: " ",
 		bodyFront: " ",
@@ -185,7 +247,7 @@ const themes = {
     first: " ",
     followingFirst: " ",
 		clickable: " " + STYLE_C,
-		backAudio: "f-subheadline " + STYLE_BA,
+		audioBtn: "f-subheadline ",
 		headFront: " f-subheadline ",
 		headBack: " ",
 		bodyFront: " lh-title ",
@@ -219,7 +281,7 @@ const themes = {
     first: " ",
     followingFirst: " db lh-title ",
     clickable: " " + STYLE_C,
-		backAudio: " f-subheadline " + STYLE_BA,
+		audioBtn: " f-subheadline ",
 		headFront: " ",
 		headBack: " pl3 pt3 ",
 		bodyFront: " absolute z-9999 left-1 top-1 ",
@@ -252,7 +314,7 @@ const themes = {
     first: ` pl3 pv3 bb b--red db lh-solid flex justify-start items-center `,
     followingFirst: ` pl3 bb b--blue db lh-solid pv2 flex items-center `,
     clickable: " stroke-black white " + STYLE_C,
-		backAudio: " f-subheadline " + STYLE_BA,
+		audioBtn: " f-subheadline ",
 		headFront: " ",
 		jpnPrimary: " f1 stroke-order ",
 		jpnSecondary: " f2 stroke-order ",
@@ -280,7 +342,7 @@ const themes = {
     first: " ",
     followingFirst: " ",
     clickable: " zb-pale-yellow " + STYLE_C,
-		backAudio: " " + STYLE_BA,
+		audioBtn: " ",
 		headFront: " ",
 		jpnPrimary: " f1 noto-serif lh-solid ",
 		jpnSecondary: " f1 noto-serif lh-solid ",
@@ -308,7 +370,7 @@ const themes = {
     first: " white neon-glow-green  ",
     followingFirst: " b normal matrix-green ",
     clickable: " white neon-glow-green " + STYLE_C,
-		backAudio: " " + STYLE_BA,
+		audioBtn: " ",
 		headFront: " ",
 		jpnPrimary: " f1 ",
 		jpnSecondary: " f2 b ",
@@ -327,7 +389,7 @@ const themes = {
 		toolBarBtn: " " + STYLE_TBB,
   },
   futuristic: {
-		name: "Glowing UI",
+		name: "Futuristic",
     global: " bg-black light-blue " + STYLE_G,
 		cardContent: " pa3 flex flex-column " + STYLE_B,
     primary: " ",
@@ -338,7 +400,7 @@ const themes = {
     first: " b f1 white neon-glow-cyan tron-outline ",
     followingFirst: " f2 camingocode ",
     clickable: " white neon-glow-cyan " + STYLE_C,
-		backAudio: " " + STYLE_BA,
+		audioBtn: " ",
 		headFront: " ",
 		jpnPrimary: " ",
 		jpnSecondary: " ",
@@ -367,7 +429,7 @@ const themes = {
     first: " f1 ",
     followingFirst: " f2 ",
     clickable: " " + STYLE_C,
-		backAudio: " " + STYLE_BA,
+		audioBtn: " ",
 		headFront: " ",
 		jpnPrimary: " noto-sans ",
 		jpnSecondary: " noto-sans ",
@@ -395,7 +457,7 @@ const themes = {
     first: " f1 sawarabi-mincho ",
     followingFirst: " f3 ",
     clickable: " " + STYLE_C,
-		backAudio: " " + STYLE_BA,
+		audioBtn: " ",
 		headFront: " ",
 		jpnPrimary: " sawarabi-mincho ",
 		jpnSecondary: " sawarabi-mincho ",
@@ -413,34 +475,34 @@ const themes = {
   },
   retroConsole: {
 		name: "8-Bit Retro",
-    global: ` pixel-m-plus12 retro-green-darker bg-retro-green-lighter ` + STYLE_G,
-		cardContent: " pl3 pt3 flex flex-column " + STYLE_B,
+    global: ` pl3 pixel-m-plus12 retro-green-darker bg-retro-green-lighter ` + STYLE_G,
+		cardContent: " pt3 flex flex-column " + STYLE_B,
     primary: " ",
     secondary: " ",
-    tertiary: " f3 ",
-    quaternary: " f3 ",
-		quintary: " f5 ",
+    tertiary: " f2 ",
+    quaternary: " f2 ",
+		quintary: " f3 ",
     first: " ",
     followingFirst: " ",
     clickable: " " + STYLE_C,
-		backAudio: " f-subheadline " + STYLE_BA,
-		headFront: " ",
+		audioBtn: " f-subheadline ",
+		headFront: " retro-green-dark ",
 		headBack: " lh-title ",
-		bodyFront: " ",
+		bodyFront: " retro-green-dark ",
 		bodyBack: " lh-copy flex flex-column ",
-		jpnPrimary: " f1 lh-solid ",
-		jpnSecondary: " f1 lh-solid ",
-		latinPrimary: " retro-green-dark ",
-		latinSecondary: " retro-green-dark ",
-		prompt: " ",
-		devLabels: " pa2 f5 retro-green-dark " + STYLE_DL,
+		jpnPrimary: " f-subheadline lh-title ",
+		jpnSecondary: " f1 lh-title ",
+		latinPrimary: " f1 lh-title ",
+		latinSecondary: " lh-title ",
+		prompt: " f2 pixel-m-plus12 ",
+		devLabels: " pa1 f4 retro-green-dark pixel-m-plus12 " + STYLE_DL,
 		styleLabel: " " + STYLE_L,
 		dataLabel: " " + STYLE_D,
-		imgSection: " db pl3 pt2 ",
+		imgSection: " db pt2 ",
 		photo: " h4 di of-contain ",
 		flag: " pt2 pt0-ns pl2-ns h4 di of-contain ",
 		imgSet: "retro",
-		toolBarBtn: " f5 retro-green-dark " + STYLE_TBB,
+		toolBarBtn: " f4 retro-green-dark pixel-m-plus12 " + STYLE_TBB,
   },
   rpgSketch: {
 		name: "RPG Sketch",
@@ -454,7 +516,7 @@ const themes = {
     first: " ",
     followingFirst: " db ",
     clickable: " " + STYLE_C,
-		backAudio: " " + STYLE_BA,
+		audioBtn: " ",
 		headFront: " ",
 		headBack: " flex items-center justify-center ",
 		bodyFront: " ",
@@ -485,7 +547,7 @@ const themes = {
     first: " f-subheadline lh-solid ",
     followingFirst: " f2 lh-solid ",
     clickable: " text-wooden cover stroke-wooden " + STYLE_C,
-		backAudio: " " + STYLE_BA,
+		audioBtn: " ",
 		headFront: " ",
 		jpnPrimary: " ",
 		jpnSecondary: " ",
@@ -715,8 +777,9 @@ const PROMPT_SET = [ prompts.hearKnow, prompts.lookSpeak, prompts.recall,
 
 const THEME_INDEX = 0;
 
-const MASTER_THEME_SET = [ themes.zenMenu, themes.retroConsole, themes.indexCard, themes.illumManus,
-	themes.blackBoard, themes.fullPhoto, themes.rpgSketch
+const MASTER_THEME_SET = [ themes.retroConsole, themes.inkOnRicePaper,
+	themes.zenMenu, themes.illumManus, themes.blackBoard,
+	themes.fullPhoto, themes.rpgSketch, themes.indexCard
 ];
 
 const ICEBOX_THEME_SET = [themes.zenBurnTachyons, themes.zenBurnTrue, themes.woodOnWood, themes.mondrian,
@@ -841,7 +904,7 @@ class CardTester extends Component {
 }
 
 const FontTest = (props) => (
-	<div className={props.classes + " pa3 dib f1 ba b--red "}>{props.text + ": あア亜 A a"}</div>
+	<div className={props.classes + " pa3 dib f2 ba b--red "}>{props.text + ": あア亜 A a"}</div>
 );
 
 //fonts
@@ -853,7 +916,7 @@ class FontTester1 extends Component {
 	render() {
 		const listItems = fonts.map((font, i) =>
 			<FontTest classes={font} text={font} />
-    );
+		);
 
 		return (<section className={this.props.classes}>{listItems}</section>);
 	}
@@ -872,13 +935,12 @@ class FontTester2 extends Component {
 		return (<section className={this.props.classes}>{listItems}</section>);
 	}
 }
-
+/* <FontTester1 classes=" purple " /><FontTester2 classes=" green " /> */
 class App extends Component {
   render() {
     return (
-      <main className="bg-yellow red w-100 h-100">
-        <FontTester1 classes=" purple " />
-				<FontTester2 classes=" green " />
+      <main className="bg-yellow red w-100 vh-100">
+        <CardTester />
       </main>
     );
   }

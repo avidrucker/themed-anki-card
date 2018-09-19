@@ -42,7 +42,7 @@ const OrganismCardFront = (props) => (
 							<div className={props.theme.cardHead + props.theme.headFront}>
 								<AtomAudio
 									audio={props.word.audio}
-									classes={props.theme.clickable}
+									classes={props.theme.clickable + props.theme.audioBtn}
 									lang={props.l2}
 								/>
 							</div>
@@ -69,7 +69,7 @@ const OrganismCardFront = (props) => (
 									lang={props.l2}
 								/>
 							</div>
-							<div className={props.theme.cardBody}>
+							<div className={props.theme.cardBody + props.theme.bodyFront}>
 								<AtomPrompt
 									text={props.prompt.ja.l1}
 									classes={props.theme.prompt}
@@ -119,7 +119,7 @@ const OrganismCardFront = (props) => (
 									lang={props.l1}
 								/>
 							</div>
-							<div className={props.theme.cardBody}>
+							<div className={props.theme.cardBody + props.theme.bodyFront}>
 								<AtomPrompt
 									text={props.prompt.ja.l1}
 									classes={props.theme.prompt}
@@ -142,7 +142,7 @@ const OrganismCardFront = (props) => (
 									lang={props.l1}
 								/>
 							</div>
-							<div className={props.theme.cardBody}>
+							<div className={props.theme.cardBody + props.theme.bodyFront}>
 								<AtomPrompt
 									text={props.prompt.ja.l1}
 									classes={props.theme.prompt}
