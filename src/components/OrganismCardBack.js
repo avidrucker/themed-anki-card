@@ -13,73 +13,109 @@ import AtomType from './AtomType';
 import AtomSide from './AtomSide';
 import AtomLanguage from './AtomLanguage';
 import AtomMeaning from './AtomMeaning';
+import AtomImagePlaceholder from './AtomImagePlaceholder';
 
-const STYLE_BA = " lh-solid absolute top-1 right-1 pa2 z-9999 "; //back audio style
+const STYLE_BA = " absolute z-9999 "; //back audio style
+const STYLE_C = " link grow "; //clickable style (the audio button)
+const STYLE_DL = " z-9999 absolute bottom-0 left-0 w-100 flex flex-row-ns flex-column items-center justify-between-ns justify-center " //devLabels style
+const STYLE_L = " order-2 "; //styleLabel style
+const STYLE_D = " order-1 "; //dataLabel style
+const STYLE_G = " relative overflow-y-hidden "; //global style
+const STYLE_GO = " disabled-link absolute top-0 right-0 w-100 h-100 z-999 "; //global overlay
 
 const StyledOrganismCardBack = styled.div.attrs({
   className: `h-100 w-100`,
 })``;
 
 const OrganismCardBack = (props) => (
-  <StyledOrganismCardBack className={props.theme.global}>
+  <StyledOrganismCardBack className={props.theme.global + STYLE_G}>
 		{
 			!!props.theme.globalOverlay &&
-			<span className={props.theme.globalOverlay}></span>
+			<span className={props.theme.globalOverlay + STYLE_GO}></span>
 		}
-		<div className={props.theme.devLabels}>
+		<div className={props.theme.devLabels + STYLE_DL}>
 			<AtomStyleLabel
 				lang={props.l1}
 				text={`style: ${props.theme.name}`}
-				classes={props.theme.styleLabel}
+				classes={props.theme.styleLabel + STYLE_L}
 			/>
-			<span className={props.theme.dataLabel}>
-				<AtomLanguage text={props.l2} />{`:`}<AtomType text={props.type} />{`:`}<AtomSide text="back" />
+			<span className={props.theme.dataLabel + STYLE_D}>
+				<AtomLanguage text={props.l2} />{`:`}<AtomType forExport={props.forExport} text={props.type} />{`:`}<AtomSide forExport={props.forExport} text="back" />
 			</span>
 		</div>
 		<AtomAudio audio={props.word.audio}
-			classes={props.theme.clickable + props.theme.audioBtn + STYLE_BA}
+			forExport={props.forExport}
+			classes={props.theme.audioBack + STYLE_C + props.theme.audioBtn + STYLE_BA}
 			lang={props.l2}
 		/>
 		<main className={props.theme.cardContent}>
 			<div className={props.theme.cardHead + props.theme.headBack}>
+				{/*+ (!props.word.reading ? " tracked-tight " : " tracked-mega ")*/}
 				<AtomTerm
 					intro={props.intro}
-					term={props.word.term}
-					classes={props.theme.primary + props.theme.first + props.theme.jpnPrimary + (!props.word.reading ? " tracked-tight " : " tracked-mega ")}
+					text={props.word.term}
+					forExport={props.forExport}
+					classes={props.theme.primary + props.theme.first + props.theme.jpnPrimary}
 					lang={props.l2}
 				/>
 			</div>
 			<div className={props.theme.cardBody + props.theme.bodyBack}>
-				<AtomReading
-					intro={props.intro}
-					reading={props.word.reading}
-					classes={props.theme.secondary + props.theme.followingFirst + props.theme.jpnSecondary}
-					lang={props.l2}
-				/>
+				{
+					!!props.word.reading && (props.forExport === 0) &&
+					<AtomReading
+						intro={props.intro}
+						forExport={props.forExport}
+						text={props.word.reading}
+						classes={props.theme.secondary + props.theme.followingFirst + props.theme.jpnSecondary}
+						lang={props.l2}
+					/>
+				}
+				{
+					!props.word.reading && (props.forExport === 1) &&
+					<AtomReading
+						intro={props.intro}
+						forExport={props.forExport}
+						text={props.word.reading}
+						classes={props.theme.secondary + props.theme.followingFirst + props.theme.jpnSecondary}
+						lang={props.l2}
+					/>
+				}
 				<div className={props.theme.tertiary + props.theme.followingFirst + props.theme.latinSecondary}>
 					<div className="">
 						<AtomTranslat
+							immersion={props.immersion}
 							intro={props.intro}
-							translat={props.word.translat}
+							forExport={props.forExport}
+							text={props.word.translat}
 							lang={props.l1}
 						/>
 						{
 							!!props.word.meaning &&
 							<Fragment>
-								{":  "}<AtomMeaning meaning={props.word.meaning} lang={props.l1} />
+								{":  "}
+								<AtomMeaning
+									immersion={props.immersion}
+									forExport={props.forExport}
+									text={props.word.meaning}
+									lang={props.l1}
+								/>
 							</Fragment>
 						}
 					</div>
 				</div>
 				<AtomTranslit
 					intro={props.intro}
-					translit={props.word.translit}
+					immersion={props.immersion}
+					text={props.word.translit}
+					forExport={props.forExport}
 					classes={props.theme.quaternary + props.theme.followingFirst + props.theme.latinSecondary}
 					lang={props.l1}
 				/>
 				<MoleculeTags
 					intro={props.intro}
-					tags={props.word.tags} 
+					immersion={props.immersion}
+					text={props.word.tags}
+					forExport={props.forExport}
 					classes={props.theme.quintary + props.theme.followingFirst + props.theme.latinSecondary}
 					lang={props.l1}
 				/>
@@ -87,7 +123,7 @@ const OrganismCardBack = (props) => (
 		</main>
 		<Fragment>
 		{
-			!!props.images && !!props.images.photo &&
+			(props.forExport === 0) && !!props.images && !!props.images.photo &&
 			<section className={props.theme.imgSection}>
 					<AtomImage
 						src={props.images.photo}
@@ -106,6 +142,21 @@ const OrganismCardBack = (props) => (
 							overlay={props.theme.imgOverlay}
 						/>
 					}
+			</section>
+		}
+		{
+			(props.forExport === 1) &&
+			<section className={props.theme.imgSection}>
+				<AtomImagePlaceholder
+					text="photo" lang={props.l1}
+					classes={props.theme.photo}
+					overlay={props.theme.imgOverlay}
+				/>
+				<AtomImagePlaceholder
+					text="flag" lang={props.l1}
+					classes={props.theme.flag}
+					overlay={props.theme.imgOverlay}
+				/>
 			</section>
 		}
 		</Fragment>

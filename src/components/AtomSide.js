@@ -7,7 +7,7 @@ const StyledAtomSide = styled.span.attrs({
 
 const AtomSide = (props) => (
   <StyledAtomSide className={props.classes} lang={props.lang} >
-    {props.text}
+		{(props.forExport===1) ? "{{Side}}" : props.text}
   </StyledAtomSide>
 );
 

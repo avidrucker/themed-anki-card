@@ -1,0 +1,52 @@
+{
+	"term": {
+		"term": "{{term}}",
+    "reading": "{{reading}}",
+    "translat": "{{translat}}",
+    "translit": "{{translit}}",
+    "audio": "{{audio}}",
+    "tags": "{{Tags}}"
+	},
+  "crab": {
+    "term": "蟹",
+    "reading": "かに",
+    "translat": "crab",
+    "translit": "ka-NI",
+    "audio": "kani.mp3",
+    "tags": "noun food animals"
+  },
+  "library": {
+    "term": "図書館",
+    "reading": "としょかん",
+    "translat": "library",
+    "translit": "to-SHO-kan",
+    "audio": "toshokan.mp3",
+    "tags": "noun places books"
+  },
+  "australia": {
+    "term": "オーストラリア",
+    "reading": "",
+    "translat": "Australia",
+    "translit": "OOsutoraria",
+    "audio": "oosutoraria.mp3",
+		"tags": "properNoun places countries"
+  },
+  "asoko": {
+    "term": "あそこ",
+    "reading": "",
+		"translat": "over there",
+		"meaning": "Refers to a place distant from both speaker & listener.",
+    "translit": "a-SO-KO",
+    "audio": "asoko.mp3",
+    "tags": "noun pronoun location grammarPoint"
+	},
+	"sushi": {
+    "term": "寿司",
+    "reading": "すし",
+		"translat": "sushi",
+		"meaning": "A Japanese cuisine typically made of raw fish & vinegar rice.",
+    "translit": "su-SHI",
+    "audio": "sushi.mp3",
+    "tags": "noun food culture"
+  }
+}

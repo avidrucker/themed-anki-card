@@ -7,7 +7,8 @@ const StyledAtomTerm = styled.span.attrs({
 
 const AtomTerm = (props) => (
   <StyledAtomTerm className={props.classes} lang={props.lang}>
-	  {/*{(props.intro===0) ? "Term: " : ""}*/}{props.term}
+		{/*{(props.intro===1) ? "Term: " : ""}*/}
+		{(props.forExport===1) ? "{{term}}" : props.text}
   </StyledAtomTerm>
 );
 

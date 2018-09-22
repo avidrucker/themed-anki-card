@@ -7,7 +7,7 @@ const StyledAtomType = styled.span.attrs({
 
 const AtomType = (props) => (
   <StyledAtomType className={props.classes} lang={props.lang} >
-    {props.text}
+		{(props.forExport===1) ? "{{Type}}" : props.text}
   </StyledAtomType>
 );
 

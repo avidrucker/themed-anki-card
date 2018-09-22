@@ -2,96 +2,106 @@
 
 @font-face {
     font-family: 'bpdotsregular';
-    src: url('BPdots-webfont.eot');
-    src: url('BPdots-webfont.eot?#iefix') format('embedded-opentype'),
-         url('BPdots-webfont.woff') format('woff'),
-         url('BPdots-webfont.ttf') format('truetype'),
-         url('BPdots-webfont.svg#bpdotsregular') format('svg');
+    src: url('fonts/BPdots-webfont.eot');
+    src: url('fonts/BPdots-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/BPdots-webfont.woff') format('woff'),
+         url('fonts/BPdots-webfont.ttf') format('truetype'),
+         url('fonts/BPdots-webfont.svg#bpdotsregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'jackeyfontregular';
-    src: url('jackeyfont-webfont.woff2') format('woff2'),
-         url('jackeyfont-webfont.woff') format('woff');
+    src: url('fonts/jackeyfont-webfont.woff2') format('woff2'),
+         url('fonts/jackeyfont-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'camingocoderegular';
-    src: url('CamingoCode-Regular-webfont.eot');
-    src: url('CamingoCode-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('CamingoCode-Regular-webfont.woff') format('woff'),
-         url('CamingoCode-Regular-webfont.ttf') format('truetype'),
-         url('CamingoCode-Regular-webfont.svg#camingocoderegular') format('svg');
+    src: url('fonts/CamingoCode-Regular-webfont.eot');
+    src: url('fonts/CamingoCode-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/CamingoCode-Regular-webfont.woff') format('woff'),
+         url('fonts/CamingoCode-Regular-webfont.ttf') format('truetype'),
+         url('fonts/CamingoCode-Regular-webfont.svg#camingocoderegular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
 	font-family: 'kanjistrokeordersregular';
-	src: url('kanjistrokeorders_v4.002-webfont.woff2') format('woff2'),
-			 url('kanjistrokeorders_v4.002-webfont.woff') format('woff');
+	src: url('fonts/kanjistrokeorders_v4.002-webfont.woff2') format('woff2'),
+			 url('fonts/kanjistrokeorders_v4.002-webfont.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'playtimewithhottoddiesobliqRg';
-	src: url('PlaytimeOblique-webfont.eot');
-	src: url('PlaytimeOblique-webfont.eot?#iefix') format('embedded-opentype'),
-			 url('PlaytimeOblique-webfont.woff') format('woff'),
-			 url('PlaytimeOblique-webfont.ttf') format('truetype'),
-			 url('PlaytimeOblique-webfont.svg#playtimewithhottoddiesobliqRg') format('svg');
+	src: url('fonts/PlaytimeOblique-webfont.eot');
+	src: url('fonts/PlaytimeOblique-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('fonts/PlaytimeOblique-webfont.woff') format('woff'),
+			 url('fonts/PlaytimeOblique-webfont.ttf') format('truetype'),
+			 url('fonts/PlaytimeOblique-webfont.svg#playtimewithhottoddiesobliqRg') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
   font-family: "chalkduster";
-  src: url("Chalkduster.eot");
-	src: url("Chalkduster.eot?#iefix") format("embedded-opentype"),
-		url("Chalkduster.woff") format("woff"),
-		url("Chalkduster.ttf") format("truetype"),
-		url("Chalkduster.svg#Chalkduster") format("svg");
+  src: url("fonts/Chalkduster.eot");
+	src: url("fonts/Chalkduster.eot?#iefix") format("embedded-opentype"),
+		url("fonts/Chalkduster.woff") format("woff"),
+		url("fonts/Chalkduster.ttf") format("truetype"),
+		url("fonts/Chalkduster.svg#Chalkduster") format("svg");
   font-style: normal;
   font-stretch: normal;
 }
 
 @font-face {
 	font-family: 'pixelmplus12';
-	src: url("PixelMplus12-Regular.woff") format("woff");
+	src: url("fonts/PixelMplus12-Regular.woff") format("woff");
 	font-style: normal;
 	font-stretch: normal; 
 }
 
 @font-face {
 	font-family: 'dearestregular';
-	src: url('Dearest-webfont.woff') format('woff');
+	src: url('fonts/Dearest-webfont.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'ringbearermedium';
-	src: url('ringm___-webfont.woff2') format('woff2'),
-			 url('ringm___-webfont.woff') format('woff');
+	src: url('fonts/ringm___-webfont.woff2') format('woff2'),
+			 url('fonts/ringm___-webfont.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'othutome_fontbold';
-	src: url('othutomefont_ver2.woff2') format('woff2'),
-			 url('othutomefont_ver2.woff') format('woff');
+	src: url('fonts/othutomefont_ver2.woff2') format('woff2'),
+			 url('fonts/othutomefont_ver2.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'RM Albion';
+	src: local('RM Albion Regular'), local('RM-Albion'),
+			url('fonts/RM-Albion.woff2') format('woff2'),
+			url('fonts/RM-Albion.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
 
 /* FONTS */
-.otsutome { font-family: 'othutome_fontbold' }
+.rm-albion { font-family: 'RM Albion' }
+.otsutome { font-family: 'othutome_fontbold', sans-serif }
 .ringbearer { font-family: 'ringbearermedium' }
 .dearest { font-family: 'dearestregular', cursive }
 .unifraktur-maguntia { font-family: 'UnifrakturMaguntia', cursive }
@@ -117,6 +127,7 @@
 .noto-sans { font-family: 'Noto Sans JP', sans-serif }
 .muli { font-family: 'Muli', sans-serif }
 .jpn-test { font-family: 'Yu Gothic', YuGothic, Meiryo, 'Meiryo', Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif }
+.jpn-test-2 { font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif }
 .fredericka { font-family: 'Fredericka the Great', cursive }
 .stroke-order { font-family: 'kanjistrokeordersregular', "KanjiStrokeOrders", KanjiStrokeOrders, cursive }
 .patrick-hand { font-family: 'Patrick Hand', cursive }
@@ -160,9 +171,18 @@ todo:
 - add: pix chicago for mac homage
 
 - reviwed & passed on: fofer, pasajero (no lowercase)
+- passed on: unicode math blackletter:
+Fonts supporting the range include Code2001, Cambria Math, and Quivira (textura style).
+For normal text writing, the ordinary Latin code points are used. The blackletter style is then determined by a font with blackletter glyphs. The glyphs in the SMP should only be used for mathematical typesetting, not for ordinary text.
 */
 
 /* COLORS */
+.sienna { color: #A0522D }
+.saddle-brown { color: #8B4513 }
+.dallas { color: #664C33 }
+.bakers-chocolate { color: #4D3300 }
+.jambalaya { color: #674834 }
+
 .retro-green-darker { color: #0f380f } /*Darker Green*/
 .retro-green-dark { color: #306230 } /*Dark Green*/
 .retro-green-light { color: #8bac0f } /*Light Green*/
@@ -207,6 +227,7 @@ todo:
 .bg-zen-beige { background-color: #f6f6e0 }
 .zen-black { color: #040404 }
 .bg-zen-black { background-color: #040404 }
+.b--zen-beige { border-color: #f6f6e0 }
 
 .oil { color: #1c1910 } /* dark brown */
 
@@ -308,3 +329,13 @@ mix-blend-mode: luminosity;*/
 /* T-MASTER FLEXBOX */
 .flex-1 { flex: 1; }
 .flex-2 { flex: 2; }
+
+/* LINE HEIGHTS */
+.lh-9 { line-height: 0.9 }
+.lh-8 { line-height: 0.8 }
+.lh-7 { line-height: 0.7 }
+.lh-6 { line-height: 0.6 }
+.lh-5 { line-height: 0.5 }
+
+/* PERCENTAGE COORDINATES */
+.top-third { top: 32% }

@@ -7,7 +7,8 @@ const StyledAtomMeaning = styled.span.attrs({
 
 const AtomMeaning = (props) => (
   <StyledAtomMeaning className={props.classes} lang={props.lang}>
-    {(props.intro===0) ? "Meaning: " : ""}{props.meaning}
+		{(props.intro===1) ? "Meaning: " : ""}
+		{(props.forExport===1) ? "{{meaning}}" : props.text}
   </StyledAtomMeaning>
 );
 

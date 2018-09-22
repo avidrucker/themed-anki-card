@@ -7,7 +7,8 @@ const StyledAtomStyleLabel = styled.label.attrs({
 
 const AtomStyleLabel = (props) => (
   <StyledAtomStyleLabel className={props.classes} lang={props.lang} >
-    {props.text}
+		{props.text}
+		{/*{(props.forExport===1) ? "{{style}}" : props.text}*/}
   </StyledAtomStyleLabel>
 );
 

@@ -9,7 +9,7 @@ const AtomImage = (props) => (
 	<Fragment>
 		{
 			!props.src &&
-			<Fragment>hi</Fragment>
+			<Fragment>???</Fragment>
 		}
 		{!!props.src && !!props.overlay &&
 		<span className="relative dib w-100 overflow-y-hidden">

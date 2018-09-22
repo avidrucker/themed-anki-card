@@ -11,24 +11,33 @@ import AtomType from './AtomType';
 import AtomSide from './AtomSide';
 import AtomLanguage from './AtomLanguage';
 import AtomPrompt from './AtomPrompt';
+import AtomImagePlaceholder from './AtomImagePlaceholder';
+
+const STYLE_C = " link grow "; //clickable style (the audio button)
+const STYLE_DL = " z-9999 absolute bottom-0 left-0 w-100 flex flex-row-ns flex-column items-center justify-between-ns justify-center " //devLabels style
+const STYLE_L = " order-2 "; //styleLabel style
+const STYLE_D = " order-1 "; //dataLabel style
+const STYLE_G = " relative overflow-y-hidden "; //global style
+const STYLE_GO = " disabled-link absolute top-0 right-0 w-100 h-100 z-999 "; //global overlay
+
 
 const StyledOrganismCardFront = styled.div.attrs({
   className: `h-100 w-100`,
 })``;
 
 const OrganismCardFront = (props) => (
-  <StyledOrganismCardFront className={props.theme.global}>
+  <StyledOrganismCardFront className={props.theme.global + STYLE_G}>
 		{
 			!!props.theme.globalOverlay &&
-			<span className={props.theme.globalOverlay}></span>
+			<span className={props.theme.globalOverlay + STYLE_GO}></span>
 		}
-		<div className={props.theme.devLabels}>
+		<div className={props.theme.devLabels + STYLE_DL}>
 			<AtomStyleLabel
 				lang={props.l1}
 				text={`style: ${props.theme.name}`}
-				classes={props.theme.styleLabel}
+				classes={props.theme.styleLabel + STYLE_L}
 			/>
-			<label className={props.theme.dataLabel}>
+			<label className={props.theme.dataLabel + STYLE_D}>
 				<AtomLanguage text={props.l2} />{`:`}<AtomType text={props.type} />{`:`}<AtomSide text="front" />
 			</label>
 		</div>
@@ -42,11 +51,15 @@ const OrganismCardFront = (props) => (
 							<div className={props.theme.cardHead + props.theme.headFront}>
 								<AtomAudio
 									audio={props.word.audio}
-									classes={props.theme.clickable + props.theme.audioBtn}
+									forExport={props.forExport}
+									classes={STYLE_C + props.theme.audioBtn}
 									lang={props.l2}
 								/>
 							</div>
 							<div className={props.theme.cardBody + props.theme.bodyFront}>
+								{/*latinSecondary must change to jpnSecondary etc. when prompt lang changes:
+								ie. should props.theme.latinSecondary be added or props.theme.prompt be split
+								into promptEng, promptJap, promptTok, etc.? */}
 								<AtomPrompt
 									text={props.prompt.ja.l1}
 									classes={props.theme.prompt}
@@ -63,9 +76,11 @@ const OrganismCardFront = (props) => (
 						(!!props.prompt && !!props.word.reading) &&
 						<Fragment>
 							<div className={props.theme.cardHead + props.theme.headFront}>
+								{/*+ (!props.word.reading ? " tracked-tight " : " tracked-mega ")*/}
 								<AtomTerm
-									term={props.word.term}
-									classes={props.theme.primary + props.theme.first + props.theme.jpnPrimary + (!props.word.reading ? " tracked-tight " : " tracked-mega ")}
+									text={props.word.term}
+									forExport={props.forExport}
+									classes={props.theme.primary + props.theme.first + props.theme.jpnPrimary}
 									lang={props.l2}
 								/>
 							</div>
@@ -87,6 +102,7 @@ const OrganismCardFront = (props) => (
 						<Fragment>
 							<div className={props.theme.cardHead + props.theme.headFront}>
 								<section className={props.theme.imgSection}>
+								{props.forExport === 0 && 
 									<AtomImage
 										src={props.images.photo}
 										alt={props.images.alt}
@@ -94,6 +110,16 @@ const OrganismCardFront = (props) => (
 										classes={props.theme.photo}
 										overlay={props.theme.imgOverlay}
 									/>
+								}
+								{
+									props.forExport === 1 &&
+									<AtomImagePlaceholder
+										text="photo"
+										lang={props.l1}
+										classes={props.theme.photo}
+										overlay={props.theme.imgOverlay}
+									/>
+								}
 								</section>
 							</div>
 							<div className={props.theme.cardBody + props.theme.bodyFront}>
@@ -114,8 +140,9 @@ const OrganismCardFront = (props) => (
 						<Fragment>
 							<div className={props.theme.cardHead + props.theme.headFront}>
 								<AtomTranslat
-									translat={props.word.translat}
-									classes={props.theme.latinPrimary}
+									text={props.word.translat}
+									forExport={props.forExport}
+									classes={props.theme.latinPrimary+ props.theme.tertiary}
 									lang={props.l1}
 								/>
 							</div>
@@ -137,8 +164,9 @@ const OrganismCardFront = (props) => (
 						<Fragment>
 							<div className={props.theme.cardHead + props.theme.headFront}>
 								<AtomTranslit
-									translit={props.word.translit}
-									classes={props.theme.latinPrimary}
+									forExport={props.forExport}
+									text={props.word.translit}
+									classes={props.theme.latinPrimary + props.theme.quaternary}
 									lang={props.l1}
 								/>
 							</div>
