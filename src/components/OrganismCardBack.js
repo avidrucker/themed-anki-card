@@ -20,18 +20,18 @@ const STYLE_C = " link grow "; //clickable style (the audio button)
 const STYLE_DL = " z-9999 absolute bottom-0 left-0 w-100 flex flex-row-ns flex-column items-center justify-between-ns justify-center " //devLabels style
 const STYLE_L = " order-2 "; //styleLabel style
 const STYLE_D = " order-1 "; //dataLabel style
-const STYLE_G = " relative overflow-y-hidden "; //global style
-const STYLE_GO = " disabled-link absolute top-0 right-0 w-100 h-100 z-999 "; //global overlay
+const STL_GLOBAL_GENERAL = " relative overflow-y-hidden "; //global style
+const STL_GLOBAL_OVERLAY = " disabled-link absolute top-0 right-0 w-100 h-100 z-999 "; //global overlay
 
 const StyledOrganismCardBack = styled.div.attrs({
   className: `h-100 w-100`,
 })``;
 
 const OrganismCardBack = (props) => (
-  <StyledOrganismCardBack className={props.theme.global + STYLE_G}>
+  <StyledOrganismCardBack className={props.theme.global + STL_GLOBAL_GENERAL}>
 		{
 			!!props.theme.globalOverlay &&
-			<span className={props.theme.globalOverlay + STYLE_GO}></span>
+			<span className={props.theme.globalOverlay + STL_GLOBAL_OVERLAY}></span>
 		}
 		<div className={props.theme.devLabels + STYLE_DL}>
 			<AtomStyleLabel

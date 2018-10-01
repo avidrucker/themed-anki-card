@@ -23,7 +23,7 @@ import FONTS from './data/fonts.json';
 
 const blackletter = ["rm-albion","dearest","unifraktur-cook","unifraktur-maguntia"];
 const handwritten = ["architects-daughter","caveat","indie-flower","patrick-hand","chalkduster"];
-const fonts = ["camingocode","caveat-brush", "cinzel", "exo-2", "fredericka", "muli", "papyrus", "play",
+const fonts = ["camingocode","caveat-brush", "cinzel", "domine", "exo-2", "fredericka", "muli", "papyrus", "play",
 	"playtime", "press-start-2p", "schoolbell", "source-code-pro", "tron-outline", "vt323",
 	"bpdots","ringbearer"];
 
@@ -246,11 +246,11 @@ const IMMERSION_SET = ["none","semi","total"];
 
 
 const TOOLBAR_INDEX = 0;
-const TOOLBAR_STYLE_SET = [" bottom-0 left-0 w-100 tc center ", " top-0 left-0 w-100 tc center ",
+const TOOLBAR_POS = [" bottom-0 left-0 w-100 tc center ", " top-0 left-0 w-100 tc center ",
 	" top-0 left-0 ", " top-0 right-0 ", " bottom-0 left-0 ", " bottom-0 right-0 "];
 
-const STYLE_TB = " absolute pb4 ph2 mb4 z-9999 "//toolbar style
-const STYLE_TBB = " dib pa1 ph1 ph2-ns ma1 link grow "//toolbar btn style
+const TOOLBAR = " absolute pb4 ph2 mb4 z-9999 "
+const TOOLBAR_BTN = " dib pa1 ph1 ph2-ns ma1 link grow "
 
 const CardDevToolBar = (props) => (
 	<aside className={props.tbStyle}>
@@ -265,7 +265,7 @@ const CardDevToolBar = (props) => (
 	</aside>
 );
 
-class CardTester extends Component {
+class CardDashboard extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -304,7 +304,7 @@ class CardTester extends Component {
 		})
 	};
 	handleClick5 = (event) => { this.setState({in: this.toggleBinary(this.state.in)}) };
-	handleClick6 = (event) => { this.setState({tb: this.updateIndex(this.state.tb, TOOLBAR_STYLE_SET)}) };
+	handleClick6 = (event) => { this.setState({tb: this.updateIndex(this.state.tb, TOOLBAR_POS)}) };
 	handleClick7 = (event) => { this.setState({e: this.toggleBinary(this.state.e)}) };
 	handleClick8 = (event) => { this.setState({m: this.updateIndex(this.state.i, IMMERSION_SET)}) };
 
@@ -327,8 +327,8 @@ class CardTester extends Component {
 							prompt={PROMPT_SET[this.state.ty]}
 						/>
 						<CardDevToolBar
-							btnStyle={MASTER_THEME_SET[this.state.th].toolBarBtn + STYLE_TBB}
-							tbStyle={TOOLBAR_STYLE_SET[this.state.tb] + STYLE_TB}
+							btnStyle={MASTER_THEME_SET[this.state.th].toolBarBtn + TOOLBAR_BTN}
+							tbStyle={TOOLBAR_POS[this.state.tb] + TOOLBAR}
 							handleClick1={this.handleClick1}
 							handleClick2={this.handleClick2}
 							handleClick3={this.handleClick3}
@@ -354,8 +354,8 @@ class CardTester extends Component {
 							theme={MASTER_THEME_SET[this.state.th]}
 						/>
 						<CardDevToolBar
-							btnStyle={MASTER_THEME_SET[this.state.th].toolBarBtn + STYLE_TBB}
-							tbStyle={TOOLBAR_STYLE_SET[this.state.tb] + STYLE_TB}
+							btnStyle={MASTER_THEME_SET[this.state.th].toolBarBtn + TOOLBAR_BTN}
+							tbStyle={TOOLBAR_POS[this.state.tb] + TOOLBAR}
 							handleClick1={this.handleClick1}
 							handleClick2={this.handleClick2}
 							handleClick3={this.handleClick3}
@@ -373,16 +373,15 @@ class CardTester extends Component {
 	}
 }
 
-//あア亜
 const FontTest = (props) => (
 	<div className={props.classes + " pa3 dib f2 ba b--red "}>
 		<span>{props.text + ": "}</span>
-		<span>日本語　ひらがな　カタカナ</span>
+		<span>日本語　ひらがな　カタカナ あア亜</span>
 		<span>ABC abc Abc</span>
 	</div>
 );
 
-class FontTester extends Component {
+class FontMassDemo extends Component {
 	constructor(props) {
 		super(props);
 	}
@@ -395,15 +394,15 @@ class FontTester extends Component {
 		return (<section className={this.props.classes}>{listItems}</section>);
 	}
 }
-/* <FontTester fontList={blackletter} classes=" green " />
-				<FontTester fontList={handwritten} classes=" blue " />
-        <FontTester fontList={fonts} classes=" red " />
-				<FontTester fontList={fonts_ja} classes=" purple " /> */
+/* <FontMassDemo fontList={blackletter} classes=" green " />
+				<FontMassDemo fontList={handwritten} classes=" blue " />
+        <FontMassDemo fontList={fonts} classes=" red " />
+				<FontMassDemo fontList={fonts_ja} classes=" purple " /> */
 class App extends Component {
   render() {
     return (
       <main className="bg-silver-gray black w-100 h-100">
-				<CardTester />
+				<CardDashboard />
       </main>
     );
   }

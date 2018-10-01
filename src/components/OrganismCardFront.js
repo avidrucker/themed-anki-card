@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react';
+import PropTypes from "prop-types";
 import styled from 'styled-components';
 
 import AtomAudio from './AtomAudio';
@@ -17,20 +18,38 @@ const STYLE_C = " link grow "; //clickable style (the audio button)
 const STYLE_DL = " z-9999 absolute bottom-0 left-0 w-100 flex flex-row-ns flex-column items-center justify-between-ns justify-center " //devLabels style
 const STYLE_L = " order-2 "; //styleLabel style
 const STYLE_D = " order-1 "; //dataLabel style
-const STYLE_G = " relative overflow-y-hidden "; //global style
-const STYLE_GO = " disabled-link absolute top-0 right-0 w-100 h-100 z-999 "; //global overlay
+const STL_GLOBAL_GENERAL = " relative overflow-y-hidden "; //global style
+const STL_GLOBAL_OVERLAY = " disabled-link absolute top-0 right-0 w-100 h-100 z-999 "; //global overlay
 
 
 const StyledOrganismCardFront = styled.div.attrs({
   className: `h-100 w-100`,
 })``;
 
+const Header = (props) => {
+	const themeGlobalOverlay = props.theme.globalOverlay || "";		
+	return (
+		<span className={themeGlobalOverLay + STL_GLOBAL_OVERLAY}></span>
+	);		
+}
+
+Header.propTypes = { theme: PropTypes.string };
+Header.defaultProps = {	theme: " blah " };
+
+const GlobalOverlay = (props) => (
+	!!props.theme.globalOverlay &&
+	<span className={props.theme.globalOverlay + STL_GLOBAL_OVERLAY}></span>
+);
+
+GlobalOverlay.propTypes = {
+	globalOverlay: PropTypes.string,
+};
+
 const OrganismCardFront = (props) => (
-  <StyledOrganismCardFront className={props.theme.global + STYLE_G}>
-		{
-			!!props.theme.globalOverlay &&
-			<span className={props.theme.globalOverlay + STYLE_GO}></span>
-		}
+  <StyledOrganismCardFront className={props.theme.global + STL_GLOBAL_GENERAL}>
+
+		<GlobalOverlay_B />
+
 		<div className={props.theme.devLabels + STYLE_DL}>
 			<AtomStyleLabel
 				lang={props.l1}
@@ -185,3 +204,40 @@ const OrganismCardFront = (props) => (
 );
 
 export default OrganismCardFront;
+
+
+const FragmentConvertWriteTranslit = (props) => {
+	return  (
+				<Fragment>
+					{
+						!!props.prompt && !!props.word.reading && !!props.word.translit &&
+						<Fragment>
+							<div className={props.theme.cardHead + props.theme.headFront}>
+								<AtomTranslit
+									forExport={props.forExport}
+									text={props.word.translit}
+									classes={props.theme.latinPrimary + props.theme.quaternary}
+									lang={props.l1}
+								/>
+							</div>
+							<div className={props.theme.cardBody + props.theme.bodyFront}>
+								<AtomPrompt
+									text={props.prompt.ja.l1}
+									classes={props.theme.prompt}
+								/>
+							</div>
+						</Fragment>
+					}
+				</Fragment>
+	)
+}
+
+
+// This would be in the render method for OrganismCardFront
+
+function render() {
+	// header stuff
+	if (prop.type == "convertWriteTranslit") {
+		<FragmentConvertWriteTranslit props={...props} /> // Something like this should work
+	}
+}
