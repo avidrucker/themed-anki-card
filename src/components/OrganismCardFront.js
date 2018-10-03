@@ -29,7 +29,7 @@ const StyledOrganismCardFront = styled.div.attrs({
 const Header = (props) => {
 	const themeGlobalOverlay = props.theme.globalOverlay || "";		
 	return (
-		<span className={themeGlobalOverLay + STL_GLOBAL_OVERLAY}></span>
+		<span className={props.theme.globalOverLay + STL_GLOBAL_OVERLAY}></span>
 	);		
 }
 
@@ -48,7 +48,7 @@ GlobalOverlay.propTypes = {
 const OrganismCardFront = (props) => (
   <StyledOrganismCardFront className={props.theme.global + STL_GLOBAL_GENERAL}>
 
-		<GlobalOverlay_B />
+		<GlobalOverlay />
 
 		<div className={props.theme.devLabels + STYLE_DL}>
 			<AtomStyleLabel
@@ -235,9 +235,9 @@ const FragmentConvertWriteTranslit = (props) => {
 
 // This would be in the render method for OrganismCardFront
 
-function render() {
-	// header stuff
-	if (prop.type == "convertWriteTranslit") {
-		<FragmentConvertWriteTranslit props={...props} /> // Something like this should work
-	}
-}
+// function render() {
+// 	// header stuff
+// 	if (prop.type == "convertWriteTranslit") {
+// 		<FragmentConvertWriteTranslit props={...props} /> // Something like this should work
+// 	}
+// }
