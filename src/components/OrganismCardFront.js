@@ -14,19 +14,18 @@ import AtomLanguage from './AtomLanguage';
 import AtomPrompt from './AtomPrompt';
 import AtomImagePlaceholder from './AtomImagePlaceholder';
 
-const STYLE_C = " link grow "; //clickable style (the audio button)
-const STYLE_DL = " z-9999 absolute bottom-0 left-0 w-100 flex flex-row-ns flex-column items-center justify-between-ns justify-center " //devLabels style
-const STYLE_L = " order-2 "; //styleLabel style
-const STYLE_D = " order-1 "; //dataLabel style
+const STY_CLKBL = " link grow "; //clickable style (the audio button)
+const STY_LBL_DEV = " z-9999 absolute bottom-0 left-0 w-100 flex flex-row-ns flex-column items-center justify-between-ns justify-center " //devLabels style
+const STY_LBL_STY = " order-2 "; //styleLabel style
+const STY_LBL_DATA = " order-1 "; //dataLabel style
 const STL_GLOBAL_GENERAL = " relative overflow-y-hidden "; //global style
 const STL_GLOBAL_OVERLAY = " disabled-link absolute top-0 right-0 w-100 h-100 z-999 "; //global overlay
-
 
 const StyledOrganismCardFront = styled.div.attrs({
   className: `h-100 w-100`,
 })``;
 
-const Header = (props) => {
+/*const Header = (props) => {
 	const themeGlobalOverlay = props.theme.globalOverlay || "";		
 	return (
 		<span className={props.theme.globalOverLay + STL_GLOBAL_OVERLAY}></span>
@@ -34,29 +33,33 @@ const Header = (props) => {
 }
 
 Header.propTypes = { theme: PropTypes.string };
-Header.defaultProps = {	theme: " blah " };
+Header.defaultProps = {	theme: " blah " };*/
 
 const GlobalOverlay = (props) => (
-	!!props.theme.globalOverlay &&
-	<span className={props.theme.globalOverlay + STL_GLOBAL_OVERLAY}></span>
+	!!props.classes &&
+	<span className={props.classes + STL_GLOBAL_OVERLAY}></span>
 );
+GlobalOverlay.propTypes = { classes: PropTypes.string }
 
-GlobalOverlay.propTypes = {
-	globalOverlay: PropTypes.string,
-};
+const Prompt = (props) => (
+	<AtomPrompt
+		text={props.prompt.ja.l1}
+		classes={props.theme.prompt}
+	/>
+)
 
 const OrganismCardFront = (props) => (
   <StyledOrganismCardFront className={props.theme.global + STL_GLOBAL_GENERAL}>
 
-		<GlobalOverlay />
+		<GlobalOverlay classes={props.theme.globalOverlay} />
 
-		<div className={props.theme.devLabels + STYLE_DL}>
+		<div className={props.theme.devLabels + STY_LBL_DEV}>
 			<AtomStyleLabel
 				lang={props.l1}
 				text={`style: ${props.theme.name}`}
-				classes={props.theme.styleLabel + STYLE_L}
+				classes={props.theme.styleLabel + STY_LBL_STY}
 			/>
-			<label className={props.theme.dataLabel + STYLE_D}>
+			<label className={props.theme.dataLabel + STY_LBL_DATA}>
 				<AtomLanguage text={props.l2} />{`:`}<AtomType text={props.type} />{`:`}<AtomSide text="front" />
 			</label>
 		</div>
@@ -71,7 +74,7 @@ const OrganismCardFront = (props) => (
 								<AtomAudio
 									audio={props.word.audio}
 									forExport={props.forExport}
-									classes={STYLE_C + props.theme.audioBtn}
+									classes={STY_CLKBL + props.theme.audioBtn}
 									lang={props.l2}
 								/>
 							</div>
@@ -79,10 +82,7 @@ const OrganismCardFront = (props) => (
 								{/*latinSecondary must change to jpnSecondary etc. when prompt lang changes:
 								ie. should props.theme.latinSecondary be added or props.theme.prompt be split
 								into promptEng, promptJap, promptTok, etc.? */}
-								<AtomPrompt
-									text={props.prompt.ja.l1}
-									classes={props.theme.prompt}
-								/>
+								<Prompt />
 							</div>
 						</Fragment>
 					}
@@ -104,10 +104,7 @@ const OrganismCardFront = (props) => (
 								/>
 							</div>
 							<div className={props.theme.cardBody + props.theme.bodyFront}>
-								<AtomPrompt
-									text={props.prompt.ja.l1}
-									classes={props.theme.prompt}
-								/>
+								<Prompt />
 							</div>
 						</Fragment>
 					}
@@ -142,10 +139,7 @@ const OrganismCardFront = (props) => (
 								</section>
 							</div>
 							<div className={props.theme.cardBody + props.theme.bodyFront}>
-								<AtomPrompt
-									text={props.prompt.ja.l1}
-									classes={props.theme.prompt}
-								/>
+								<Prompt />
 							</div>
 						</Fragment>
 					}
@@ -166,10 +160,7 @@ const OrganismCardFront = (props) => (
 								/>
 							</div>
 							<div className={props.theme.cardBody + props.theme.bodyFront}>
-								<AtomPrompt
-									text={props.prompt.ja.l1}
-									classes={props.theme.prompt}
-								/>
+								<Prompt />
 							</div>
 						</Fragment>
 					}
@@ -190,10 +181,7 @@ const OrganismCardFront = (props) => (
 								/>
 							</div>
 							<div className={props.theme.cardBody + props.theme.bodyFront}>
-								<AtomPrompt
-									text={props.prompt.ja.l1}
-									classes={props.theme.prompt}
-								/>
+								<Prompt />
 							</div>
 						</Fragment>
 					}
@@ -206,7 +194,7 @@ const OrganismCardFront = (props) => (
 export default OrganismCardFront;
 
 
-const FragmentConvertWriteTranslit = (props) => {
+/*const FragmentConvertWriteTranslit = (props) => {
 	return  (
 				<Fragment>
 					{
@@ -233,11 +221,11 @@ const FragmentConvertWriteTranslit = (props) => {
 }
 
 
-// This would be in the render method for OrganismCardFront
+//This would be in the render method for OrganismCardFront
 
-// function render() {
-// 	// header stuff
-// 	if (prop.type == "convertWriteTranslit") {
-// 		<FragmentConvertWriteTranslit props={...props} /> // Something like this should work
-// 	}
-// }
+function render() {
+	// header stuff
+	if (prop.type == "convertWriteTranslit") {
+		<FragmentConvertWriteTranslit props={...props} /> // Something like this should work
+	}
+}*/

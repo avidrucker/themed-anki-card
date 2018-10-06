@@ -16,10 +16,10 @@ import AtomMeaning from './AtomMeaning';
 import AtomImagePlaceholder from './AtomImagePlaceholder';
 
 const STYLE_BA = " absolute z-9999 "; //back audio style
-const STYLE_C = " link grow "; //clickable style (the audio button)
-const STYLE_DL = " z-9999 absolute bottom-0 left-0 w-100 flex flex-row-ns flex-column items-center justify-between-ns justify-center " //devLabels style
-const STYLE_L = " order-2 "; //styleLabel style
-const STYLE_D = " order-1 "; //dataLabel style
+const STY_CLKBL = " link grow "; //clickable style (the audio button)
+const STY_LBL_DEV = " z-9999 absolute bottom-0 left-0 w-100 flex flex-row-ns flex-column items-center justify-between-ns justify-center " //devLabels style
+const STY_LBL_STY = " order-2 "; //styleLabel style
+const STY_LBL_DATA = " order-1 "; //dataLabel style
 const STL_GLOBAL_GENERAL = " relative overflow-y-hidden "; //global style
 const STL_GLOBAL_OVERLAY = " disabled-link absolute top-0 right-0 w-100 h-100 z-999 "; //global overlay
 
@@ -33,19 +33,19 @@ const OrganismCardBack = (props) => (
 			!!props.theme.globalOverlay &&
 			<span className={props.theme.globalOverlay + STL_GLOBAL_OVERLAY}></span>
 		}
-		<div className={props.theme.devLabels + STYLE_DL}>
+		<div className={props.theme.devLabels + STY_LBL_DEV}>
 			<AtomStyleLabel
 				lang={props.l1}
 				text={`style: ${props.theme.name}`}
-				classes={props.theme.styleLabel + STYLE_L}
+				classes={props.theme.styleLabel + STY_LBL_STY}
 			/>
-			<span className={props.theme.dataLabel + STYLE_D}>
+			<span className={props.theme.dataLabel + STY_LBL_DATA}>
 				<AtomLanguage text={props.l2} />{`:`}<AtomType forExport={props.forExport} text={props.type} />{`:`}<AtomSide forExport={props.forExport} text="back" />
 			</span>
 		</div>
 		<AtomAudio audio={props.word.audio}
 			forExport={props.forExport}
-			classes={props.theme.audioBack + STYLE_C + props.theme.audioBtn + STYLE_BA}
+			classes={props.theme.audioBack + STY_CLKBL + props.theme.audioBtn + STYLE_BA}
 			lang={props.l2}
 		/>
 		<main className={props.theme.cardContent}>

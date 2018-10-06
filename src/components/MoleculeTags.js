@@ -8,7 +8,7 @@ const StyledMoleculeTags = styled.span.attrs({
 //categories, tags, metadata
 const MoleculeTags = (props) => (
   <StyledMoleculeTags className={props.classes} lang={props.lang}>
-		{(props.intro===1) ? "Categories: " : ""}
+		{(props.intro===1) ? "Tags: " : ""}
 		{(props.forExport===1) ? "{{Tags}}" : props.text}
   </StyledMoleculeTags>
 );
