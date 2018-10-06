@@ -118,7 +118,7 @@
 		"latinPrimary": " ",
 		"latinSecondary": " ",
 		"prompt": " ",
-		"devLabels": " f4 pa3 mb2 m-plus-rounded-1c ",
+		"devLabels": " f5 pa3 mb2 m-plus-rounded-1c ",
 		"styleLabel": " ",
 		"dataLabel": " ",
 		"imgSection": " ",
@@ -126,7 +126,7 @@
 		"flag": " ",
 		"imgSet": " ",
 		"imgOverlay": " ",
-		"toolBarBtn": " f4 underline m-plus-rounded-1c ",
+		"toolBarBtn": " f5 underline m-plus-rounded-1c ",
 		"globalOverlay": " absolute vh-25 w-third top-third right-0 bg-dark-blue bt bl bb bw4 b--near-black "
   },
 	"illumManus": {
@@ -153,7 +153,7 @@
 		"latinPrimary": " f-headline db lh-5 ",
 		"latinSecondary": " f-headline db lh-5 ",
 		"prompt": " f-subheadline db lh-5 dark-red ",
-		"devLabels": " f3 pa1 unifraktur-cook ",
+		"devLabels": " f4 pa1 unifraktur-cook ",
 		"styleLabel": " ",
 		"dataLabel": " ",
 		"imgSection": " ",
@@ -161,7 +161,7 @@
 		"flag": " ",
 		"imgSet": " ",
 		"imgOverlay": " ",
-		"toolBarBtn": " f3 underline unifraktur-cook dark-red "
+		"toolBarBtn": " f4 underline unifraktur-cook dark-red "
   },
 	"zenMenu": {
 		"name": "Zen Menu",
@@ -195,7 +195,7 @@
 		"flag": " dn ",
 		"imgSet": " dn ",
 		"imgOverlay": " dn ",
-		"toolBarBtn": " f4 b--zen-beige ba br-pill zen-beige bg-zen-black muli "
+		"toolBarBtn": " f5 b--zen-beige ba br-pill zen-beige bg-zen-black muli "
   },
 	"blackBoard": {
 		"name": "Blackboard",
@@ -217,7 +217,7 @@
 		"latinPrimary": " f3 f2-ns chalkduster lh-title ",
 		"latinSecondary": " f3 f2-ns chalkduster lh-title ",
 		"prompt": " pa2 f3 f2-ns chalkduster white tc lh-copy ",
-		"devLabels": " pa2 f4 chalkduster ",
+		"devLabels": " pa2 f5 chalkduster ",
 		"styleLabel": " ",
 		"dataLabel": " ",
 		"imgSection": " pa2 h4 db flex justify-center ",
@@ -225,9 +225,9 @@
 		"flag": " h4 of-contain lighten ",
 		"imgSet": "std",
 		"globalOverlay": " bg-blackboard cover darken o-10 ",
-		"toolBarBtn": " f4 chalkduster white underline "
+		"toolBarBtn": " f5 chalkduster white underline "
 	},
-	"fullPhoto": {
+	"fullPhotoBeautiful": {
 		"name": "Full Photo",
     "global": " relative white noto-sans flex flex-column ",
 		"cardContent": " absolute left-0 z-9 flex flex-column justify-start ",
@@ -251,14 +251,14 @@
 		"latinPrimary": " lh-title ",
 		"latinSecondary": " lh-title ",
 		"prompt": " ",
-		"devLabels": " pa2 f4 ",
+		"devLabels": " pa2 f5 ",
 		"styleLabel": " ",
 		"dataLabel": " ",
 		"imgSection": " vh-100 ",
 		"photo": " of-cover h-100 w-100 ",
 		"flag": " dn ",
 		"imgSet": "std",
-		"toolBarBtn": " f4 underline white noto-sans "
+		"toolBarBtn": " f5 underline white noto-sans "
 	},
 	"indexCard": {
 		"name": "Index Card",
@@ -435,8 +435,8 @@
   },
   "retroConsole": {
 		"name": "8-Bit Retro",
-    "global": " pl3 pixel-m-plus12 retro-green-darker bg-retro-green-lighter ",
-		"cardContent": " pt3 flex flex-column ",
+    "global": " center ph2 ph3-m ph4-l measure-narrow measure-m measure-wide-l bg-moon-gray pixel-m-plus12 retro-green-darker ",
+		"cardContent": " shadow-inset-2 bg-retro-green-lighter ma3 pa3 br4 flex flex-column ",
     "primary": " retro-green-darker ",
     "secondary": " ",
     "tertiary": " f2 ",
@@ -444,7 +444,7 @@
 		"quintary": " f3 ",
     "first": " ",
     "followingFirst": " ",
- 		"audioBack": " top-1 right-1 pa2 ",
+ 		"audioBack": " top-1 right-1 pa2 pr3-m pr4-l ",
 		"audioBtn": " f-subheadline ",
 		"headFront": " retro-green-darker ",
 		"headBack": " lh-title ",
@@ -455,18 +455,19 @@
 		"latinPrimary": " f1 lh-title ",
 		"latinSecondary": " lh-title ",
 		"prompt": " f3 pixel-m-plus12 ",
-		"devLabels": " pa1 f4 retro-green-dark pixel-m-plus12 ",
+		"devLabels": " pa1 f5 retro-green-dark pixel-m-plus12 ",
 		"styleLabel": " ",
 		"dataLabel": " ",
-		"imgSection": " db pt2 ",
-		"photo": " h4 di of-contain ",
-		"flag": " pt2 pt0-ns pl2-ns h4 di of-contain ",
+		"imgSection": " dn ",
+		"photo": " dn ",
+		"flag": " dn ",
 		"imgSet": "retro",
-		"toolBarBtn": " f4 retro-green-dark pixel-m-plus12 "
+		"toolBarBtn": " f5 retro-green-dark pixel-m-plus12 ",
+		"store": " imgSection: db pt2, photo: h4 di of-contain, flag: pt2 pt0-ns pl2-ns h4 di of-contain "
   },
   "rpgSketch": {
 		"name": "RPG Sketch",
-    "global": " bg-parchment relative cover manuscript-brown flex flex-column justify-center items-center ",
+    "global": " libre-baskerville bg-parchment relative cover manuscript-brown flex flex-column justify-center items-center ",
 		"cardContent": " ",
  		"audioBack": " top-1 right-1 pa2 ",
 		"audioBtn": " ",
@@ -476,17 +477,17 @@
 		"bodyBack": " flex flex-column items-center justify-center pv1",
 		"jpnPrimary": " f1 noto-serif ",
 		"jpnSecondary": " f2 noto-serif ",
-		"latinPrimary": " f3 noto-serif ",
-		"latinSecondary": " f3 noto-serif ",
-		"prompt": " f3 noto-serif ",
-		"devLabels": " ",
+		"latinPrimary": " f3 ",
+		"latinSecondary": " f3 ",
+		"prompt": " f3 ",
+		"devLabels": " f5 libre-baskerville ",
 		"styleLabel": " ",
 		"dataLabel": " ",
 		"imgSection": " absolute w-100 flex flex-row items-center justify-between ",
 		"photo": " sepia multiply w-50 of-contain ",
 		"flag": " sepia multiply w-50 of-contain ",
 		"imgSet": "sketch",
-		"toolBarBtn": " f5 noto-serif manuscript-brown underline "
+		"toolBarBtn": " f5 noto-serif manuscript-brown underline libre-baskerville "
   },
 	"woodOnWood": {
 		"name": "Wood Inlay",

@@ -15,13 +15,13 @@ import AtomLanguage from './AtomLanguage';
 import AtomMeaning from './AtomMeaning';
 import AtomImagePlaceholder from './AtomImagePlaceholder';
 
-const STYLE_BA = " absolute z-9999 "; //back audio style
-const STY_CLKBL = " link grow "; //clickable style (the audio button)
-const STY_LBL_DEV = " z-9999 absolute bottom-0 left-0 w-100 flex flex-row-ns flex-column items-center justify-between-ns justify-center " //devLabels style
-const STY_LBL_STY = " order-2 "; //styleLabel style
-const STY_LBL_DATA = " order-1 "; //dataLabel style
-const STL_GLOBAL_GENERAL = " relative overflow-y-hidden "; //global style
-const STL_GLOBAL_OVERLAY = " disabled-link absolute top-0 right-0 w-100 h-100 z-999 "; //global overlay
+const STY_AUD_BACK = " absolute z-9999 ";
+const STY_CLKBL = " link grow ";
+const STY_LBL_DEV = " z-9999 absolute bottom-0 left-0 w-100 flex flex-row-ns flex-column items-center justify-between-ns justify-center ";
+const STY_LBL_STY = " order-2 ";
+const STY_LBL_DATA = " order-1 ";
+const STL_GLOBAL_GENERAL = " relative overflow-y-hidden ";
+const STL_GLOBAL_OVERLAY = " disabled-link absolute top-0 right-0 w-100 h-100 z-999 ";
 
 const StyledOrganismCardBack = styled.div.attrs({
   className: `h-100 w-100`,
@@ -45,7 +45,7 @@ const OrganismCardBack = (props) => (
 		</div>
 		<AtomAudio audio={props.word.audio}
 			forExport={props.forExport}
-			classes={props.theme.audioBack + STY_CLKBL + props.theme.audioBtn + STYLE_BA}
+			classes={props.theme.audioBack + STY_CLKBL + props.theme.audioBtn + STY_AUD_BACK}
 			lang={props.l2}
 		/>
 		<main className={props.theme.cardContent}>

@@ -26,7 +26,6 @@ const handwritten = ["architects-daughter","caveat","indie-flower","patrick-hand
 const fonts = ["camingocode","caveat-brush", "cinzel", "domine", "exo-2", "fredericka", "muli", "papyrus", "play",
 	"playtime", "press-start-2p", "schoolbell", "source-code-pro", "tron-outline", "vt323",
 	"bpdots","ringbearer"];
-
 const fonts_ja = ["jackeyfont","jpn-test","jpn-test-2","m-plus-rounded-1c","noto-sans","noto-serif","otsutome",
 	"pixel-m-plus12","sawarabi-mincho","stroke-order"];
 
@@ -226,9 +225,9 @@ const PROMPT_SET = [ prompts.hearKnow, prompts.lookSpeak, prompts.recall,
 
 const THEME_INDEX = 0;
 
-const MASTER_THEME_SET = [ THEMES.zenMenu, THEMES.mondrian, THEMES.blackBoard, THEMES.illumManus, THEMES.retroConsole, THEMES.inkOnRicePaper,
-		THEMES.fullPhoto, THEMES.rpgSketch, THEMES.indexCard, THEMES.zenBurnTachyons, THEMES.zenBurnTrue, THEMES.woodOnWood,
-		THEMES.matrix, THEMES.futuristic, THEMES.highFantasy, THEMES.quiltedFiber
+const MASTER_THEME_SET = [ THEMES.retroConsole, THEMES.zenMenu, THEMES.mondrian, THEMES.blackBoard, THEMES.inkOnRicePaper,
+		THEMES.fullPhotoBeautiful, THEMES.rpgSketch, THEMES.indexCard, THEMES.zenBurnTachyons, THEMES.zenBurnTrue, THEMES.woodOnWood,
+		THEMES.matrix, THEMES.futuristic, THEMES.highFantasy, THEMES.illumManus, THEMES.quiltedFiber
 ];
 
 const ICEBOX_THEME_SET = [];
@@ -249,20 +248,23 @@ const TOOLBAR_INDEX = 0;
 const TOOLBAR_POS = [" bottom-0 left-0 w-100 tc center ", " top-0 left-0 w-100 tc center ",
 	" top-0 left-0 ", " top-0 right-0 ", " bottom-0 left-0 ", " bottom-0 right-0 "];
 
-const TOOLBAR = " absolute pb4 ph2 mb4 z-9999 "
-const TOOLBAR_BTN = " dib pa1 ph1 ph2-ns ma1 link grow "
+const STY_CNTNR_TOOLBAR = " test-bg-purple db absolute w-100 mb5 mb4-ns z-9999 ";
+const STY_TOOLBAR = " dib ph4 test-bg-blue center tc measure-narrow measure-m measure-wide-l ";
+const STY_BTN_TOOLBAR = " dib test-bg-red pa1 ph1 ph2-ns ma1 link grow ";
 
 const CardDevToolBar = (props) => (
-	<aside className={props.tbStyle}>
-		<a onClick={props.handleClick1} className={props.btnStyle}>Flip</a>
-		<a onClick={props.handleClick2} className={props.btnStyle}>Theme</a>
-		<a onClick={props.handleClick3} className={props.btnStyle}>Vector</a>
-		<a onClick={props.handleClick4} className={props.btnStyle}>Word</a>
-		<a onClick={props.handleClick5} className={props.btnStyle}>Preface</a>
-		{/* <a onClick={props.handleClick6} className={props.btnStyle}>Move Btns</a> */}
-		<a onClick={props.handleClick7} className={props.btnStyle}>Export</a>
-		<a onClick={props.handleClick8} className={props.btnStyle}>Immerse</a>{/*no immersion, semi-immersion, full immersion*/}
-	</aside>
+	<section className={props.tbCntnrStyle}>
+		<aside className={props.tbStyle}>
+			<a onClick={props.handleClick1} className={props.btnStyle}>Flip</a>
+			<a onClick={props.handleClick2} className={props.btnStyle}>Theme</a>
+			<a onClick={props.handleClick3} className={props.btnStyle}>Vector</a>
+			<a onClick={props.handleClick4} className={props.btnStyle}>Word</a>
+			<a onClick={props.handleClick5} className={props.btnStyle}>Preface</a>
+			{/* <a onClick={props.handleClick6} className={props.btnStyle}>Move Btns</a> */}
+			<a onClick={props.handleClick7} className={props.btnStyle}>Export</a>
+			<a onClick={props.handleClick8} className={props.btnStyle}>Immerse</a>{/*no immersion, semi-immersion, full immersion*/}
+		</aside>
+	</section>
 );
 
 class CardDashboard extends Component {
@@ -327,8 +329,9 @@ class CardDashboard extends Component {
 							prompt={PROMPT_SET[this.state.ty]}
 						/>
 						<CardDevToolBar
-							btnStyle={MASTER_THEME_SET[this.state.th].toolBarBtn + TOOLBAR_BTN}
-							tbStyle={TOOLBAR_POS[this.state.tb] + TOOLBAR}
+							tbCntnrStyle={TOOLBAR_POS[this.state.tb] + STY_CNTNR_TOOLBAR}
+							btnStyle={MASTER_THEME_SET[this.state.th].toolBarBtn + STY_BTN_TOOLBAR}
+							tbStyle={STY_TOOLBAR}
 							handleClick1={this.handleClick1}
 							handleClick2={this.handleClick2}
 							handleClick3={this.handleClick3}
@@ -354,8 +357,9 @@ class CardDashboard extends Component {
 							theme={MASTER_THEME_SET[this.state.th]}
 						/>
 						<CardDevToolBar
-							btnStyle={MASTER_THEME_SET[this.state.th].toolBarBtn + TOOLBAR_BTN}
-							tbStyle={TOOLBAR_POS[this.state.tb] + TOOLBAR}
+							tbCntnrStyle={TOOLBAR_POS[this.state.tb] + STY_CNTNR_TOOLBAR}
+							btnStyle={MASTER_THEME_SET[this.state.th].toolBarBtn + STY_BTN_TOOLBAR}
+							tbStyle={STY_TOOLBAR}
 							handleClick1={this.handleClick1}
 							handleClick2={this.handleClick2}
 							handleClick3={this.handleClick3}
