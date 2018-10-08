@@ -225,12 +225,12 @@ const PROMPT_SET = [ prompts.hearKnow, prompts.lookSpeak, prompts.recall,
 
 const THEME_INDEX = 0;
 
-const MASTER_THEME_SET = [ THEMES.retroConsole, THEMES.zenMenu, THEMES.mondrian, THEMES.blackBoard, THEMES.inkOnRicePaper,
-		THEMES.fullPhotoBeautiful, THEMES.rpgSketch, THEMES.indexCard, THEMES.zenBurnTachyons, THEMES.zenBurnTrue, THEMES.woodOnWood,
-		THEMES.matrix, THEMES.futuristic, THEMES.highFantasy, THEMES.illumManus, THEMES.quiltedFiber
+const MASTER_THEME_SET = [ THEMES.zenMenu, THEMES.blackBoard, THEMES.inkOnRicePaper,
+		THEMES.fullPhotoBeautiful, THEMES.zenBurnOriginal,  THEMES.retroConsole
 ];
 
-const ICEBOX_THEME_SET = [];
+const ICEBOX_THEME_SET = [THEMES.woodOnWood,
+	THEMES.matrix, THEMES.futuristic, THEMES.highFantasy, THEMES.illumManus, THEMES.quiltedFiber, THEMES.mondrian, THEMES.rpgSketch, THEMES.indexCard, THEMES.zenBurnTachyons ];
 
 const WORD_INDEX = 0; //crab==1 kanji, australia==long, library==many kanji, asoko==kana only, sushi==even kanji to kana ratio
 const MASTER_WORD_SET = [WORDS.crab, WORDS.australia, WORDS.library, WORDS.asoko, WORDS.sushi];

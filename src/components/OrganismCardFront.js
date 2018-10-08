@@ -76,7 +76,7 @@ const OrganismCardFront = (props) => (
 								<AtomAudio
 									audio={props.word.audio}
 									forExport={props.forExport}
-									classes={STY_CLKBL + props.theme.audioBtn}
+									classes={STY_CLKBL + props.theme.audioBtnFront}
 									lang={props.l2}
 								/>
 							</div>

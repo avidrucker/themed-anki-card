@@ -14,8 +14,8 @@ import AtomSide from './AtomSide';
 import AtomLanguage from './AtomLanguage';
 import AtomMeaning from './AtomMeaning';
 import AtomImagePlaceholder from './AtomImagePlaceholder';
+import AtomIcon from './AtomIcon';
 
-const STY_AUD_BACK = " absolute z-9999 ";
 const STY_CLKBL = " link grow ";
 const STY_LBL_DEV = " z-9999 absolute bottom-0 left-0 w-100 flex flex-row-ns flex-column items-center justify-between-ns justify-center ";
 const STY_LBL_STY = " order-2 ";
@@ -43,11 +43,15 @@ const OrganismCardBack = (props) => (
 				<AtomLanguage text={props.l2} />{`:`}<AtomType forExport={props.forExport} text={props.type} />{`:`}<AtomSide forExport={props.forExport} text="back" />
 			</span>
 		</div>
-		<AtomAudio audio={props.word.audio}
-			forExport={props.forExport}
-			classes={props.theme.audioBack + STY_CLKBL + props.theme.audioBtn + STY_AUD_BACK}
-			lang={props.l2}
-		/>
+		<aside className={props.theme.iconGroupBack}>
+			<AtomAudio audio={props.word.audio}
+				forExport={props.forExport}
+				classes={STY_CLKBL + props.theme.audioBtnBack}
+				lang={props.l2}
+			/>
+			{/*<div className="bg-green yellow"><i className="fa fa-file-image-o f1" aria-hidden="true">y</i></div>*/}
+			<AtomIcon iconName="fa fa-file-image-o" classes={props.theme.icon} />
+		</aside>
 		<main className={props.theme.cardContent}>
 			<div className={props.theme.cardHead + props.theme.headBack}>
 				{/*+ (!props.word.reading ? " tracked-tight " : " tracked-mega ")*/}

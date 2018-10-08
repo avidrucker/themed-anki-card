@@ -331,8 +331,10 @@ mix-blend-mode: luminosity;*/
 .disabled-link { pointer-events: none }
 
 /* T-MASTER FLEXBOX */
-.flex-1 { flex: 1; }
-.flex-2 { flex: 2; }
+.flex-1 { flex: 1 }
+.flex-2 { flex: 2 }
+.flex-golden-1 { flex: 1.61803398875 }
+.flex-golden-2 { flex: 0.61803398875 }
 
 /* LINE HEIGHTS */
 .lh-9 { line-height: 0.9 }
