@@ -7,7 +7,7 @@ const StyledAtomTranslit = styled.span.attrs({
 
 const AtomTranslit = (props) => (
   <StyledAtomTranslit className={props.classes} lang={props.lang}>
-		{(props.intro===1) ? "Transliteration: " : ""}
+		{(props.intro===1) ? <span className="o-50">{`Transliteration: `}</span> : ""}
 		{(props.forExport===1) ? "{{translit}}" : props.text}
   </StyledAtomTranslit>
 );

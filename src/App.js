@@ -283,6 +283,10 @@ class CardDashboard extends Component {
 		};
 	}
 
+	toggleBinary = (i) => {
+		return (i === 0 ? 1 : 0);
+	};
+
 	updateIndex = (i, set) => {
 		const CNT = set.length;
 		if(i < CNT - 1) {
@@ -290,10 +294,6 @@ class CardDashboard extends Component {
 		}	else {
 			return 0;
 		}
-	};
-
-	toggleBinary = (i) => {
-		return (i === 0 ? 1 : 0);
 	};
 
 	handleClick1 = (event) => { this.setState({s: this.toggleBinary(this.state.s)}) };

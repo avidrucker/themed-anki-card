@@ -8,7 +8,8 @@ const StyledAtomReading = styled.span.attrs({
 //reading, pronunciation, phonetic writing
 const AtomReading = (props) => (
 	<StyledAtomReading className={props.classes} lang={props.lang}>
-		{(props.intro===1) ? "Reading: " : ""}{(props.forExport===1) ? "{{reading}}" : props.text}
+		{(props.intro===1) ? <span className="o-50">{`Reading: `}</span> : ""}
+		{(props.forExport===1) ? "{{reading}}" : props.text}
 	</StyledAtomReading>
 );
 
