@@ -55,37 +55,40 @@ const OrganismCardBack = (props) => (
 		<main className={props.theme.cardContent}>
 			<div className={props.theme.cardHead + props.theme.headBack}>
 				{/*+ (!props.word.reading ? " tracked-tight " : " tracked-mega ")*/}
-				<AtomTerm
-					intro={props.intro}
-					text={props.word.term}
-					forExport={props.forExport}
-					classes={props.theme.primary + props.theme.first + props.theme.jpnPrimary}
-					lang={props.l2}
-				/>
+					<AtomTerm
+						intro={props.intro}
+						text={props.word.term}
+						forExport={props.forExport}
+						classes={props.theme.primary + props.theme.first + props.theme.jpnPrimary}
+						lang={props.l2}
+					/>
 			</div>
 			<div className={props.theme.cardBody + props.theme.bodyBack}>
 				{
 					!!props.word.reading && (props.forExport === 0) &&
-					<AtomReading
-						intro={props.intro}
-						forExport={props.forExport}
-						text={props.word.reading}
-						classes={props.theme.secondary + props.theme.followingFirst + props.theme.jpnSecondary}
-						lang={props.l2}
-					/>
+					<div>
+						<AtomReading
+							intro={props.intro}
+							forExport={props.forExport}
+							text={props.word.reading}
+							classes={props.theme.secondary + props.theme.followingFirst + props.theme.jpnSecondary}
+							lang={props.l2}
+						/>
+					</div>
 				}
 				{
-					!props.word.reading && (props.forExport === 1) &&
-					<AtomReading
-						intro={props.intro}
-						forExport={props.forExport}
-						text={props.word.reading}
-						classes={props.theme.secondary + props.theme.followingFirst + props.theme.jpnSecondary}
-						lang={props.l2}
-					/>
+					props.forExport === 1 &&
+					<div>
+						<AtomReading
+							intro={props.intro}
+							forExport={props.forExport}
+							text={props.word.reading}
+							classes={props.theme.secondary + props.theme.followingFirst + props.theme.jpnSecondary}
+							lang={props.l2}
+						/>
+					</div>
 				}
-				<div className={props.theme.tertiary + props.theme.followingFirst + props.theme.latinSecondary}>
-					<div className="">
+				<span className={props.theme.tertiary + props.theme.followingFirst + props.theme.latinSecondary}>
 						<AtomTranslat
 							immersion={props.immersion}
 							intro={props.intro}
@@ -105,16 +108,18 @@ const OrganismCardBack = (props) => (
 								/>
 							</Fragment>
 						}
-					</div>
+				</span>
+				<div>
+					<AtomTranslit
+						intro={props.intro}
+						immersion={props.immersion}
+						text={props.word.translit}
+						forExport={props.forExport}
+						classes={props.theme.quaternary + props.theme.followingFirst + props.theme.latinSecondary}
+						lang={props.l1}
+					/>
 				</div>
-				<AtomTranslit
-					intro={props.intro}
-					immersion={props.immersion}
-					text={props.word.translit}
-					forExport={props.forExport}
-					classes={props.theme.quaternary + props.theme.followingFirst + props.theme.latinSecondary}
-					lang={props.l1}
-				/>
+				<div>
 				<MoleculeTags
 					intro={props.intro}
 					immersion={props.immersion}
@@ -123,6 +128,7 @@ const OrganismCardBack = (props) => (
 					classes={props.theme.quintary + props.theme.followingFirst + props.theme.latinSecondary}
 					lang={props.l1}
 				/>
+				</div>
 			</div>
 		</main>
 		<Fragment>

@@ -100,6 +100,7 @@
 }
 
 /* FONTS */
+.arimo { font-family: 'Arimo', sans-serif }
 .libre-baskerville { font-family: 'Libre Baskerville', serif }
 .domine { font-family: 'Domine', serif }
 .rm-albion { font-family: 'RM Albion' }
@@ -126,6 +127,7 @@
 .tron-outline { font-family: 'tr2n', cursive }
 .source-code-pro {font-family: 'Source Code Pro', monospace }
 .sawarabi-mincho { font-family: 'Sawarabi Mincho', sans-serif }
+.sawarabi-gothic { font-family: 'Sawarabi Gothic', sans-serif }
 .noto-sans { font-family: 'Noto Sans JP', sans-serif }
 .muli { font-family: 'Muli', sans-serif }
 .jpn-test { font-family: 'Yu Gothic', YuGothic, Meiryo, 'Meiryo', Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif }
@@ -271,12 +273,18 @@ reference: http://colormind.io/image/
 
 .shadow-inset-2 { box-shadow: inset 0px 0px 8px 2px rgba( 0, 0, 0, 0.2 ); }
 
+.ts-1 { text-shadow: 0px 0px 4px rgba( 0, 0, 0, 0.2 ); }
+.ts-2 { text-shadow: 0px 0px 8px rgba( 0, 0, 0, 0.2 ); }
+.ts-3 { text-shadow: 2px 2px 4px rgba( 0, 0, 0, 0.2 ); }
+.ts-4 { text-shadow: 2px 2px 8px rgba( 0, 0, 0, 0.2 ); }
+.ts-5 { text-shadow: 4px 4px 8px rgba( 0, 0, 0, 0.2 ); }
 
 /* BACKGROUND IMAGES */
 .bg-blackboard { background-image: url("./images/bg_blackboard_l_opt.jpg")}
 .bg-wood { background-image: url("./images/fg_wood1_opt.jpg")} /*swapped fg and bg*/
 .bg-parchment { background-image: url("./images/bg_parchment_l_opt.jpg")}
 .bg-space { background-image: url("./images/bg_space_l_opt.jpg")}
+.bg-space2 { background-image: url("./images/bg_space2_l_opt.jpg")}
 .bg-chalk { background-image: url("./images/chalk_texture1.jpg")}
 .bg-code-rain { background-image: url("./images/code_rain_opt.jpg")}
 .bg-rice-paper {

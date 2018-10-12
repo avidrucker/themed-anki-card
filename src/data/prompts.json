@@ -1,0 +1,102 @@
+{
+	"hearSpeak": {
+		"ja": {
+			"l1": "Repeat in Japanese",
+			"l2": "日本語で言い替えしなさい"
+		},
+		"tp": {
+			"l1": "Repeat in toki pona",
+			"l2": "o kute. o toki e ni"
+		}
+	},
+	"hearKnow": {
+		"ja": {
+			"l1": "Translate into English",
+			"l2": "英語に訳しなさい"
+		},
+		"tp": {
+			"l1": "Translate into English",
+			"l2": "o kute. o ante tawa toki Inli"
+		}
+	},
+	"lookSpeak": {
+		"ja": {
+			"l1": "Say out loud",
+			"l2": "見たものを言いなさい"
+		},
+		"tp": {
+			"l1": "Say out loud",
+			"l2": "o toki e ni kepeken uta kalama sina"
+		}
+	},
+	"recall": {
+		"ja": {
+			"l1": "Translate to Japanese",
+			"l2": "日本語に訳しなさい"
+		},
+		"tp": {
+			"l1": "Translate to toki pona",
+			"l2": "o ante tawa toki pona"
+		}
+	},
+	"readKnow": {
+		"ja": {
+			"l1": "Translate to English",
+			"l2": "英語に訳しなさい"
+		},
+		"tp": {
+			"l1": "Translate to English",
+			"l2": "o ante tawa toki Inli"
+		}
+	},
+	"readSpeak": {
+		"ja": {
+			"l1": "Read this out loud",
+			"l2": "読み上げなさい"
+		},
+		"tp": {
+			"l1": "Read this out loud",
+			"l2": "o toki kepeken uta kalama sina"
+		}
+	},
+	"copyWrite": {
+		"ja": {
+			"l1": "copy (rewrite) this",
+			"l2": "書き写しなさい"
+		},
+		"tp": {
+			"l1": "copy (rewrite) this",
+			"l2": "o sitelen sin e ni"
+		}
+	},
+	"convertWriteTranslit": {
+		"ja": {
+			"l1": "Write this using Hiragana",
+			"l2": "ひらがなでかきなさい"
+		},
+		"tp": {
+			"l1": "Write this using sitelen pona",
+			"l2": "o sitelen kepeken sitelen pona"
+		}
+	},
+	"hearWrite": {
+		"ja": {
+			"l1": "Write in Japanese",
+			"l2": "聴いた言葉を書きなさい"
+		},
+		"tp": {
+			"l1": "Write in 'sitelen pona'",
+			"l2": "o sitelen kepeken sitelen pona"
+		}
+	},
+	"mnemonicSpeak": {
+		"ja": {
+			"l1": "Say aloud the mnemonic word",
+			"l2": "記憶術を使って、適切な言葉を言いなさい"
+		},
+		"tp": {
+			"l1": "Say aloud the mnemonic word",
+			"l2": "o toki e nimi ni lon toki pona"
+		}
+	}
+}

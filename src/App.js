@@ -20,6 +20,7 @@ import CRAB_SKETCH from './images/crab_sketch2.jpg';
 import WORDS from './data/words.json';
 import THEMES from './data/themes.json';
 import FONTS from './data/fonts.json';
+import PROMPTS from './data/prompts.json';
 
 const blackletter = ["rm-albion","dearest","unifraktur-cook","unifraktur-maguntia"];
 const handwritten = ["architects-daughter","caveat","indie-flower","patrick-hand","chalkduster"];
@@ -57,175 +58,18 @@ const pictures = {
 	sushi: {},
 };
 
-{/*
-	Prompts seem like tricky business, however they are actually simple.
-	
-	Prompts exist to test one capability at a time, using one method.
-	For example, one could test your ability to understand the word "arigatou"
-	in Japanese via audio (your ability to hear to hear it is key here).
-	Therefore, there are two knowledge "vectors" being engaged at any time.
-	Vectors include reading, writing, speaking & listening, but could also
-	include visual comprehension, cultural comprehension, or another foundational
-	skill such as alphabets or awareness of (not just the ability to hear) tonal
-	information/encoding, etc..
-
-	As these learning modules are meant to be used individually, the prompts
-	need to be clear, concrete, to the point, and not be open to subjectivity.
-	The ability of the learner to answer prompts should clearly fall into either
-	success or failure (no partials!). For example, either the learner reads
-	"arigatou" and says "thank you" or "thanks" (this term has two acceptable
-	translations), or they don't.
-
-	KEY:
-	
-	AUDITORY
-	1A. hearSpeak = repeat (SHALLOW, MAY BE USEFUL FOR BEGINNERS)
-	1B. hearKnow = listening comprehension (RECOMMENDED)
-	1C. hearDistinguish = dubbed "sound karuta" by AD, this is for telling two similar sounding
-			words apart, such as a "A-me" rain and "a-ME" candy (which vary only in intonation).
-
-	VISUAL
-	2A. lookSpeak = visual identification (RECOMMENDED)
-	
-	TRANSLATION
-	3A. recall = l1 to l2 translation (RECOMMENDED)
-
-	READING
-	4A. readKnow = reading comprehnsion (HELPFUL, BUT NOT SUPER EFFECTIVE)
-	4B. readSpeak = reading comprehension + speaking practice (BETTER THAN ABOVE)
-	4C. readPhonetic = pronunciation practice & phonetic character recognition (THIS IS A STEP 0 ITEM, SKIPPABLE AT A COST)
-	
-	WRITING
-	5A. copyWrite = writing skills & attention to detail
-			(SQUARE 0: BEST NOT TO SKIP, BUT DON'T STAY HERE FOR LONG)
-	5B. convertWriteTranslit = converting from transliteration in l1 to l2 transliteration
-			(ie. romanji to kana) (RECOMMENDED COMPROMISE BETWEEN 5A & 5C)
-	5C. hearWrite = dictation, combining listening & writing (ADVANCED LEARNERS ONLY)
-	
-	MISC
-	6. mnemonicRecall
-
-	*/}
-const prompts = {
-	hearSpeak: {
-		ja: {
-			l1: "Repeat in Japanese",
-			l2: "日本語で言い替えしなさい",
-		},
-		tp: {
-			l1: "Repeat in toki pona",
-			l2: "o kute. o toki e ni"
-		},
-	},
-	hearKnow: {
-		ja: {
-			l1: "Translate into English",
-			l2: "英語に訳しなさい",
-		},
-		tp: {
-			l1: "Translate into English",
-			l2: "o kute. o ante tawa toki Inli"
-		},
-	},
-
-	lookSpeak: {
-		ja: {
-			l1: "Say out loud",
-			l2: "見たものを言いなさい",
-		},
-		tp: {
-			l1: "Say out loud",
-			l2: "o toki e ni kepeken uta kalama sina"
-		},
-	},
-
-	recall: {
-		ja: {
-			l1: "Translate to Japanese",
-			l2: "日本語に訳しなさい",
-		},
-		tp: {
-			l1: "Translate to toki pona",
-			l2: "o ante tawa toki pona"
-		},
-	},
-
-	readKnow: {
-		ja: {
-			l1: "Translate to English",
-			l2: "英語に訳しなさい",
-		},
-		tp: {
-			l1: "Translate to English",
-			l2: "o ante tawa toki Inli",
-		},
-	},
-	readSpeak: {
-		ja: {
-			l1: "Read this out loud",
-			l2: "読み上げなさい",
-		},
-		tp: {
-			l1: "Read this out loud",
-			l2: "o toki kepeken uta kalama sina",
-		},
-	},
-	
-	copyWrite: {
-		ja: {
-			l1: "copy (rewrite) this",
-			l2: "書き写しなさい",
-		},
-		tp: {
-			l1: "copy (rewrite) this",
-			l2: "o sitelen sin e ni",
-		},
-	},
-	convertWriteTranslit: {
-		ja: {
-			l1: "Write this using Hiragana",
-			l2: "ひらがなでかきなさい",
-		},
-		tp: {
-			l1: "Write this using sitelen pona",
-			l2: "o sitelen kepeken sitelen pona",
-		},
-	},
-	hearWrite: {
-		ja: {
-			l1: "Write in Japanese",
-			l2: "聴いた言葉を書きなさい",
-		},
-		tp: {
-			l1: "Write in 'sitelen pona'",
-			l2: "o sitelen kepeken sitelen pona",
-		},
-	},
-
-	mnemonicSpeak: {
-		ja: {
-			l1: "Say aloud the mnemonic word",
-			l2: "記憶術を使って、適切な言葉を言いなさい",
-		},
-		tp: {
-			l1: "Say aloud the mnemonic word",
-			l2: "o toki e nimi ni lon toki pona",
-		},
-	},
-};
-
 const TYPE_INDEX = 4;
 const TYPE_SET = [ "hearKnow", "lookSpeak", "recall", "readSpeak", "convertWriteTranslit"];
 
-const PROMPT_SET = [ prompts.hearKnow, prompts.lookSpeak, prompts.recall,
-	prompts.readSpeak, prompts.convertWriteTranslit ]; //PRIMARY VECTORS
+const PROMPT_SET = [ PROMPTS.hearKnow, PROMPTS.lookSpeak, PROMPTS.recall,
+	PROMPTS.readSpeak, PROMPTS.convertWriteTranslit ]; //PRIMARY VECTORS
 //const PROMPT_SET2 = [ prompts.egDescribe, prompts.egMCD, prompts.soundKaruta,
 //	prompts.QandA, prompts.opposites]; //SECONDARY VECTORS //todo: implement V2
 // prompts.identifyCountryByFlag //TERTIARY VECTORS //todo: implement V3
 
 const THEME_INDEX = 0;
 
-const MASTER_THEME_SET = [ THEMES.zenMenu, THEMES.blackBoard, THEMES.inkOnRicePaper,
+const MASTER_THEME_SET = [ THEMES.zenMenu, THEMES.blackBoard, THEMES.momentumSpace, THEMES.inkOnRicePaper,
 		THEMES.fullPhotoBeautiful, THEMES.zenBurnOriginal,  THEMES.retroConsole
 ];
 
@@ -248,9 +92,9 @@ const TOOLBAR_INDEX = 0;
 const TOOLBAR_POS = [" bottom-0 left-0 w-100 tc center ", " top-0 left-0 w-100 tc center ",
 	" top-0 left-0 ", " top-0 right-0 ", " bottom-0 left-0 ", " bottom-0 right-0 "];
 
-const STY_CNTNR_TOOLBAR = " test-bg-purple db absolute w-100 mb5 mb4-ns z-9999 ";
-const STY_TOOLBAR = " dib ph4 test-bg-blue center tc measure-narrow measure-m measure-wide-l ";
-const STY_BTN_TOOLBAR = " dib test-bg-red pa1 ph1 ph2-ns ma1 link grow ";
+const STY_CNTNR_TOOLBAR = " test-bg-purple db absolute w-100 pb3 mb4 z-9999 ";
+const STY_TOOLBAR = " dib ph3 test-bg-blue center tc ";
+const STY_BTN_TOOLBAR = " dib test-bg-red pa1 ma1 link grow ";
 
 const CardDevToolBar = (props) => (
 	<section className={props.tbCntnrStyle}>
