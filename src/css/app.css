@@ -317,6 +317,7 @@ reference: http://colormind.io/image/
 .lighten { mix-blend-mode: lighten }
 .darken { mix-blend-mode: darken }
 .luminosity { mix-blend-mode: luminosity }
+.contrast-200-brightness-150 { filter:contrast(200%) brightness(150%); }
 
 /*mix-blend-mode: normal;
 mix-blend-mode: multiply;
